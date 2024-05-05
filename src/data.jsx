@@ -4,8 +4,8 @@ const dropdownData = [
       title: "Applying",
       content: (
         <p>
-          The application deadline is December 11th, 11:59 PST for non-Ottawa students, and
-          December 30th, 11:59 PST for Ottawa students. Go to our application portal today 
+          The application deadline is February 11th, 11:59 EST for non-Ottawa students, and
+          February 30th, 11:59 EST for Ottawa students. Go to our application portal today 
           to apply- we can't wait to learn more about you! Note that we accept 
           people individually and not as whole teams. We look for a mix of beginners 
           and more experienced people- so even if you're new to the space, apply apply apply! 
@@ -19,8 +19,7 @@ const dropdownData = [
         content: (
           <p>
             At uOttaHack we're committed to making transportation as convenient 
-            as possible for you. For select schools in California like UC Berkeley 
-            and USC, bus transportation to and from the hackathon will be provided. 
+            as possible for you. For select schools in Canada like UofT and McGill, bus transportation to and from the hackathon will be provided. 
           </p>
         ),
       },
@@ -28,7 +27,7 @@ const dropdownData = [
         title: "Hacking",
         content: (
           <p>
-            Hacking at uOttaHack is unique. With silicon valley right 
+            Hacking at uOttaHack is unique. With Kanata North right 
             at our doorstep, we've got mentors from several companies and some 
             awesome tech for you to tinker with. We've also got a ton of  workshops, 
             hackpacks,
@@ -39,7 +38,7 @@ const dropdownData = [
         title: "Learning",
         content: (
           <p>
-            Hacking at uOttaHack is unique. With silicon valley right 
+            Hacking at uOttaHack is unique. With Kanata North right 
             at our doorstep, we've got mentors from several companies and some 
             awesome tech for you to tinker with. We've also got a ton of  workshops, 
             hackpacks,
