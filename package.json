@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
+    "boxicons": "^2.1.4",
     "eslint-plugin-unused-imports": "^3.2.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
@@ -19,6 +20,7 @@
     "react-moment-proptypes": "^1.8.1",
     "react-particles-js": "^3.6.0",
     "react-scripts": "5.0.1",
+    "react-scroll-parallax": "^3.4.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
