@@ -34,8 +34,8 @@ This app utilizes several dependencies, including React, React Icons, and SVG as
 
 ## Credits
 
-- **Developed by**: [Your Name or Team Name]
-- **Contact**: [Your Email Address]
+- **Developed by**: [Hamed](https://github.com/qerope)
+- **Contact**: [dev@Qerope.me](mailto:dev@Qerope.me)
 
 ## License
 
