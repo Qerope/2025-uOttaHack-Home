@@ -2,6 +2,10 @@
 
 This is a React application for uOttaHack main website [uOttaHack.ca](https://uottahack.ca)
 
+## Screenshot
+
+![Screenshot](screenshot.png)
+
 ## Introduction
 
 The uOttaHack React app provides information about the hackathon, including its mission, impact, sponsors, frequently asked questions (FAQs), and team details.
