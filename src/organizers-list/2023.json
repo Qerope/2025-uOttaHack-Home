@@ -1,0 +1,159 @@
+{
+    "Co-Directors": [
+      {
+        "imgsrc": "",
+        "name": "Deniz Jasarbasic",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Iaroslav Volkov",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Logistics": [
+      {
+        "imgsrc": "",
+        "name": "Cattuong Le",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Alona Petrova",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Saja Elkurtehi",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Marouane B.",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Yephihy Akissi Paule Noura Offia",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Software Development": [
+      {
+        "imgsrc": "",
+        "name": "Eric Dam",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Lucas Rahn",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Devon Knight",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Finance": [
+      {
+        "imgsrc": "",
+        "name": "Michael Cong",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Sponsorship": [
+      {
+        "imgsrc": "",
+        "name": "Caitlin Lim",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Shavon Thadani",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Shaylin Thadani",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Design & Marketing": [
+      {
+        "imgsrc": "",
+        "name": "Elayna Tian",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Lauren Hong",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Aisorya Bhandari",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "",
+        "name": "Aya Debbagh",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ]
+  }
+  

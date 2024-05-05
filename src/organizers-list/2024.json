@@ -1,0 +1,254 @@
+{
+  "Co-Directors": [
+    {
+      "imgsrc": "",
+      "name": "Deniz Jasarbasic",
+      "islead": true,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Iaroslav Volkov",
+      "islead": true,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    }
+  ],
+  "Logistics": [
+    {
+      "imgsrc": "",
+      "name": "Saja Elkurtehi",
+      "islead": true,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Anima Mehrin",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Asad Ali",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Algo Woolf",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "John Bute",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Joon Lee",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Priya Kumar",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    }
+  ],
+  "Development": [
+    {
+      "imgsrc": "",
+      "name": "Alona Petrova",
+      "islead": true,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Tawfiq Abubaker",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Matteo Torlone",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Hamed Tavakoli",
+      "islead": false,
+      "website": "https://qerope.github.io",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Abdi Souit",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    }
+  ],
+  "Sponsorship": [
+    {
+      "imgsrc": "",
+      "name": "Marouane Bouzzit",
+      "islead": true,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Ayman Ben Naceur",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Vanessa Vo",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Shavon Thadani",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Shaylin Thadani",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    }
+  ],
+  "Design & Marketing": [
+    {
+      "imgsrc": "",
+      "name": "Lauren Hong",
+      "islead": true,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Fay Lee",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Felipe Garcia Affonso",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Kelly Gao",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    }
+  ],
+  "Community": [
+    {
+      "imgsrc": "",
+      "name": "Devon Knight",
+      "islead": true,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Anthony Le",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Tony Li",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Robyn Westerberg",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Elizabeth Lam",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Masoud Karimi",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    },
+    {
+      "imgsrc": "",
+      "name": "Matteo Dagostino",
+      "islead": false,
+      "website": "",
+      "linkedin": "",
+      "github": ""
+    }
+  ]
+}

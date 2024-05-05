@@ -1,0 +1,119 @@
+{
+    "Co-Directors": [
+      {
+        "imgsrc": "../../images/emily-pham.png",
+        "name": "Matt Langois",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "../../images/emily-pham.png",
+        "name": "Paul Lee",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Sponsorship": [
+      {
+        "imgsrc": "../../images/emily-pham.png",
+        "name": "Emily Pham",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "../../images/amar-jasarbasic.png",
+        "name": "Amar Jasarbasic",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "../../images/hamza-basrai.png",
+        "name": "Hamza Basrai",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Marketing": [
+      {
+        "imgsrc": "../../images/minhthao-dang.png",
+        "name": "MinhThao Dang",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Logistics": [
+      {
+        "imgsrc": "../../images/anita-popescu.png",
+        "name": "Anita Popescu",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "../../images/abdulwahaab-ahmed.png",
+        "name": "Abdulwahaab Ahmed",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "../../images/natesh-kukreja.png",
+        "name": "Natesh Kukreja",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "../../images/stephanie-giang.png",
+        "name": "Stephanie Giang",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      },
+      {
+        "imgsrc": "../../images/robert-conrad.png",
+        "name": "Robert Conrad",
+        "islead": false,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "IT/AV": [
+      {
+        "imgsrc": "../../images/ivor-Benderavage.png",
+        "name": "Ivor Benderavage",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ],
+    "Finance": [
+      {
+        "imgsrc": "../../images/sherry-wang.png",
+        "name": "Sherry Wang",
+        "islead": true,
+        "website": "",
+        "linkedin": "",
+        "github": ""
+      }
+    ]
+  }
+  
