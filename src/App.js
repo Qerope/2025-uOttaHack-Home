@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
 import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from "react-icons/fa";
+
 import { ReactComponent as CTA } from './assets/cta.svg';
+import { ReactComponent as BELL } from './assets/bell.svg';
+
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+
 import { ReactComponent as Logo } from './assets/logo.svg';
+
 import Footer from "./footer/Footer";
 
 import globeImage from './assets/globe.svg';
@@ -83,6 +90,8 @@ import { AiFillGithub, AiFillInstagram, AiOutlineTwitter } from "react-icons/ai"
 
 function App() {
 
+
+
   const [activePrizePage, setActivePrizePage] = useState(1);
 
   let count = 0;
@@ -120,26 +129,60 @@ function App() {
   }, []);
 
   const orgData = {
-  2018: organizers2018List,
-  2019: organizers2019List,
-  2020: organizers2020List,
-  2021: organizers2021List,
-  2023: organizers2023List,
-  2024: organizers2024List,
-};
+    2018: organizers2018List,
+    2019: organizers2019List,
+    2020: organizers2020List,
+    2021: organizers2021List,
+    2023: organizers2023List,
+    2024: organizers2024List,
+  };
   const orgImages = {
-  2018: organizers2018Image,
-  2019: organizers2019Image,
-  2020: organizers2020Image,
-  2021: organizers2021Image,
-  2023: organizers2023Image,
-  2024: organizers2024Image,
-};
+    2018: organizers2018Image,
+    2019: organizers2019Image,
+    2020: organizers2020Image,
+    2021: organizers2021Image,
+    2023: organizers2023Image,
+    2024: organizers2024Image,
+  };
+
+  const [mainState, setMainState] = useState(0);
+
+  /*
+    mainState = 0 -> Newsletter, 2024
+    mainState = 1 -> Newsletter, 2025
+    mainState = 2 -> Apply
+    mainState = 3 -> Live
+  */
 
   const [activeTab, setActiveTab] = useState('2024'); // Default active tab is 2024
 
   const handleTabClick = (year) => {
     setActiveTab(year);
+  };
+
+  const [email, setEmail] = useState("");
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [emailFailed, setEmailFailed] = useState(false);
+
+  const handleEmailSubmit = (event) => {
+    event.preventDefault();
+
+    const db = firebase.firestore();
+    db.collection("emails")
+      .doc(email)
+      .set({ createdAt: firebase.firestore.FieldValue.serverTimestamp() })
+      .then(() => {
+        console.log("Email submitted successfully!");
+        setEmailSubmitted(true);
+        setEmail("");
+      })
+      .catch((error) => {
+        console.error("Error submitting email: ", error);
+        setEmailFailed(true);
+      });
+  };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   // Horizontal scroller
@@ -230,94 +273,94 @@ function App() {
   }, []);
 
 
-// Horizontal scroll 2
+  // Horizontal scroll 2
 
-useEffect(() => {
-  if (countsm === 0) {
-    (function horizontalScrollingStat() {
-      var banners = document.getElementsByClassName('horizontal-scrolling-stats');
-      if (!banners || banners.length === 0) {
-        return;
-      }
-      var pxPerSecond = 50;
-      setUpStats();
-      scrollTheStat();
-      window.addEventListener('resize', setUpStats);
+  useEffect(() => {
+    if (countsm === 0) {
+      (function horizontalScrollingStat() {
+        var banners = document.getElementsByClassName('horizontal-scrolling-stats');
+        if (!banners || banners.length === 0) {
+          return;
+        }
+        var pxPerSecond = 50;
+        setUpStats();
+        scrollTheStat();
+        window.addEventListener('resize', setUpStats);
 
-      function setUpStats() {
-        for (var i = 0; i < banners.length; i++) {
-          var currentBanner = banners[i];
-          var helperWrapperClass = 'horizontal-scrolling-stats__helper-wrapper';
-          var currentHelperWrapper = currentBanner.querySelector('.' + helperWrapperClass);
-          if (currentHelperWrapper) {
-            var clones = currentHelperWrapper.querySelectorAll('[data-clone]');
-            Array.prototype.forEach.call(clones, function (clone) {
-              clone.remove();
-            });
-            var childrenCount = currentHelperWrapper.children.length;
-            for (var i = 0; i < childrenCount; i++) {
-              currentBanner.appendChild(currentHelperWrapper.children[0]);
+        function setUpStats() {
+          for (var i = 0; i < banners.length; i++) {
+            var currentBanner = banners[i];
+            var helperWrapperClass = 'horizontal-scrolling-stats__helper-wrapper';
+            var currentHelperWrapper = currentBanner.querySelector('.' + helperWrapperClass);
+            if (currentHelperWrapper) {
+              var clones = currentHelperWrapper.querySelectorAll('[data-clone]');
+              Array.prototype.forEach.call(clones, function (clone) {
+                clone.remove();
+              });
+              var childrenCount = currentHelperWrapper.children.length;
+              for (var i = 0; i < childrenCount; i++) {
+                currentBanner.appendChild(currentHelperWrapper.children[0]);
+              }
+              currentHelperWrapper.remove();
             }
-            currentHelperWrapper.remove();
-          }
 
-          var children = currentBanner.children;
+            var children = currentBanner.children;
 
-          var bannerWidth = currentBanner.getBoundingClientRect().width;
-          var minWidthToCoverBanner = (bannerWidth * 2) + children[0].getBoundingClientRect().width;
-          var childrenWidth = Array.prototype.reduce.call(children, function (r, child) {
-            return r + child.getBoundingClientRect().width;
-          }, 0);
-          var currentWidth = childrenWidth;
-
-          do {
-            Array.prototype.forEach.call(children, function (child) {
-              var clone = child.cloneNode();
-              clone.setAttribute('aria-hidden', true);
-              clone.dataset.clone = true;
-              currentBanner.appendChild(clone);
-            });
-            currentWidth += childrenWidth;
-          } while (currentWidth < minWidthToCoverBanner);
-
-          var transitionHelperWrapper = document.createElement('div');
-          transitionHelperWrapper.classList.add('horizontal-scrolling-stats__helper-wrapper');
-          var childrenCount = children.length;
-          for (var i = 0; i < childrenCount; i++) {
-            transitionHelperWrapper.appendChild(children[0]);
-          }
-          currentBanner.appendChild(transitionHelperWrapper);
-          transitionHelperWrapper.dataset.childrenWidth = childrenWidth;
-        }
-      }
-
-      function scrollTheStat() {
-        for (var i = 0; i < banners.length; i++) {
-          var helperWrapper = banners[i].firstElementChild;
-          var childrenWidth = helperWrapper.dataset.childrenWidth;
-          var offsetLeft = helperWrapper.offsetLeft;
-
-          if (offsetLeft <= (childrenWidth * -1)) {
-            helperWrapper.style.transitionDuration = '0s';
-            helperWrapper.style.left = '0px';
-            helperWrapper.style.removeProperty('transition-duration');
-          } else if (helperWrapper.style.left === '' || helperWrapper.style.left === '0px') {
-            setTimeout(function () {
-              helperWrapper.style.transitionDuration = (childrenWidth / pxPerSecond).toFixed() + 's';
-              helperWrapper.style.left = (childrenWidth * -1) + 'px';
+            var bannerWidth = currentBanner.getBoundingClientRect().width;
+            var minWidthToCoverBanner = (bannerWidth * 2) + children[0].getBoundingClientRect().width;
+            var childrenWidth = Array.prototype.reduce.call(children, function (r, child) {
+              return r + child.getBoundingClientRect().width;
             }, 0);
+            var currentWidth = childrenWidth;
+
+            do {
+              Array.prototype.forEach.call(children, function (child) {
+                var clone = child.cloneNode();
+                clone.setAttribute('aria-hidden', true);
+                clone.dataset.clone = true;
+                currentBanner.appendChild(clone);
+              });
+              currentWidth += childrenWidth;
+            } while (currentWidth < minWidthToCoverBanner);
+
+            var transitionHelperWrapper = document.createElement('div');
+            transitionHelperWrapper.classList.add('horizontal-scrolling-stats__helper-wrapper');
+            var childrenCount = children.length;
+            for (var i = 0; i < childrenCount; i++) {
+              transitionHelperWrapper.appendChild(children[0]);
+            }
+            currentBanner.appendChild(transitionHelperWrapper);
+            transitionHelperWrapper.dataset.childrenWidth = childrenWidth;
           }
         }
-        requestAnimationFrame(scrollTheStat);
-      }
-    })();
 
-    countsm = 1;
-  }
-}, []);
+        function scrollTheStat() {
+          for (var i = 0; i < banners.length; i++) {
+            var helperWrapper = banners[i].firstElementChild;
+            var childrenWidth = helperWrapper.dataset.childrenWidth;
+            var offsetLeft = helperWrapper.offsetLeft;
+
+            if (offsetLeft <= (childrenWidth * -1)) {
+              helperWrapper.style.transitionDuration = '0s';
+              helperWrapper.style.left = '0px';
+              helperWrapper.style.removeProperty('transition-duration');
+            } else if (helperWrapper.style.left === '' || helperWrapper.style.left === '0px') {
+              setTimeout(function () {
+                helperWrapper.style.transitionDuration = (childrenWidth / pxPerSecond).toFixed() + 's';
+                helperWrapper.style.left = (childrenWidth * -1) + 'px';
+              }, 0);
+            }
+          }
+          requestAnimationFrame(scrollTheStat);
+        }
+      })();
+
+      countsm = 1;
+    }
+  }, []);
 
 
-const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
+  const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
 
 
   // Header
@@ -333,10 +376,10 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
 
       if (currentScroll > lastScrollTop) {
         // Scrolling down
-        header.style.transform = 'translateY(-100%)'; 
+        header.style.transform = 'translateY(-100%)';
       } else {
         // Scrolling up
-        header.style.transform = 'translateY(0)'; 
+        header.style.transform = 'translateY(0)';
         header.style.backgroundColor = '#cbb8cc'; // setting background to white when shown
         if (scrollPos <= 100) {
           header.style.backgroundColor = "transparent";
@@ -357,7 +400,7 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
     return (
       <a disabled={disabled} href={section ? "#" + section : link} target={section ? "" : "_blank"} className={`  mb-2 py-4 px-6 ${disabled ? "" : "ease-in duration-300 cursor-pointer"} lg:bg-transparent w-full lg:h-48`}>
         <div className={`${disabled ? "opacity-40" : ""}`}>
-          <h1 className='font-Raleway font-bold text-2xl mb-2 bg-gradient-to-r bg-clip-text' style={{color: '#232323'}}>{title}</h1>
+          <h1 className='font-Raleway font-bold text-2xl mb-2 bg-gradient-to-r bg-clip-text' style={{ color: '#232323' }}>{title}</h1>
           <div className="relative flex flex-col justify-center">
             <p className="font-CerealMd text-sm lg:text-black text-gray-500">
               {description}
@@ -372,14 +415,14 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
       <a disabled={disabled} href={section ? "#" + section : link} target={section ? "" : "_blank"} className={`  mb-2 py-4 px-6 ${disabled ? "" : "ease-in duration-300 cursor-pointer"} lg:bg-transparent w-full lg:h-48`}>
         <div className={`${disabled ? "opacity-40" : ""}`}>
           <div className="relative flex flex-col justify-center">
-            
+
             <a disabled={disabled} href={section ? "#" + section : link} target={section ? "" : "_blank"} >
-                <div className='w-full flex justify-center rounded-md h-40 relative'>
-                  <img src={image} className="object-contain" />
-                </div>
-              </a>
+              <div className='w-full flex justify-center rounded-md h-40 relative'>
+                <img src={image} className="object-contain" />
+              </div>
+            </a>
           </div>
-          <span className='font-main-title ' style={{color: '#232323', fontSize: '35px', lineHeight: '0.9', alignContent: 'center'}}>{title}</span>
+          <span className='font-main-title ' style={{ color: '#232323', fontSize: '35px', lineHeight: '0.9', alignContent: 'center' }}>{title}</span>
         </div>
       </a>
     )
@@ -388,8 +431,8 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
     return (
       <a disabled={disabled} href={section ? "#" + section : link} target={section ? "" : "_blank"} className={`  mb-2 py-4 px-6 ${disabled ? "" : "ease-in duration-300 cursor-pointer"} lg:bg-transparent w-full lg:h-48`}>
         <div className={`${disabled ? "opacity-40" : ""}`}>
-          <h1 className={`font-Raleway font-bold text-2xl bg-gradient-to-r bg-clip-text`}  style={{color: '#232323', lineHeight: 0.9, fontSize: '1.9rem', fontFamily: 'Harabara'} }>{title}</h1>
-          <h1 className='description font-bold font-Raleway mb-1' style={{color: '#585858', fontSize: '14px', width: '80%', }}>{subtitle}</h1>
+          <h1 className={`font-Raleway font-bold text-2xl bg-gradient-to-r bg-clip-text`} style={{ color: '#232323', lineHeight: 0.9, fontSize: '1.9rem', fontFamily: 'Harabara' }}>{title}</h1>
+          <h1 className='description font-bold font-Raleway mb-1' style={{ color: '#585858', fontSize: '14px', width: '80%', }}>{subtitle}</h1>
           <div className="relative flex flex-col justify-center">
             <p className="font-CerealMd text-sm lg:text-black text-gray-500">
               {description}
@@ -401,16 +444,16 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
   }
   const QuickContact = ({ disabled, title, subtitle, section, email }) => {
     return (
-      <a disabled={disabled} href={section ? "#" + section : 'mailto:'+email} target={section ? "" : "_blank"} className={`  mb-2 py-4 px-6 ${disabled ? "" : "ease-in duration-300 cursor-pointer"} text-center lg:bg-transparent w-full lg:h-48`}>
+      <a disabled={disabled} href={section ? "#" + section : 'mailto:' + email} target={section ? "" : "_blank"} className={`  mb-2 py-4 px-6 ${disabled ? "" : "ease-in duration-300 cursor-pointer"} text-center lg:bg-transparent w-full lg:h-48`}>
         <div className={`${disabled ? "opacity-40" : ""}`}>
-          <h1 className={`font-Raleway font-bold text-2xl bg-gradient-to-r bg-clip-text`}  style={{color: '#232323', lineHeight: 1.0, fontSize: '1.9rem'} }>{title}</h1>
+          <h1 className={`font-Raleway font-bold text-2xl bg-gradient-to-r bg-clip-text`} style={{ color: '#232323', lineHeight: 1.0, fontSize: '1.9rem' }}>{title}</h1>
           <div className="relative flex flex-col justify-center">
-          <h1 className='description font-bold font-Raleway mb-1' style={{color: '#585858', fontSize: '14px'}}>{email}</h1>
+            <h1 className='description font-bold font-Raleway mb-1' style={{ color: '#585858', fontSize: '14px' }}>{email}</h1>
 
-          <p className="font-CerealMd text-md lg:text-black text-gray-500">
+            <p className="font-CerealMd text-md lg:text-black text-gray-500">
               {subtitle}
-              </p>
-            <button style={{marginTop: '10px'}} className="text-center cta font-Raleway font-bold bg-[#6f519e]"><a target="_blank" href={'mailto:'+email}>{title}<CTA /></a> </button>
+            </p>
+            <button style={{ marginTop: '10px' }} className="text-center cta font-Raleway font-bold bg-[#6f519e]"><a target="_blank" href={'mailto:' + email}>{title}<CTA /> </a> </button>
           </div>
         </div>
       </a>
@@ -418,46 +461,79 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
   }
   const QuickTeam = ({ cols, disabled, email, team, persons, section }) => {
     return (
-      <div className={`flex flex-col ${cols==1 ? 'mt-20 pt-20' : ''} ${'lg:w-'+cols+'/12'} w-12/12 pl-1 pr-1 justify-center`}>
+      <div className={`flex flex-col ${cols == 1 ? 'mt-20 pt-20' : ''} ${'lg:w-' + cols + '/12'} w-12/12 pl-1 pr-1 justify-center`}>
 
-      <a disabled={disabled} href={section ? "#" + section : ""} target={section ? "" : "_blank"} className={`  mb-4 py-4 px-6 ${disabled ? "" : "ease-in duration-300 cursor-pointer"} text-center lg:bg-transparent w-full`}>
-        <div className={`${disabled ? "opacity-40" : ""}`}>
-          <h1 className={`font-Raleway font-bold text-2xl bg-gradient-to-r bg-clip-text`}  style={{color: '#232323', lineHeight: 1.0, fontSize: '1.9rem'} }>{team}</h1>
-          <div className="relative flex flex-col justify-center">
-          <h1 className='description font-bold font-Raleway mb-1' style={{color: '#585858', fontSize: '14px'}}>{email}</h1>
+        <a disabled={disabled} href={section ? "#" + section : ""} target={section ? "" : "_blank"} className={`  mb-4 py-4 px-6 ${disabled ? "" : "ease-in duration-300 cursor-pointer"} text-center lg:bg-transparent w-full`}>
+          <div className={`${disabled ? "opacity-40" : ""}`}>
+            <h1 className={`font-Raleway font-bold text-2xl bg-gradient-to-r bg-clip-text`} style={{ color: '#232323', lineHeight: 1.0, fontSize: '1.9rem' }}>{team}</h1>
+            <div className="relative flex flex-col justify-center">
+              <h1 className='description font-bold font-Raleway mb-1' style={{ color: '#585858', fontSize: '14px' }}>{email}</h1>
 
-            {persons.map((person, index) => (
-              <div key={index}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <h1 className={`m-1 font-Raleway ${person.islead ? 'font-bold' : ''} text-l bg-gradient-to-r bg-clip-text`} style={{ color: '#232323', lineHeight: 1.0, fontSize: '1rem' }}>{person.name}</h1>{person.instagram && (
-                <a disabled={disabled} href={section ? "#" + section : person.instagram} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
-                  <FaInstagram />
-                </a>
-              )}
-              {person.linkedin && (
-                <a disabled={disabled} href={section ? "#" + section : person.linkedin} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
-                  <FaLinkedin />
-                </a>
-              )}
-              {person.website && (
-                <a disabled={disabled} href={section ? "#" + section : person.website} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
-                  <FaGlobe />
-                </a>
-              )}
-              {person.github && (
-                <a disabled={disabled} href={section ? "#" + section : person.github} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
-                  <FaGithub />
-                </a>
-              )}
+              {persons.map((person, index) => (
+                <div key={index}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <h1 className={`m-1 font-Raleway ${person.islead ? 'font-bold' : ''} text-l bg-gradient-to-r bg-clip-text`} style={{ color: '#232323', lineHeight: 1.0, fontSize: '1rem' }}>{person.name}</h1>{person.instagram && (
+                      <a disabled={disabled} href={section ? "#" + section : person.instagram} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
+                        <FaInstagram />
+                      </a>
+                    )}
+                    {person.linkedin && (
+                      <a disabled={disabled} href={section ? "#" + section : person.linkedin} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
+                        <FaLinkedin />
+                      </a>
+                    )}
+                    {person.website && (
+                      <a disabled={disabled} href={section ? "#" + section : person.website} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
+                        <FaGlobe />
+                      </a>
+                    )}
+                    {person.github && (
+                      <a disabled={disabled} href={section ? "#" + section : person.github} target={section ? "" : "_blank"} style={{ marginLeft: "0.5rem" }}>
+                        <FaGithub />
+                      </a>
+                    )}
 
+                  </div>
+
+                </div>
+              ))}
             </div>
-            
-              </div>
-            ))}
           </div>
-        </div>
-      </a>
+        </a>
       </div>
+    );
+  };
+
+  const QuickHeroSectionLinks = ({ buttonText, buttonLink, isNewsLetterActive }) => {
+    return (
+      <>
+        {isNewsLetterActive ? (
+          <div className="button-container text-center mt-0">
+            <form onSubmit={handleEmailSubmit}>
+              <div>
+                <button type="submit" className="text-center cta pr-12 font-Raleway font-bold bg-[#6f519e]">
+                  {emailSubmitted ? (
+                    <p>Thank you for subscribing!</p>
+                  ) : (
+                    <input
+                      type="email"
+                      placeholder="Subscribe to our newsletter"
+                      value={email}
+                      onChange={handleEmailChange}
+                    />
+                  )}
+                  {(emailFailed && !emailSubmitted) ? (<div style={{ display: 'inline' }}>Try Again!</div>) : (<div style={{ display: 'inline' }}>Get Notified! ✉️</div>)}
+                </button>
+              </div>
+            </form>
+          </div>
+        ) : null}
+        <div className="button-container text-center mt-0">
+          <button className="text-center cta font-Raleway font-bold bg-[#6f519e]">
+            <a target="_blank" href={buttonLink}>{buttonText} <CTA/></a>
+          </button>
+        </div>
+      </>
     );
   };
 
@@ -480,31 +556,37 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
         </div>
 
         <section className="w-full pt-36 lg:pl-40 lg:pr-40 md:pl-20 md:pr-20 flex flex-col relative pb lg:items-center">
-        <img src={sechootowImg} className="z-0 left-5 top-4 absolute dissapearWhenSmall" alt="Hoover Tower" />
-        <img src={sechootowImg} className="z-0 right-5 inverse top-4 absolute dissapearWhenSmall" style={{transform: 'scale(-1, 1)'}} alt="Hoover Tower" />
+          <img src={sechootowImg} className="z-0 left-5 top-4 absolute dissapearWhenSmall" alt="Hoover Tower" />
+          <img src={sechootowImg} className="z-0 right-5 inverse top-4 absolute dissapearWhenSmall" style={{ transform: 'scale(-1, 1)' }} alt="Hoover Tower" />
 
           <div className="container mx-auto px-4">
-              <h1 className='text-center font-Raleway font-main-title font-extrabold mb-4 bg-clip-text' style={{color: '#232323', fontSize: '5rem', lineHeight: '1.2'}}>
-                  uOttaHack
-              </h1>
-              <h1 className='text-center font-Raleway font-extrabold mb-4 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
-                  uOttaHack is Ottawa’s premier hackathon. Join<br></br> us for our 7th year to dream and build the future!
-              </h1>
-              <p className='description font-bold lg:text-center font-Raleway' style={{color: '#585858', fontSize: '18px', width: '80%', margin: 'auto'}}>
-                  Brightest engineering students are flown to Ottawa’s campus <br></br> to build solutions to the world’s largest challenges for 36 hours straight.           
-              </p>
-              <p className='description font-bold lg:text-center font-Raleway' style={{color: '#585858', fontSize: '18px', width: '80%', margin: 'auto'}}>
-              </p>
-              <div className="button-container text-center mt-4">
-                    <button className="text-center cta font-Raleway font-bold bg-[#6f519e]"><a target="_blank" href="https://root.uottahack.ca/">Visit 2024 <CTA /></a> </button>
-                </div>
+            <h1 className='text-center font-Raleway font-main-title font-extrabold mb-4 bg-clip-text' style={{ color: '#232323', fontSize: '5rem', lineHeight: '1.2' }}>
+              uOttaHack
+            </h1>
+            <h1 className='text-center font-Raleway font-extrabold mb-4 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
+              uOttaHack is Ottawa’s premier hackathon. Join<br></br> us for our 7th year to dream and build the future!
+            </h1>
+            <p className='description font-bold lg:text-center font-Raleway' style={{ color: '#585858', fontSize: '18px', width: '80%', margin: 'auto' }}>
+              Brightest engineering students are flown to Ottawa’s campus <br></br> to build solutions to the world’s largest challenges for 36 hours straight.
+            </p>
+            <p className='description font-bold lg:text-center font-Raleway' style={{ color: '#585858', fontSize: '18px', width: '80%', margin: 'auto' }}>
+            </p>
+            {
+              {
+                0: <QuickHeroSectionLinks isNewsLetterActive={true} buttonText="Visit 2024" buttonLink="https://2024.uottahack.ca/"/>,
+                1: <QuickHeroSectionLinks isNewsLetterActive={true} buttonText="Visit 2025" buttonLink="https://2025.uottahack.ca/"/>,
+                2: <QuickHeroSectionLinks isNewsLetterActive={false} buttonText="Apply!" buttonLink="https://apply.uottahack.ca/"/>,
+                3: <QuickHeroSectionLinks isNewsLetterActive={false} buttonText="Live" buttonLink="https://live.uottahack.ca/"/>,
+                4: null
+              }[mainState]
+            }
           </div>
         </section>
 
 
         <section class="xl:h-[105vh] lg:h-[90vh] flex w-screen lg:pl-40 lg:pr-40 md:pl-20 md:pr-20 pl-10 pr-10 flex-col justify-center items-center" id="home">
           <div class="scale-90 w-11/12 mx-auto aspect-w-16 aspect-h-9 overflow-hidden rounded-2xl absolute top-[2rem] bottom-[5rem] left-1/2 bottom-20 transform -translate-x-[52%]">
-            <div class="rounded-3xl background-block left-0"></div> 
+            <div class="rounded-3xl background-block left-0"></div>
           </div>
           <div class="scale-90 w-11/12 mx-auto aspect-w-16 aspect-h-9 overflow-hidden rounded-3xl absolute top-[2rem] bottom-[5rem] left-1/2 transform -translate-x-[52%]">
             <video src={introVideo} autoPlay muted loop class="brightness-[0.4] object-cover w-full h-full " />
@@ -513,9 +595,9 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
           <div className='translate-x-[0%] flex flex-row items-center w-full justify-content: start'>
             <div className='lg:w-5/6 z-auto'>
               <div className='xl:text-3xl lg:text-3xl text-3xl mt-4 mb-0 font-CerealBD text-white' targetDate="2025-03-01T00:00:00" > Our Most Recent Event</div>
-              <div className='font-Raleway font-main-title font-bil mb-4 bg-clip-text'  style={{lineHeight: "0.5", marginBottom: "0"}} targetDate="2025-03-01T00:00:00" >             uOttaHack 6</div>   
+              <div className='font-Raleway font-main-title font-bil mb-4 bg-clip-text' style={{ lineHeight: "0.5", marginBottom: "0" }} targetDate="2025-03-01T00:00:00" >             uOttaHack 6</div>
               <div className="inline-block">
-              </div>      
+              </div>
               <div className='flex flex-row p-8 pt-0 pl-0'>
                 <p className='mr-20 font-semibold xl:text-white lg:text-white md:text-white text-white mb-1 font-display xl:text-lg lg:text-md text-lg'>March 1-3 2024 @ University of Ottawa</p>
                 <a href="https://twitter.com/uottahack" target="_blank"><AiOutlineTwitter className="mr-4 text-gray-200 xl:text-gray-200 lg:text-gray-200 md:text-gray-200" size={30} /></a>
@@ -529,15 +611,15 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
 
 
         <section className="w-full xl:pt-8 lg:pt-8 md:pt-14 pt-14 xl:pl-40 xl:pr-40 lg:pl-10 lg:pr-10 md:pl-20 md:pr-20 pl-4 pr-4 pb-12 flex flex-col relative justify-center items-center" id="about">
-            <img src={globeImage} className="small_img -top-10 z-0 w-120 mb-160 -right-16 absolute lg:-mr-16 animate-spin-slow" alt="Revolving Globe" />
-            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
-            What is <span className='font-main-title' style={{color: '#232323', fontSize: '55px', lineHeight: '1.2'}}> uOttaHack</span>
-            </h1>        
-              <p className='description font-bold lg:text-center font-Raleway mb-4' style={{color: '#585858', fontSize: '18px', width: '80%', margin: 'auto'}}>
-              Our mission is to empower students to comfortably explore their passion for technology and entrepreneurship, through building a community of like-minded individuals who innovate and disrupt the worlds of business and technology!
-              </p>
+          <img src={globeImage} className="small_img -top-10 z-0 w-120 mb-160 -right-16 absolute lg:-mr-16 animate-spin-slow" alt="Revolving Globe" />
+          <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
+            What is <span className='font-main-title' style={{ color: '#232323', fontSize: '55px', lineHeight: '1.2' }}> uOttaHack</span>
+          </h1>
+          <p className='description font-bold lg:text-center font-Raleway mb-4' style={{ color: '#585858', fontSize: '18px', width: '80%', margin: 'auto' }}>
+            Our mission is to empower students to comfortably explore their passion for technology and entrepreneurship, through building a community of like-minded individuals who innovate and disrupt the worlds of business and technology!
+          </p>
 
-            <div className='z-10 w-full flex relative lg:flex-row flex-col'>
+          <div className='z-10 w-full flex relative lg:flex-row flex-col'>
             <div className='flex flex-col lg:w-4/12 w-12/12 pl-1 pr-1'>
               <QuickOption disabled={false} title="Community" link="https://uottahack.ca/community" description="Join a strong community of students and mentors who share your passion for technology. If you've ever had an idea that you wanted to bring to life, uOttaHack’s hackathon is the place to do it!" />
             </div>
@@ -554,11 +636,11 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
 
 
         <section className="w-full xl:pt-8 lg:pt-8 md:pt-14 pt-14 xl:pl-40 xl:pr-40 lg:pl-10 lg:pr-10 md:pl-20 md:pr-20 pl-4 pr-4 pb-12 flex flex-col relative justify-center items-center" id="past">
-            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
-            <span className='font-main-title' style={{color: '#232323', fontSize: '55px', lineHeight: '1.2'}}> uOttaHack</span> from Previous Years
-            </h1>
+          <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
+            <span className='font-main-title' style={{ color: '#232323', fontSize: '55px', lineHeight: '1.2' }}> uOttaHack</span> from Previous Years
+          </h1>
 
-            <div className='z-10 w-full flex relative lg:flex-row flex-col'>
+          <div className='z-10 w-full flex relative lg:flex-row flex-col'>
             <Parallax translateY={[0, -50]} className='flex lg:w-2/12 w-12/12 pl-1 pr-1'>
               <QuickHackathon disabled={false} title={2018} link="https://2018.uottahack.ca" image={uOttaHack2018Logo} />
             </Parallax>
@@ -581,12 +663,12 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
         </section>
 
         <section className="w-full xl:pt-8 lg:pt-8 md:pt-14 pt-14 xl:pl-40 xl:pr-40 lg:pl-10 lg:pr-10 md:pl-20 md:pr-20 pl-4 pr-4 pb-12 flex flex-col relative justify-center items-center" id="events">
-            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
+          <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
             🚀 Our Events & Initiatives
 
-            </h1>        
+          </h1>
 
-            <div className='z-10 w-full flex relative lg:flex-row flex-col'>
+          <div className='z-10 w-full flex relative lg:flex-row flex-col'>
             <div className='flex flex-col lg:w-3/12 w-12/12 pl-1 pr-1'>
               <QuickEvent subtitle="Flagship Hackathon" disabled={false} title="uOttaHack 6" link="https://2024.uottahack.ca/" description="Flagship Hackathon Our flagship event, the university's official MLH hackathon with over 600+ hackers and 20+ sponsors!" />
             </div>
@@ -603,38 +685,38 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
         </section>
 
         <section className="w-full xl:pl-40 xl:pr-40 lg:pl-10 lg:pr-10 md:pl-20 md:pr-20 pl-4 pr-4 pb-12 flex flex-col relative justify-center items-center" id="about">
-            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
+          <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
             💥 Our Impact
 
-            </h1>    
-              <p className='description font-bold lg:text-center font-Raleway' style={{color: '#585858', fontSize: '18px', width: '80%', margin: 'auto'}}>
-              Over the past 6 years, our hackathon event has brought the community together to connect students with each other, to employers & opportunities, and solve real-world challenges. We are excited to share some statistics that reflect this entire journey.
-              </p>
-              <Parallax translateY={[-40, -2]} rotateX={[-20,20]}>    
-            <div className="scroll-container pt-10 z-0" style={{rotate: '-10deg'}}>
+          </h1>
+          <p className='description font-bold lg:text-center font-Raleway' style={{ color: '#585858', fontSize: '18px', width: '80%', margin: 'auto' }}>
+            Over the past 6 years, our hackathon event has brought the community together to connect students with each other, to employers & opportunities, and solve real-world challenges. We are excited to share some statistics that reflect this entire journey.
+          </p>
+          <Parallax translateY={[-40, -2]} rotateX={[-20, 20]}>
+            <div className="scroll-container pt-10 z-0" style={{ rotate: '-10deg' }}>
               <img src={stats} alt="Scrolling Image" />
               <img src={stats} alt="Scrolling Image" />
               <img src={stats} alt="Scrolling Image" />
               <img src={stats} alt="Scrolling Image" />
               <img src={stats} alt="Scrolling Image" />
-              </div>
+            </div>
           </Parallax>
         </section>
 
 
         <section className="w-full lg:pl-40 lg:pr-40 flex flex-col relative 8 lg:pb-16" id="sponsors">
           <div className="items-center flex flex-col">
-            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
-                  Past Sponsors
-            </h1>   
-            <p className='description font-bold text-center font-Raleway px-4' style={{color: '#585858', fontSize: '18px', width: '80%'}}>
-            uOttaHack would not be possible without the support of our incredible sponsors. Over the past 6 years, our sponsors have made it possible for over 3000 developers, designers, product managers, and dreamers to turn their ideas into a reality.
+            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
+              Past Sponsors
+            </h1>
+            <p className='description font-bold text-center font-Raleway px-4' style={{ color: '#585858', fontSize: '18px', width: '80%' }}>
+              uOttaHack would not be possible without the support of our incredible sponsors. Over the past 6 years, our sponsors have made it possible for over 3000 developers, designers, product managers, and dreamers to turn their ideas into a reality.
 
 
             </p>
           </div>
-          <div className="pt-16 lg:pt-8 pb-8 sponsorSection">          
-          {/* New Row */}
+          <div className="pt-16 lg:pt-8 pb-8 sponsorSection">
+            {/* New Row */}
             <div className='flex lg:flex-row flex-col mb-4 justify-center'>
               <div className='sponsorCard lg:w-6/12 w-full lg:mr-0'>
                 <a href="link to website" target="_blank">
@@ -909,11 +991,11 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
               </div>
             </div>
           </div>
-            <h1 className='text-center font-Raleway font-extrabold mb-0 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
-                  Our Partners
-            </h1>  
-          <div className="pt-16 lg:pt-8 partnerSection">          
-          {/* New Row */}
+          <h1 className='text-center font-Raleway font-extrabold mb-0 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
+            Our Partners
+          </h1>
+          <div className="pt-16 lg:pt-8 partnerSection">
+            {/* New Row */}
             <div className='flex lg:flex-row flex-col mb-4 justify-center'>
               <div className='sponsorCard lg:w-4/12 w-full lg:mr-0'>
                 <a href="link to website" target="_blank">
@@ -943,77 +1025,77 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
 
 
         <section className="w-full xl:pt-8 lg:pt-8 md:pt-14 pt-14 xl:pl-40 xl:pr-40 lg:pl-10 lg:pr-10 md:pl-20 md:pr-20 pl-4 pr-4 pb-12 flex flex-col relative justify-center items-center" id="contact">
-            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
+          <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
             📩 Get in touch
 
-            </h1>        
-  
-            <p className='description font-bold lg:text-center font-Raleway mb-4' style={{color: '#585858', fontSize: '18px', width: '80%', margin: 'auto'}}>
+          </h1>
+
+          <p className='description font-bold lg:text-center font-Raleway mb-4' style={{ color: '#585858', fontSize: '18px', width: '80%', margin: 'auto' }}>
             We're always excited to partner with like minded and innovative groups both on campus and professionally. Reach out to us if you'd like to explore a new venture!
-              </p>
-            <div className='z-10 w-full flex relative lg:flex-row flex-col'>
+          </p>
+          <div className='z-10 w-full flex relative lg:flex-row flex-col'>
             <div className='flex flex-col lg:w-3/12 w-12/12 pl-1 pr-1'>
               <QuickContact subtitle="Interested in sponsoring our hackathon?" disabled={false} title="Sponsorship" email="sponsorship@uottahack.ca" />
             </div>
             <div className='flex flex-col lg:w-3/12 w-12/12 pl-1 pr-1'>
-              <QuickContact subtitle="Would you like to partner for an on-campus event?" disabled={false} title="Community" email="community@uottahack.ca"  />
+              <QuickContact subtitle="Would you like to partner for an on-campus event?" disabled={false} title="Community" email="community@uottahack.ca" />
             </div>
             <div className='flex flex-col lg:w-3/12 w-12/12 pl-1 pr-1'>
-              <QuickContact subtitle="Looking for promotion or communication help?" disabled={false} title="Marketing" email="marketing@uottahack.ca"  />
+              <QuickContact subtitle="Looking for promotion or communication help?" disabled={false} title="Marketing" email="marketing@uottahack.ca" />
             </div>
             <div className='flex flex-col lg:w-3/12 w-12/12 pl-1 pr-1'>
-              <QuickContact subtitle="For any other inquiries please contact the Co-Directors!" disabled={false} title="Directors" email="chair@uottahack.ca"  />
+              <QuickContact subtitle="For any other inquiries please contact the Co-Directors!" disabled={false} title="Directors" email="chair@uottahack.ca" />
             </div>
           </div>
         </section>
 
-  <section className="w-full xl:pt-8 lg:pt-8 md:pt-14 pt-14 xl:pl-40 xl:pr-40 lg:pl-10 lg:pr-10 md:pl-20 md:pr-20 pl-4 pr-4 pb-12 flex flex-col relative justify-center items-center" id="team">
-    <div className="flex">
-        <div className="flex flex-row justify between w-12/12">
-          
-          {Object.keys(orgData).map((year) => (
-            <div key={year} className={`tab-content ${activeTab === year ? '' : 'hidden'}`}>
-              
-              
-            <div className='flex flex-row'>
-              <div className='w-8/12'>
-                <div className='xl:text-3xl lg:text-3xl text-3xl mt-4 mb-0 font-CerealBD' targetDate="2025-03-01T00:00:00">Our Team</div>
-                <div className='font-Raleway font-main-title font-bil mb-4 bg-clip-text' style={{color: "rgb(35, 35, 35)", lineHeight: "0.5", marginBottom: "0" }} targetDate="2025-03-01T00:00:00">{"uOttaHack " + (year - 2024 + 6)}</div>
-                  <p className='mr-20 font-semibold mb-1 font-display xl:text-lg lg:text-md text-lg'>{(year-1) + '/' + year}</p>
-                <Parallax translateY={[-9,0]} translateX={[-5,5]}>
-                  <div className="inline-block">
-                    <img src={orgImages[year]} alt="team" className="rounded-2xl z-0 w-full h-auto" />
-                  </div>
-                </Parallax>
-              </div>
-              <div className='w-4/12 justify-center flex'>
+        <section className="w-full xl:pt-8 lg:pt-8 md:pt-14 pt-14 xl:pl-40 xl:pr-40 lg:pl-10 lg:pr-10 md:pl-20 md:pr-20 pl-4 pr-4 pb-12 flex flex-col relative justify-center items-center" id="team">
+          <div className="flex">
+            <div className="flex flex-row justify between w-12/12">
 
-                <Parallax translateY={[-20,300]} className='flex z-10 flex-row items-center justify-between absolute right-[50px] top-[50px]'>
-                  <div className="tabs">
-                    {Object.keys(orgData).map((year) => (
-                      <button 
-                        key={year}
-                        onClick={() => handleTabClick(year)}
-                        style={{marginTop: '10px', paddingLeft: 15}} 
-                        className={`tab ${activeTab === year ? 'active' : ''} text-center cta cta-tab font-Raleway font-bold bg-[#6f519e]`} >
-                        {'\'' + (year-2000)}
-                      </button>
-                    ))}
-                  </div>
-                </Parallax>
-                {orgData[year]["Co-Directors"] && <QuickTeam cols={1} team="Co-Directors" persons={orgData[year]["Co-Directors"]} />}
-              </div>
-            </div>
+              {Object.keys(orgData).map((year) => (
+                <div key={year} className={`tab-content ${activeTab === year ? '' : 'hidden'}`}>
 
-              <div className='z-10 flex relative lg:flex-row flex-col'>
-                  {/* Other Teams */}
-                    {Object.entries(orgData[year]).slice(1,6).map(([team, persons]) => {
+
+                  <div className='flex flex-row'>
+                    <div className='w-8/12'>
+                      <div className='xl:text-3xl lg:text-3xl text-3xl mt-4 mb-0 font-CerealBD' targetDate="2025-03-01T00:00:00">Our Team</div>
+                      <div className='font-Raleway font-main-title font-bil mb-4 bg-clip-text' style={{ color: "rgb(35, 35, 35)", lineHeight: "0.5", marginBottom: "0" }} targetDate="2025-03-01T00:00:00">{"uOttaHack " + (year - 2024 + 6)}</div>
+                      <p className='mr-20 font-semibold mb-1 font-display xl:text-lg lg:text-md text-lg'>{(year - 1) + '/' + year}</p>
+                      <Parallax translateY={[-9, 0]} translateX={[-5, 5]}>
+                        <div className="inline-block">
+                          <img src={orgImages[year]} alt="team" className="rounded-2xl z-0 w-full h-auto" />
+                        </div>
+                      </Parallax>
+                    </div>
+                    <div className='w-4/12 justify-center flex'>
+
+                      <Parallax translateY={[-20, 300]} className='flex z-10 flex-row items-center justify-between absolute right-[50px] top-[50px]'>
+                        <div className="tabs">
+                          {Object.keys(orgData).map((year) => (
+                            <button
+                              key={year}
+                              onClick={() => handleTabClick(year)}
+                              style={{ marginTop: '10px', paddingLeft: 15 }}
+                              className={`tab ${activeTab === year ? 'active' : ''} text-center cta cta-tab font-Raleway font-bold bg-[#6f519e]`} >
+                              {'\'' + (year - 2000)}
+                            </button>
+                          ))}
+                        </div>
+                      </Parallax>
+                      {orgData[year]["Co-Directors"] && <QuickTeam cols={1} team="Co-Directors" persons={orgData[year]["Co-Directors"]} />}
+                    </div>
+                  </div>
+
+                  <div className='z-10 flex relative lg:flex-row flex-col'>
+                    {/* Other Teams */}
+                    {Object.entries(orgData[year]).slice(1, 6).map(([team, persons]) => {
                       if (team !== "Co-Directors") {
                         return <QuickTeam cols={5} key={team} team={team} persons={persons} />;
                       }
                       return null;
                     })}
-              </div>
+                  </div>
                   {/* Other Teams */}
                   <div className="lg:flex lg:flex-row lg:justify-between flex-col">
                     {Object.entries(orgData[year]).slice(6).map(([team, persons]) => {
@@ -1022,51 +1104,51 @@ const [lastScrollTop, setLastScrollTop] = useState(0); // Initialize the state
                       }
                       return null;
                     })}
-              </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    
-  </section>
+          </div>
+
+        </section>
 
 
-        <section className="w-full lg:pl-40 lg:pr-40 md:pl-20 md:pr-20 flex flex-col relative" id="faqs">                  
-          <Parallax translateX={[20,-10]}>
+        <section className="w-full lg:pl-40 lg:pr-40 md:pl-20 md:pr-20 flex flex-col relative" id="faqs">
+          <Parallax translateX={[20, -10]}>
             <img src={hootowImg} className="dissapearWhenSmall globe_img top-30 z-0 w-120 mb-160 right-20 absolute" alt="Hoover Tower" />
           </Parallax>
           <div className="items-center flex flex-col">
-            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{color: '#232323', fontSize: '36px', lineHeight: '1.2'}}>
-                  FAQs
-            </h1>   
-            <p className='description font-bold pb-10 px-4 text-center font-Raleway' style={{color: '#585858', fontSize: '18px', width: '80%'}}>
-                  Email us at hi@uottahack.ca if we missed anything!
+            <h1 className='text-center font-Raleway font-extrabold mb-8 bg-clip-text' style={{ color: '#232323', fontSize: '36px', lineHeight: '1.2' }}>
+              FAQs
+            </h1>
+            <p className='description font-bold pb-10 px-4 text-center font-Raleway' style={{ color: '#585858', fontSize: '18px', width: '80%' }}>
+              Email us at hi@uottahack.ca if we missed anything!
             </p>
           </div>
 
           <div className="faqSection">
-          {FAQData.map((faq, index) => (
-            <Parallax translateX={[(0*index),(index*2)]}>
+            {FAQData.map((faq, index) => (
+              <Parallax translateX={[(0 * index), (index * 2)]}>
 
-            <div key={index} class="font-CerealBK text-lg text-black pt-5">
-              <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-16">
-                <p className='mb-2 description font-semibold text-left font-Raleway text-sm' style={{color: '#585858', width: '80%'}}>
-                  {faq.question}
-                </p>
-              </div>
-              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0">
-                <p className='bg-[#c4b8cc] p-5 mb-2 description font-semibold text-left font-Raleway text-sm' style={{borderRadius: '20px', color: '#585858'}}>
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
-            </Parallax>
-          ))}
+                <div key={index} class="font-CerealBK text-lg text-black pt-5">
+                  <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-16">
+                    <p className='mb-2 description font-semibold text-left font-Raleway text-sm' style={{ color: '#585858', width: '80%' }}>
+                      {faq.question}
+                    </p>
+                  </div>
+                  <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0">
+                    <p className='bg-[#c4b8cc] p-5 mb-2 description font-semibold text-left font-Raleway text-sm' style={{ borderRadius: '20px', color: '#585858' }}>
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </Parallax>
+            ))}
           </div>
 
         </section>
       </div >
-        <Footer />
+      <Footer />
     </ParallaxProvider>
   );
 }
