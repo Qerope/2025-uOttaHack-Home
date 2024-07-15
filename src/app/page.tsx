@@ -13,6 +13,7 @@ export default function Home() {
   <main>
 
     <MainHeader />
+
     <HeroSection />
     <IntroSection />
     <AboutSection />
@@ -20,6 +21,7 @@ export default function Home() {
     <SponsorsSection />
     <MapSection />
     <FAQSection />
+    
     <MainFooter />
 
   </main>
