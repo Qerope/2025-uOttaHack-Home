@@ -59,10 +59,13 @@ const MainHeader = () => {
               <span className="text-white hover-coloured-text">Impact</span>
             </Link>
             <Link className='pt-2' href="#sponsorship">
-              <span className="text-white hover-coloured-text">Sponsorship</span>
+              <span className="text-white hover-coloured-text">Sponsors</span>
             </Link>
-            <Link className='pt-2' href="https://2024.uottahack.ca">
-              <span className="text-white coloured-text hover-coloured-text" data-text="2024" />
+            <Link href="#pastevents">
+              <span className="text-white p-10 hover-coloured-text">Past Events</span>
+            </Link>
+            <Link href="https://2024.uottahack.ca">
+              <span className="text-white coloured-text p-10 hover-coloured-text">2024</span>
             </Link>
             <Link className='pt-2' href="#faq">
               <span className="text-white hover-coloured-text">FAQ</span>
@@ -76,7 +79,7 @@ const MainHeader = () => {
           <div className={styles.headerLogo}><img width="50px" src={logoImage.src} /></div>
           <div className={styles.horMenu}>
             <Link href="#">
-              <span className="text-white p-10 hover:coloured-text">Home</span>
+              <span className="text-white p-10 hover-coloured-text">Home</span>
             </Link>
             <Link href="#mission">
               <span className="text-white p-10 hover-coloured-text">Mission</span>
@@ -85,10 +88,13 @@ const MainHeader = () => {
               <span className="text-white p-10 hover-coloured-text">Impact</span>
             </Link>
             <Link href="#sponsorship">
-              <span className="text-white p-10 hover-coloured-text">Sponsorship</span>
+              <span className="text-white p-10 hover-coloured-text">Sponsors</span>
+            </Link>
+            <Link href="#pastevents">
+              <span className="text-white p-10 hover-coloured-text">Past Events</span>
             </Link>
             <Link href="https://2024.uottahack.ca">
-              <span className="text-white coloured-text p-10 hover-coloured-text" data-text="2024" />
+              <span className="text-white coloured-text p-10 hover-coloured-text">2024</span>
             </Link>
             <Link href="#faq">
               <span className="text-white p-10 hover-coloured-text">FAQ</span>
