@@ -1,18 +1,59 @@
 .container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 110vh; /* Adjust height as needed */
-    overflow: hidden; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh; /* Adjust height as needed */
+  overflow: hidden; 
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%; /* Adjust size as needed */
+  max-height: 95%; /* Adjust size as needed */
+}
+
+/* Star Container */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Individual Stars */
+.star {
+  position: absolute;
+  width: 8px; 
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  animation: glow 2s infinite alternate;
+  opacity: 0.8;
+}
+
+@keyframes glow {
+  from {
+      opacity: 0.8;
+      transform: scale(1);
+      box-shadow: 0 0 8px rgba(0, 0, 255, 0.6);
   }
-  
-  .backgroundImage {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%; /* Adjust size as needed */
-    max-height: 95%; /* Adjust size as needed */
+  to {
+      opacity: 1;
+      transform: scale(1.2);
+      box-shadow: 0 0 16px rgba(0, 0, 255, 0.9);
   }
-  
+}
+
+/* Manually add stars to specific positions */
+.stars .star:nth-child(1) { top: 10%; left: 10%; }
+.stars .star:nth-child(2) { top: 20%; left: 30%; }
+.stars .star:nth-child(3) { top: 25%; left: 50%; }
+.stars .star:nth-child(4) { top: 15%; left: 70%; }
+.stars .star:nth-child(5) { top: 40%; left: 20%; }
