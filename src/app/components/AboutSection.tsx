@@ -9,7 +9,7 @@ interface AboutSectionProps {
   const AboutSection: React.FC<AboutSectionProps> = () => {
     return (
         <section className={styles.container}>
-          
+          <h2 className={styles.title}>Dive into uOttaHack</h2>
         </section>
     );
   };
