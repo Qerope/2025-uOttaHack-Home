@@ -2,6 +2,9 @@ import React from 'react';
 import styles from '../styles/HeroSection.module.css';
 import gridImage from '../assets/Grid.png';
 import rightImage from '../assets/Vector Graphic.png'; 
+import sun from '../assets/Retro sun.png';
+import rock from '../assets/Rock.png';
+import parliament from '../assets/Parliam.png';
 
 interface HeroSectionProps {}
 
