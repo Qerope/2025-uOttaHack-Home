@@ -29,13 +29,13 @@
   left: 4%;
 }
 
-.title {
-  font-size: 6rem; 
-  margin: 0;
-  font-weight: 700;
-  font-family: 'Harabara', sans-serif; 
-  
-}
+  .title {
+    font-size: 6rem; 
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Harabara', sans-serif; 
+    
+  }
 
 .subtitle {
   font-size: 1.5rem; 
