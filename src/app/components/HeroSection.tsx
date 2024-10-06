@@ -1,5 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase";
+//Asset Imports Below
 import styles from "../styles/HeroSection.module.css";
 import gridImage from "../assets/Grid.png";
 import rightImage from "../assets/Vector Graphic.png";
@@ -12,8 +15,26 @@ import buildingRight from "../assets/BuildingRight.png";
 interface HeroSectionProps {}
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
-  const handleEmailSubmit = (e) => {
+  const [email, setEmail] = useState<string>("");
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (email) {
+      try {
+        await addDoc(collection(db, "emails"), {
+          email: email,
+          timestamp: new Date(),
+        });
+
+        setEmail(""); // Clear input
+        alert("Email added successfully!");
+      } catch (error) {
+        console.error("Error adding email: ", error);
+        alert("Failed to add email");
+      }
+    } else {
+      alert("Please enter an email");
+    }
   };
   return (
     <section className={styles.container}>
@@ -42,8 +63,11 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           type="email"
           placeholder="Email Address"
           name=""
-          id=""
+          id="email"
+          value={email}
           className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 shadow-sm"
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
 
         <button onClick={handleEmailSubmit} className={styles.cta}>
