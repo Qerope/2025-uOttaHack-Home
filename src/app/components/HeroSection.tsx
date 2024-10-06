@@ -11,6 +11,7 @@ import rock from "../assets/Rock.png";
 import parliament from "../assets/Parliam.png";
 import background from "../assets/Background.png";
 import buildingRight from "../assets/BuildingRight.png";
+import mlh from "../assets/MLH.png";
 
 interface HeroSectionProps {}
 
@@ -37,52 +38,38 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
     }
   };
   return (
-    <section className={styles.container}>
+    <>
       <img
-        src={gridImage.src}
-        alt="Background Grid"
-        className={styles.backgroundImage}
+        src={mlh.src}
+        alt=""
+        className="absolute top-0 right-20 w-[8.24rem] h-[15.5rem] "
       />
-      <div className={styles.stars}>
-        {Array.from({ length: 23 }).map((_, i) => (
-          <div
-            key={i}
-            className={styles.star}
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-          ></div>
-        ))}
-      </div>
-      <div className={styles.textContainer}>
-        <h1 className={styles.title}>uOttaHack</h1>
-        <p className={styles.subtitle}>Explore Your Limits</p>
+      <section className={styles.container}>
+        <div className={styles.textContainer}>
+          <br />
+          <p className={styles.subtitle}>January 17 - 19 2025</p>
+          <h1 className={styles.title}>uOttaHack 7</h1>
 
-        <input
-          type="email"
-          placeholder="Email Address"
-          name=""
-          id="email"
-          value={email}
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 shadow-sm"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <input
+            type="email"
+            placeholder="Enter your email to be notified when application open"
+            name=""
+            id="email"
+            value={email}
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 shadow-sm"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <button onClick={handleEmailSubmit} className={styles.cta}>
-          Sign up
-        </button>
-        <a href="https://2024.uottahack.ca" className={styles.cta}>
-          See 2024
-        </a>
-      </div>
-      <img
-        src={rightImage.src}
-        alt="Right Side Image"
-        className={styles.rightImage}
-      />
-    </section>
+          <button onClick={handleEmailSubmit} className={styles.cta}>
+            Sign up
+          </button>
+          <a href="https://2024.uottahack.ca" className={styles.cta}>
+            See 2024
+          </a>
+        </div>
+      </section>
+    </>
   );
 };
 
