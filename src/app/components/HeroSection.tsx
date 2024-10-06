@@ -6,6 +6,8 @@ import rightImage from "../assets/Vector Graphic.png";
 import sun from "../assets/Retro sun.png";
 import rock from "../assets/Rock.png";
 import parliament from "../assets/Parliam.png";
+import background from "../assets/Background.png";
+import buildingRight from "../assets/BuildingRight.png";
 
 interface HeroSectionProps {}
 
@@ -34,7 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
       </div>
       <div className={styles.textContainer}>
         <h1 className={styles.title}>uOttaHack</h1>
-        <p className={styles.subtitle}>Canada’s Capital Hackathon</p>
+        <p className={styles.subtitle}>Explore Your Limits</p>
 
         <input
           type="email"
