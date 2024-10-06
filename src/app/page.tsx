@@ -10,20 +10,8 @@ import SponsorUsSection from "./components/SponsorUsSection";
 
 export default function Home() {
   return (
-  <main>
-
-    <MainHeader />
-
-    <HeroSection />
-    <IntroSection />
-    <AboutSection />
-    <SponsorUsSection />
-    <SponsorsSection />
-    <MapSection />
-    <FAQSection />
-    
-    <MainFooter />
-
-  </main>
+    <main>
+      <HeroSection />
+    </main>
   );
 }
