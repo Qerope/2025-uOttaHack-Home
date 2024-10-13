@@ -47,9 +47,11 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
       <section className={styles.container}>
         <div className={styles.textContainer}>
           <br />
-          <p className={styles.subtitle}>January 17 - 19 2025</p>
+          <p className="text-xl mt-[-25px] m-0 text-center font-jost">
+            January 17 - 19 2025
+          </p>
           <h1 className={styles.title}>uOttaHack 7</h1>
-          <p className="text-shadow text-jost">Explore Your Limits</p>
+          <p className="text-shadow font-jost">Explore Your Limits</p>
           <br />
           <input
             type="email"
@@ -57,7 +59,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             name=""
             id="email"
             value={email}
-            className="w-full p-3 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-white bg-gray-500 bg-opacity-50 text-center"
+            className="w-full font-jost p-3 border border-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-white bg-gray-500 bg-opacity-50 text-center"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -67,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             {/* Flex container for centering the button */}
             <button
               onClick={handleEmailSubmit}
-              className="text-jost bg-[#0c7ebc] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-200 w-full max-w-xs mt-10"
+              className="font-jost bg-[#0c7ebc] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-200 w-full max-w-xs mt-10"
             >
               Enter
             </button>
