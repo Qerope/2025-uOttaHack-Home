@@ -7,6 +7,16 @@
     transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
   }
   
+  .photoColumn {
+    display: flex;
+    flex-direction: column; /* Vertical layout by default (for large screens) */
+    align-items: center; /* Center the content */
+    justify-content: center;
+    margin-bottom: 10px; /* Add some space between the image and text in vertical layout */
+  }
+  
+  
+  
   .horMenu {
     display: flex;
     justify-content: center;
@@ -16,9 +26,10 @@
     font-weight: 700;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -40px;
-    margin-bottom: 15px;
+    margin-top: -55px;
+    margin-bottom: -5px;
   }
+  
   
   .headerLogo {
     display: inline-block;
@@ -33,6 +44,9 @@
       transform: translateX(-50%);
       display: inline-block;
     }
+    .photoColumn {
+      flex-direction: row; /* Horizontal layout for smaller screens */
+    }
   }
   
   .vertMenu {
@@ -46,4 +60,3 @@
     transition: max-height 0.3s ease-out;
     max-height: 15rem;
   }
-  

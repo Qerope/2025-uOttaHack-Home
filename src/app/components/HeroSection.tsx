@@ -39,29 +39,24 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   };
   return (
     <>
-      <img
-        src={mlh.src}
-        alt=""
-        className="absolute top-0 right-20 w-[8.24rem] h-[15.5rem] "
-      />
       <section className={styles.container}>
         <div className={styles.textContainer}>
           <br />
-          <p className="text-xl mt-[-25px] m-0 text-center font-jost">
+          <p className="mx-auto mt-[-25px] mb-[-25px] text-large text-center font-jost">
             January 17 - 19 2025
           </p>
           <h1 className={styles.title}>uOttaHack 7</h1>
-          <p className="text-shadow font-jost">Explore Your Limits</p>
+          <p className="mx-auto text-shadow font-jost">Explore Your Limits</p>
           <br />
           <input
-            type="email"
-            placeholder="Enter your email to be notified when applications open"
-            name=""
-            id="email"
-            value={email}
-            className="w-full font-jost p-3 border border-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-white bg-gray-500 bg-opacity-50 text-center"
-            onChange={(e) => setEmail(e.target.value)}
-            required
+          type="email"
+          placeholder="Enter your email to be notified when applications open"
+          name=""
+          id="email"
+          value={email}
+          className="w-full md:w-[75%] mx-auto md:ml-16 ml-0 font-jost p-3 border border-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-white bg-gray-500 bg-opacity-50 text-center"
+          onChange={(e) => setEmail(e.target.value)}
+          required
           />
 
           <div className="flex justify-center">
@@ -69,7 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             {/* Flex container for centering the button */}
             <button
               onClick={handleEmailSubmit}
-              className="font-jost bg-[#0c7ebc] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-200 w-full max-w-xs mt-10"
+              className="mx-auto font-jost bg-[#0c7ebc] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-200 w-full max-w-xs mt-10"
             >
               Enter
             </button>

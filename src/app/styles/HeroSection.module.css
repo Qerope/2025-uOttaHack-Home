@@ -7,7 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set it to 100vh to match the full viewport */
+  height: 80vh; /* Set it to 100vh to match the full viewport */
+  width: 100%;
   overflow: hidden; /* No scrolling within the container */
 }
 
@@ -15,7 +16,9 @@
   font-family: "Jost", sans-serif;
   font-weight: 400;
   color: blue;
-}
+  align-items: center;
+ }
+
 
 .backgroundImage {
   position: absolute;
@@ -31,9 +34,7 @@
   color: white;
   text-align: left;
   z-index: 1;
-  margin-right: 20px;
-  top: -15%;
-  left: 4%;
+  top: -25%;
   background: linear-gradient(
     90deg,
     #ffffff 0%,
@@ -54,11 +55,12 @@
   font-family: "Harabara", sans-serif;
 }
 
-.subtitle {
-}
+/* .subtitle {
+} */
 
 .cta {
   display: inline-block;
+  align-items: center;
   margin-top: 20px;
   padding: 10px 20px;
   background-color: rgba(0, 123, 255, 0.5); /* Adjust transparency here */
@@ -83,4 +85,12 @@
   z-index: 2; /* Ensure image is on top of the background and text */
   top: -12%;
   left: 4%;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 4rem; /* Smaller size for phone screens */
+  }
+
 }
