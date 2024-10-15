@@ -55,12 +55,23 @@
   font-family: "Harabara", sans-serif;
 }
 
-/* .subtitle {
-} */
+@media (max-width: 768px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+.subtitle {
+}
 
 .cta {
   display: inline-block;
-  align-items: center;
   margin-top: 20px;
   padding: 10px 20px;
   background-color: rgba(0, 123, 255, 0.5); /* Adjust transparency here */

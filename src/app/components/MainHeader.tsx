@@ -40,10 +40,10 @@ const MainHeader = () => {
           <div className="md:hidden inline-block items-center">
             <button onClick={toggleMenu} className="pt-1 text-white focus:outline-none">
               <svg
-                className="w-6 h-12"
+                className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 38 38"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path

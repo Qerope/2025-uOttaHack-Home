@@ -11,6 +11,7 @@ import SponsorUsSection from "./components/SponsorUsSection";
 export default function Home() {
   return (
     <main>
+<<<<<<< HEAD
       <MainHeader/>
       <HeroSection />
       
@@ -20,6 +21,9 @@ export default function Home() {
       <MapSection/>
       <SponsorsSection/>
       <SponsorUsSection/> */}
+=======
+      <HeroSection />
+>>>>>>> origin/dev
     </main>
   );
 }
