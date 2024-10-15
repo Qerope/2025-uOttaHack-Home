@@ -55,11 +55,6 @@
   font-family: "Harabara", sans-serif;
 }
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 5rem;
-  }
-}
 
 @media (max-width: 400px) {
   .title {
@@ -67,8 +62,6 @@
   }
 }
 
-.subtitle {
-}
 
 .cta {
   display: inline-block;
