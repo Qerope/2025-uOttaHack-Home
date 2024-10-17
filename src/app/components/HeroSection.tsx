@@ -22,11 +22,11 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section className={`${styles.container} flex items-center justify-center`}>
       <div className={`${styles.textContainer} mt-4 md:mt-32`}>
-        <p className="text-md md:text-lg text-center font-inter font-medium">
+        <p className="text-md md:text-lg text-center font-inter font-medium text-shadow-hero">
           January 17 - 19, 2025
         </p>
-        <h1 className={`${styles.title} mb-2`}>uOttaHack 7</h1>
-        <p className="mb-24 text-md md:text-lg text-center font-inter font-medium">
+        <h1 className={`${styles.title} mb-2 text-shadow-hero`}>uOttaHack 7</h1>
+        <p className="mb-24 text-md md:text-lg text-center font-inter font-medium text-shadow-hero">
           In-person @ the University of Ottawa
         </p>
   
