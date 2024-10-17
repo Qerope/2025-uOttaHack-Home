@@ -21,21 +21,21 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   
   return (
     <section className={`${styles.container} flex items-center justify-center`}>
-      <div className={`${styles.textContainer} mt-32`}>
-        <p className="text-md md:text-lg text-center font-inter font-light ">
+      <div className={`${styles.textContainer} mt-4 md:mt-32`}>
+        <p className="text-md md:text-lg text-center font-inter font-medium">
           January 17 - 19, 2025
         </p>
         <h1 className={`${styles.title} mb-2`}>uOttaHack 7</h1>
-        <p className="mb-24 text-md md:text-lg text-center font-inter font-light">
+        <p className="mb-24 text-md md:text-lg text-center font-inter font-medium">
           In-person @ the University of Ottawa
         </p>
-
+  
         <div className="flex justify-center">
           <EmailInputBox />
         </div>
       </div>
     </section>
-  );
+  );    
 };
 
 export default HeroSection;

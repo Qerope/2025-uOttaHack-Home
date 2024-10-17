@@ -117,7 +117,7 @@ const MainHeader = () => {
               <img
                 src={mlh_black.src}
                 alt="MLH 2025 Badge"
-                className="h-[20%] w-auto"
+                className="h-[100px] w-auto"
               />
             </div>
 
