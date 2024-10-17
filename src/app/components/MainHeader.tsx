@@ -148,13 +148,13 @@ const MainHeader = () => {
             </div>
 
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-6 w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
-              <a href="#" target="_blank">
+              <a href="https://ca.linkedin.com/company/uottahack" target="_blank">
                 <img src={linkedin.src} alt="LinkedIn" className="w-7 h-7" />
               </a>
               <a href="https://www.instagram.com/uottahack" target="_blank">
                 <img src={insta.src} alt="Instagram" className="w-6 h-6" />
               </a>
-              <a href="#" target="_blank">
+              <a href="https://discord.gg/XDQ94xsDwB" target="_blank">
                 <img src={discord.src} alt="Discord" className="w-7 h-7" />
               </a>
             </div>
