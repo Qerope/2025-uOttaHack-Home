@@ -8,6 +8,7 @@ import mlh_black from "../assets/black.svg";
 import insta from "../assets/insta.svg";
 import linkedin from "../assets/linkedin.svg";
 import discord from "../assets/discord.svg";
+import MLHBadge from './MLHBadge';
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,15 +49,14 @@ const MainHeader = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           {isMobile ? (
-            <div className="flex items-center space-x-4 p-4 pl-6">
-              <img src={logoImage.src} alt="Logo" className="w-12 h-12" />
+            <div className="flex-shrink-0">
+              <img src={logoImage.src} alt="Logo" className="w-12 h-12 m-6" />
             </div>
           ) : (
-            <div className="flex items-center space-x-4 pl-6">
+            <div className="flex-shrink-0">
               <img src={logoImage.src} alt="Logo" className="w-12 h-12" />
             </div>
           )}
-
 
           {/* Desktop Navigation */}
           {!isMobile && (
@@ -85,20 +85,26 @@ const MainHeader = () => {
             </button>
           )}
 
-          {/* MLH Badge (Desktop only) */}
+          {/* Janky fix: */}
+
           {!isMobile && (
-            <div className="absolute top-0 right-8 h-full flex items-start">
-              <img
-                src={mlh.src}
-                alt="MLH 2025 Badge"
-                className="h-[190%] w-auto"
-              />
-            </div>
+            <>
+              <div className="flex-shrink-0 w-12 h-12">
+              </div>
+              <div className="absolute top-0 right-4 mr-4">
+                <img
+                  src={mlh.src}
+                  alt="MLH 2025 Badge"
+                  className="h-40 w-auto"
+                />
+              </div>
+            </>
           )}
+
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (unchanged) */}
       {isMobile && isOpen && (
         <div className="fixed inset-0 z-10">
           <div className="absolute h-[60%] w-[80%] bg-white p-12 items-center top-8 m-auto left-0 right-0 shadow-lg rounded-md">
