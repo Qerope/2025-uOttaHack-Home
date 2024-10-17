@@ -36,7 +36,6 @@ const EmailInputBox: React.FC = () => {
 
   return (
     <form
-      onSubmit={handleSubmit}
       className="flex items-center h-12 md:h-14 p-1 backdrop-blur-md bg-white/70 rounded-lg overflow-hidden w-full max-w-md"
     >
       <input
@@ -47,6 +46,7 @@ const EmailInputBox: React.FC = () => {
         className="flex-grow px-4 py-3 mt-[2px] text-sm text-[#4375B6] placeholder-[#4375B6] bg-transparent outline-none leading-none"
       />
       <button
+        onClick={handleSubmit}
         type="submit"
         className="flex items-center justify-center bg-[#4375B6] hover:bg-[#3D6CA9] bg-opacity-90 text-white w-11 h-11 rounded-lg transition-all m-1"
       >
