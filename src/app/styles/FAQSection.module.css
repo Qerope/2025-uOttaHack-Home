@@ -1,6 +1,6 @@
 .container {
     padding: 5%;
-    background-color: #092349;
+    background: url('../assets/FAQBackground.png') no-repeat center center;
     font-family: 'Jost', sans-serif;
 }
 

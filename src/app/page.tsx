@@ -18,9 +18,11 @@ export default function Home() {
         <HeroSection />
         
         <IntroSection/>
+        <MapSection/>
+        <FAQSection/>
+
         <MainFooter/>
         <MainHeader/>
-        <MapSection/>
         <SponsorsSection/>
         <SponsorUsSection/> 
       </ParallaxProvider>
