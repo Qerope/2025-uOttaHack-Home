@@ -1,0 +1,11 @@
+.title {
+    font-family: 'Jost', sans-serif;
+    font-style: italic;
+    font-size: 2.5em;
+    background-color: #092349;
+    color: white;
+    padding-left: 25px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 100%;
+}
