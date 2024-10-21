@@ -52,6 +52,7 @@
     border-right: 9px solid transparent;
     border-bottom: 15px solid white;
     transition: transform 0.3s;
+    transform: rotate(-90deg);
 }
 
 .open {
