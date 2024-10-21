@@ -1,5 +1,6 @@
 .container {
     padding: 5%;
+    padding-bottom: 1%;
     background: url('../assets/FAQBackground.png') no-repeat center center;
     font-family: 'Jost', sans-serif;
 }
@@ -55,4 +56,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.moreQuestions {
+    margin-top: 90vh;
+    text-align: center;
 }

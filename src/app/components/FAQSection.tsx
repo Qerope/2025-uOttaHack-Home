@@ -48,6 +48,10 @@ const FAQSection: React.FC = () => {
                     </div>
                 ))}
             </div>
+            <div className={styles.moreQuestions}>
+                <p>Still got questions?</p>
+                <p>Contact <a href="mailto:hi@uottahack.ca"><u>hi@uottahack.ca</u></a> or any of our socials</p>
+            </div>
         </section>
     );
 };
