@@ -18,12 +18,13 @@ export default function Home() {
         <HeroSection />
         
         <IntroSection/>
+        <SponsorsSection/>
         <MapSection/>
         <FAQSection/>
 
         <MainFooter/>
         <MainHeader/>
-        <SponsorsSection/>
+        
         <SponsorUsSection/> 
       </ParallaxProvider>
     </main>
