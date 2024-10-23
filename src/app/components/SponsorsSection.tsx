@@ -114,6 +114,8 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <div className={styles.otrainrails} >
                 <Image src={otrainRails} alt="Otrain Rails Drawing" />
             </div>
+            
+            <div className={styles.triangle} />
         </section>
     );
 };
