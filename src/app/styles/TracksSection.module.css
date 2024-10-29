@@ -1,0 +1,38 @@
+/* TracksSection.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap');
+
+.section {
+  position: relative;
+}
+
+.relativeDiv {
+  position: relative;
+}
+
+.absoluteText {
+  position: absolute;
+  top: 40%;
+  left: 6%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  max-width: 470px;
+  font-family: 'Jost', sans-serif; 
+}
+
+.heading {
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.paragraph {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-top: -10px;
+}
+
+.marginTopNegative {
+  margin-top: -1058px;
+}
