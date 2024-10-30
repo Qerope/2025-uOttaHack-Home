@@ -8,14 +8,14 @@ import ColourLogo from '../assets/colourLogo.svg';
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [width, setWidth] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const updateWidth = () => {
-    const newWidth = window.innerWidth;
-    setWidth(newWidth);
+    setWidth(window.innerWidth);
   };
 
   useEffect(() => {
@@ -26,8 +26,16 @@ const MainHeader = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className={`${styles.header} items-center p-4 shadow-md`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} items-center p-4 `}>
       {(width < 700) && (
         <>
           <div className="md:hidden inline-block items-center">
@@ -51,27 +59,15 @@ const MainHeader = () => {
           <div className={styles.headerLogo}>
             <ColourLogo width="50px" alt="Logo" />
           </div>
-          <nav className={`w-full flex flex-col space-y-2 mt-8 text-center md:hidden ${styles.vertMenu} ${isOpen ? styles.open : ''}`}>
-            <Link className="pt-2" href="#">
-              <span className="text-white hover-coloured-text">Home</span>
+          <nav className={`w-full flex flex-col space-y-2 text-center md:hidden ${styles.vertMenu} ${isOpen ? styles.open : ''}`}>
+            <Link href="#">
+              <span className="text-white">About</span>
             </Link>
-            <Link className="pt-2" href="#mission">
-              <span className="text-white hover-coloured-text">Mission</span>
+            <Link href="#sponsorship">
+              <span className="text-white">Sponsors</span>
             </Link>
-            <Link className="pt-2" href="#impact">
-              <span className="text-white hover-coloured-text">Impact</span>
-            </Link>
-            <Link className="pt-2" href="#sponsorship">
-              <span className="text-white hover-coloured-text">Sponsors</span>
-            </Link>
-            <Link className="pt-2" href="#pastevents">
-              <span className="text-white hover-coloured-text">Past Events</span>
-            </Link>
-            <Link className="pt-2" href="https://2024.uottahack.ca">
-              <span className="text-white coloured-text hover-coloured-text">2024</span>
-            </Link>
-            <Link className="pt-2" href="#faq">
-              <span className="text-white hover-coloured-text">FAQ</span>
+            <Link href="#faq">
+              <span className="text-white">FAQ</span>
             </Link>
           </nav>
         </>
@@ -83,25 +79,13 @@ const MainHeader = () => {
           </div>
           <div className={styles.horMenu}>
             <Link href="#">
-              <span className="text-white p-10 hover-coloured-text">Home</span>
-            </Link>
-            <Link href="#mission">
-              <span className="text-white p-10 hover-coloured-text">Mission</span>
-            </Link>
-            <Link href="#impact">
-              <span className="text-white p-10 hover-coloured-text">Impact</span>
+              <span className="text-white p-8">About</span>
             </Link>
             <Link href="#sponsorship">
-              <span className="text-white p-10 hover-coloured-text">Sponsors</span>
-            </Link>
-            <Link href="#pastevents">
-              <span className="text-white p-10 hover-coloured-text">Past Events</span>
-            </Link>
-            <Link href="https://2024.uottahack.ca">
-              <span className="text-white coloured-text p-10 hover-coloured-text">2024</span>
+              <span className="text-white p-3">Sponsors</span>
             </Link>
             <Link href="#faq">
-              <span className="text-white p-10 hover-coloured-text">FAQ</span>
+              <span className="text-white p-5">FAQ</span>
             </Link>
           </div>
         </>

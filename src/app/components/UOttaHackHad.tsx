@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../styles/UOttaHackHad.module.css";
 import RectangleImage from '../assets/Rectangle 1280.png';
+import road from '../assets/Road.png';
+import maps from '../assets/Maps.png';
 
 const UOttaHackHad: React.FC = () => {
   return (
