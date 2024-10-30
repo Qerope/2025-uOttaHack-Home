@@ -9,6 +9,7 @@ import MapSection from "./components/MapSection";
 import SponsorsSection from "./components/SponsorsSection";
 import SponsorUsSection from "./components/SponsorUsSection";
 import TracksSection from "./components/TracksSection";
+import UOttaHackHad from "./components/UOttaHackHad";
 
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -21,7 +22,8 @@ export default function Home() {
         
         <IntroSection/>
 
-        <TracksSection/>        
+        <TracksSection/> 
+        <UOttaHackHad/>       
 
         <SponsorsSection/>
         <MapSection/>

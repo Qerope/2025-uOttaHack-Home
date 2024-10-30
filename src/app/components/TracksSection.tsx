@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/TracksSection.module.css";
 import TracksImageTop from '../assets/Background 3.png';
 import TracksImageBottom from '../assets/Train Station.png';
-import SeperationImage from '../assets/Seperation.png'; // Import the new image
+import SeperationImage from '../assets/Seperation.png'; 
 
 const TracksSection: React.FC = () => {
   return (
@@ -25,12 +25,11 @@ const TracksSection: React.FC = () => {
           <img 
             src={TracksImageBottom.src} 
             alt="Bottom Tracks Image" 
-            style={{ width: '84%', marginLeft: '222px' }} // Corrected '222x' to '222px'
+            style={{ width: '84%', marginLeft: '222px' }}
           />
         </div>
 
-        {/* Add the Separation image */}
-        <div style={{ marginTop: '20px' }}> {/* Adjust margin as needed */}
+        <div style={{ marginTop: '20px' }}>
           <img 
             src={SeperationImage.src} 
             alt="Seperation Image" 
