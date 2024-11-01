@@ -17,7 +17,7 @@ import xyz from '../assets/xyz.png';
 import interviewcake from '../assets/interviewcake.png';
 import balsamiq from '../assets/balsamiq.png';
 
-import mlh from '../assets/mlh.png';
+import mlh from '../assets/mlhLogo.png';
 import github from '../assets/github.png';
 import uottawa from '../assets/uottawa.png';
 

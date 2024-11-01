@@ -30,7 +30,8 @@ export default function Home() {
         <FAQSection/>
 
         <MainFooter/>
-        <MainHeader/>
+       
+        
         
         <SponsorUsSection/> 
       </ParallaxProvider>
