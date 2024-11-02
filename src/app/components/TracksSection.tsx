@@ -1,53 +1,82 @@
 import React from "react";
 import styles from "../styles/TracksSection.module.css";
-import TracksImageTop from '../assets/Background 3.png';
-import TracksImageBottom from '../assets/Train Station.png';
-import SeperationImage from '../assets/Seperation.png'; 
+import TracksImageTop from "../assets/Background 3.png";
+import TracksImageBottom from "../assets/Train Station.png";
+import RectangleImage from "../assets/Rectangle 1280.png";
+import { useRef, useEffect, useState } from "react";
 
-const TracksSection = () => {
+import SeperationImage from "../assets/Seperation.png";
+
+const TracksSection: React.FC = () => {
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const [minHeight, setMinHeight] = useState("100vh"); // Initial value as full screen height
+
+  useEffect(() => {
+    // Check if the image is loaded and has a height
+    if (imageRef.current) {
+      const imageHeight = imageRef.current.clientHeight;
+      setMinHeight(`${imageHeight}px`); // Set the minHeight dynamically
+    }
+  }, []);
   return (
-    <section id="tracks" className="relative w-full">
-      <div className="relative">
-        {/* Top Image */}
-        <div className="w-full">
-          <img 
-            src={TracksImageTop.src}
-            alt="Top Tracks Image" 
-            className="w-full object-cover"
-          />
+    <section
+      id="tracks"
+      className="relative z-10 w-full  "
+      style={{ minHeight }} // Apply the dynamically calculated minHeight
+      // style={{ background: "#FFAF00" }}
+    >
+      <div className="flex w-full  bg=[#FFAF00]">
+        <div className="h-full  ">
+          <div className=" absolute z-1 ">
+            <img
+              src={TracksImageTop.src}
+              ref={imageRef} // Attach the ref to the image
+              alt="Top Tracks Image"
+              className="w-[100%]"
+            />
+          </div>
         </div>
-
-        {/* Main Content */}
-        <div className="absolute top-1/2 left-[6%] transform -translate-y-1/2 z-10 text-white max-w-sm md:max-w-lg font-['Jost']">
-          <h1 className="text-5xl md:text-6xl lg:text-[6rem] font-bold mb-8 md:mb-12"
-              style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
-            TRACKS
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl leading-relaxed -mt-2">
-            Whether you're passionate about <strong>health, fintech, AI, or sustainability</strong>, 
-            see what we can offer for the perfect platform to focus your creativity and build 
-            impactful solutions. <u>Choose your challenge</u>, collaborate, and{' '}
-            <strong><em>explore your limits!</em></strong>
-          </p>
-        </div>
-
-        {/* Bottom Images */}
-        <div className="relative">
-          <div className="mt-[-65vw] md:mt-[-1058px]">
-            <img 
+        <div className="absolute w-full  z-2 ">
+          <div className="w-full justify-end items-end  flex">
+            <img
               src={TracksImageBottom.src}
               alt="Bottom Tracks Image"
-              className="w-[84%] ml-[222px] object-cover"
+              className=" w-[83%]  "
             />
           </div>
-          
-          <div className="mt-5">
-            <img 
+          <div className="absolute top-[77%]">
+            <img
               src={SeperationImage.src}
-              alt="Separation Image"
-              className="w-full -mt-[260px] object-cover"
+              alt="Seperation Image"
+              // style={{ marginTop: '-260px' }}
+              className=" "
             />
           </div>
+        </div>
+
+        <div className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center h-1/2 md:h-full text-white">
+          <h1
+            className=" font-bold [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)] "
+            style={{ fontSize: "clamp(1rem, 7vw, 10rem)" }}
+          >
+            TRACKS
+          </h1>
+
+          <p
+            className=" text-white"
+            style={{ fontSize: "clamp(0.7rem, 2vw ,2rem)" }}
+          >
+            <span className="font-light">Whether you're passionate about</span>{" "}
+            <strong>health, fintech, AI, or sustainability</strong>
+            <span className="font-light">
+              , see what we can offer for the perfect platform to focus your
+              creativity and build impactful solutions.
+            </span>
+            <u>Choose your challenge</u>, collaborate, and{" "}
+            <strong>
+              <em>explore your limits!</em>
+            </strong>
+          </p>
         </div>
       </div>
     </section>

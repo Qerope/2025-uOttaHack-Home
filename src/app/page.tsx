@@ -12,30 +12,28 @@ import TracksSection from "./components/TracksSection";
 import UOttaHackHad from "./components/UOttaHackHad";
 import InterestedInSponsoring from "./components/InterestedInSponsoring";
 
-import { ParallaxProvider } from 'react-scroll-parallax';
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function Home() {
   return (
     <main>
       <ParallaxProvider>
-        <MainHeader/>
+        <MainHeader />
         <HeroSection />
-        
-        <IntroSection/>
 
-        <TracksSection/> 
-        <UOttaHackHad/>   
-        <InterestedInSponsoring/>
+        <IntroSection />
 
-        <SponsorsSection/>
-        <MapSection/>
-        <FAQSection/>
+        <TracksSection />
+        <UOttaHackHad />
+        {/* <InterestedInSponsoring/> */}
 
-        <MainFooter/>
-       
-        
-        
-        <SponsorUsSection/> 
+        <SponsorsSection />
+        <MapSection />
+        <FAQSection />
+
+        <MainFooter />
+
+        <SponsorUsSection />
       </ParallaxProvider>
     </main>
   );
