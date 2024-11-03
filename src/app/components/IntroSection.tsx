@@ -4,8 +4,10 @@ import styles from "../styles/IntroSection.module.css";
 import IntroBuildingsTop from "../assets/IntroBuildingsTop.png";
 import IntroBuildingsBottom from "../assets/IntroBuildingsBottom.png";
 import { Parallax } from "react-scroll-parallax";
-
+import useInView from "../hooks/useInView";
 const IntroSection: React.FC = () => {
+  const [ref, isInView] = useInView({ threshold: 0.5 }); // Adjust threshold as needed
+
   return (
     <section
       className={`relative overflow-hidden bg-fixed  bg-center bg-[#00B3F0]  w-[100%]  h-[100vh]`}
@@ -20,7 +22,10 @@ const IntroSection: React.FC = () => {
               UOTTAHACK
             </span>
             <span
-              className="font-bold text-7xl md:text-8xl"
+              ref={ref}
+              className={`font-bold text-7xl md:text-8xl ${
+                isInView ? "animate-jump-in" : ""
+              }`}
               style={{ fontSize: "clamp(5rem, 7vw, 10rem)" }}
             >
               IS BACK

@@ -21,13 +21,33 @@ import mlh from "../assets/mlhLogo.png";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
 
-import OtrainSVG from "../assets/otrain.svg";
+import OtrainSVG from "../assets/Otrain2.svg";
 import OtrainRails from "../assets/OtrainRail.svg";
 import { Parallax } from "react-scroll-parallax";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 interface SponsorsSectionProps {}
 
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true }); // Detect when the section comes into view
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5, // Adjust the delay between each child animation
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <section className={styles.container} id="sponsorship">
       <p className={styles.pretitle}>Thank you to our</p>
@@ -38,79 +58,196 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
         SPONSORS
       </p>
 
-      <div className={styles.row}>
-        <div className={styles.sponsorContainer}>
-          <Image src={solace} alt="Solace Logo" />
+      <div ref={sectionRef} className={styles.sponsorSection}>
+        {/* First Row */}
+        <div className={styles.row}>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"} // Trigger animation based on view
+            transition={{ duration: 1, ease: "easeOut", delay: 0 }}
+          >
+            <Image src={solace} alt="Solace Logo" />
+          </motion.div>
         </div>
-      </div>
 
-      <div className={styles.row}>
-        <div className={styles.sponsorContainer}>
-          <Image src={EEF} alt="EEF Logo" />
+        {/* Second Row */}
+        <div className={styles.row}>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+          >
+            <Image src={EEF} alt="EEF Logo" />
+          </motion.div>
         </div>
-      </div>
 
-      <div className={styles.row}>
-        <div className={styles.sponsorContainer}>
-          <Image src={CSE} alt="CSE Logo" />
+        {/* Third Row */}
+        <div className={styles.row}>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+          >
+            <Image src={CSE} alt="CSE Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
+          >
+            <Image src={surveymonkey} alt="SurveyMonkey Logo" />
+          </motion.div>
         </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={surveymonkey} alt="SurveyMonkey Logo" />
-        </div>
-      </div>
 
-      <div className={styles.row}>
-        <div className={styles.sponsorContainer}>
-          <Image src={deloitte} alt="Deloitte Logo" />
+        {/* Fourth Row */}
+        <div className={styles.row}>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 2 }}
+          >
+            <Image src={deloitte} alt="Deloitte Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 2.5 }}
+          >
+            <Image src={deepcode} alt="DeepCode Logo" />
+          </motion.div>
+          {/* <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          >
+            <Image src={anotherLogo} alt="Another Logo" />
+          </motion.div> */}
         </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={deepcode} alt="DeepCode Logo" />
-        </div>
-        <div className={styles.sponsorContainer}>
-          <Image alt=" Logo" />
-        </div>
-      </div>
 
-      <div className={styles.row}>
-        <div className={styles.sponsorContainer}>
-          <Image src={voiceflow} alt="VoiceFlow Logo" />
+        {/* Fifth Row */}
+        <div className={styles.row}>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 3 }}
+          >
+            <Image src={voiceflow} alt="VoiceFlow Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 3.5 }}
+          >
+            <Image src={onepassword} alt="1Password Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 4 }}
+          >
+            <Image src={ehub} alt="Entrepreneurship Hub Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 4.5 }}
+          >
+            <Image src={icons8} alt="Icons8 Logo" />
+          </motion.div>
         </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={onepassword} alt="1Password Logo" />
-        </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={ehub} alt="Entrepreneurship Hub Logo" />
-        </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={icons8} alt="Icons8 Logo" />
-        </div>
-      </div>
 
-      <div className={styles.row}>
-        <div className={styles.sponsorContainer}>
-          <Image src={eleg} alt="Elegoo Logo" />
+        {/* Sixth Row */}
+        <div className={styles.row}>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 5 }}
+          >
+            <Image src={eleg} alt="Elegoo Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 5.5 }}
+          >
+            <Image src={xyz} alt=".xyz Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 6 }}
+          >
+            <Image src={interviewcake} alt="Interview Cake Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.sponsorContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 6.5 }}
+          >
+            <Image src={balsamiq} alt="Balsamiq Logo" />
+          </motion.div>
         </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={xyz} alt=".xyz Logo" />
-        </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={interviewcake} alt="Interview Cake Logo" />
-        </div>
-        <div className={styles.sponsorContainer}>
-          <Image src={balsamiq} alt="Balsamiq Logo" />
-        </div>
-      </div>
 
-      <p className={styles.partnersTitle}>Community Partners</p>
-      <div className={styles.row}>
-        <div className={styles.partnersContainer}>
-          <Image src={mlh} alt="MLH Logo" />
-        </div>
-        <div className={styles.partnersContainer}>
-          <Image src={github} alt="Github Logo" />
-        </div>
-        <div className={styles.partnersContainer}>
-          <Image src={uottawa} alt="uOttawa Logo" />
+        {/* Community Partners */}
+        <p className={styles.partnersTitle}>Community Partners</p>
+        <div className={styles.row}>
+          <motion.div
+            className={styles.partnersContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 7 }}
+          >
+            <Image src={mlh} alt="MLH Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.partnersContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 7.5 }}
+          >
+            <Image src={github} alt="GitHub Logo" />
+          </motion.div>
+          <motion.div
+            className={styles.partnersContainer}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 8 }}
+          >
+            <Image src={uottawa} alt="uOttawa Logo" />
+          </motion.div>
         </div>
       </div>
 

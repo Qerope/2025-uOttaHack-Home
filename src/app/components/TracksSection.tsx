@@ -4,12 +4,14 @@ import TracksImageTop from "../assets/Background 3.png";
 import TracksImageBottom from "../assets/Train Station.png";
 import RectangleImage from "../assets/Rectangle 1280.png";
 import { useRef, useEffect, useState } from "react";
+import useInView from "../hooks/useInView";
 
 import SeperationImage from "../assets/Seperation.png";
 
 const TracksSection: React.FC = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [minHeight, setMinHeight] = useState("100vh"); // Initial value as full screen height
+  const [ref, isInView] = useInView({ threshold: 0.5 }); // Adjust threshold as needed
 
   useEffect(() => {
     // Check if the image is loaded and has a height
@@ -56,7 +58,10 @@ const TracksSection: React.FC = () => {
 
         <div className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center h-1/2 md:h-full text-white">
           <h1
-            className=" font-bold  [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] "
+            ref={ref}
+            className={`font-bold  [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${
+              isInView ? "animate-flip-down" : ""
+            }`}
             style={{ fontSize: "clamp(1rem, 7vw, 10rem)" }}
           >
             TRACKS

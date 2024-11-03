@@ -14,7 +14,7 @@ const InterestedInSponsoring = () => {
                 }}
               >
                 <p>INTERESTED IN</p>
-                <p>SPONSERING?</p>
+                <p>SPONSORING?</p>
               </div>
               <div className="md:space-y-10 pb-10 ">
                 <p

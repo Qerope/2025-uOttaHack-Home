@@ -35,9 +35,9 @@ export default function Home() {
           <FAQSection />
         </SnackbarProvider>
 
-        {/* <MainFooter />
+        <MainFooter />
 
-        <SponsorUsSection /> */}
+        {/* <SponsorUsSection />  */}
       </ParallaxProvider>
     </main>
   );

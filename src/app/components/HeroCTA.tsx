@@ -4,7 +4,9 @@ import { db } from "../../firebase";
 import styles from "../styles/HeroCTA.module.css";
 import { FaArrowRightLong, FaCheck } from "react-icons/fa6";
 import { useSnackbar } from "notistack";
-
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 import CTA from "../assets/cta.svg";
 import BELL from "../assets/bell.svg";
 
@@ -24,6 +26,8 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [emailFailed, setEmailFailed] = useState<boolean>(false);
   const { enqueueSnackbar } = useSnackbar();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -82,6 +86,7 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
                     onChange={handleEmailChange}
                     className="flex-grow px-4 py-3 w-full mt-[2px] text-sm text-[#4375B6] placeholder-[#4375B6] bg-transparent outline-none leading-none"
                   />
+
                   <button
                     type="submit"
                     className="flex items-center justify-center bg-[#F4A701] hover:bg-[#3D6CA9] bg-opacity-90 text-white w-12 h-12 md:w-14 md:h-30 rounded-lg transition-all m-1"
@@ -99,11 +104,17 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
         </div>
       )}
       <div className="button-container p-10 text-center mt-0">
-        <button className={`text-center  font-bold bg-[#F4A701]`}>
+        <motion.button
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }} // Starting state: faded out and below
+          animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible and in place
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Animation duration and easing
+          className={`text-center  font-bold bg-[#F4A701]`}
+        >
           <a target="_blank" rel="noopener noreferrer" href={buttonLink}>
             {buttonText}
           </a>
-        </button>
+        </motion.button>
       </div>
     </div>
   );

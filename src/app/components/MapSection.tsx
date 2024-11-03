@@ -1,12 +1,22 @@
 import React from "react";
 import styles from "../styles/MapSection.module.css";
+import TrainBord from "../assets/board.svg";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 interface MapSectionProps {}
 
 const MapSection: React.FC<MapSectionProps> = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
+
   return (
     <section className={`${styles.container} h-auto`}>
-      <div className={styles.title}>
+      <div
+        className={`bg-[#D5DBE2] text-3xl md:text-7xl text=[#092349] md:pt-10 font-bold p-1`}
+        style={{ fontFamily: "Jost, sans-serif", fontStyle: "italic" }}
+      >
         <h2>Where to find us...</h2>
       </div>
 
@@ -19,6 +29,14 @@ const MapSection: React.FC<MapSectionProps> = () => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
+      <motion.div
+        ref={ref}
+        initial={{ height: 0, opacity: 0 }} // Start with zero height and fully transparent
+        animate={isInView ? { height: "auto", opacity: 1 } : {}} // Animate to full height and opacity when in view
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        <TrainBord></TrainBord>{" "}
+      </motion.div>
     </section>
   );
 };

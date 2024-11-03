@@ -5,208 +5,145 @@ import Link from "next/link";
 import ColorLogo from "../assets/colourLogo.svg";
 import mlh from "../assets/MLH.png";
 import mlh_black from "../assets/black.svg";
-import insta from "../assets/insta.svg";
-import linkedin from "../assets/linkedin.svg";
-import discord from "../assets/discord.svg";
+import Insta from "../assets/insta.svg";
+import Linkedin from "../assets/linkedin.svg";
+import Discord from "../assets/discord.svg";
 import MLHBadge from "./MLHBadge";
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const NavLinks = () => (
-    <nav
-      className={`${
-        isMobile ? "flex flex-col space-y-4" : "flex space-x-16"
-      } text-xl font-light`}
-    >
-      <Link
-        href="https://www.uottahack.ca/"
-        target="_blank"
-        className="relative group"
-      >
-        <span className="text-shadow-navbar-subtle">About</span>
-        <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-      </Link>
-      <Link
-        href="https://www.uottahack.ca/events"
-        target="_blank"
-        className="relative group"
-      >
-        <span className="text-shadow-navbar-subtle">Past Events</span>
-        <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-      </Link>
-      <Link
-        href="https://www.uottahack.ca/faq"
-        target="_blank"
-        className="relative group"
-      >
-        <span className="text-shadow-navbar-subtle">FAQs</span>
-        <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-      </Link>
+    <nav className="flex space-x-8 text-xl font-light">
+      {[
+        { href: "https://www.uottahack.ca/", label: "About" },
+        { href: "https://www.uottahack.ca/events", label: "Past Events" },
+        { href: "https://www.uottahack.ca/faq", label: "FAQs" },
+      ].map((link, index) => (
+        <Link
+          key={index}
+          href={link.href}
+          target="_blank"
+          className="relative group"
+        >
+          <span className="text-shadow-navbar-subtle">{link.label}</span>
+          <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+        </Link>
+      ))}
     </nav>
   );
 
-  return (
-    <header className="relative bg-transparent text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex items-center justify-between py-4">
-          {/* Logo */}
-          {isMobile ? (
-            <div className="flex-shrink-0">
-              <ColorLogo className="w-20 h-20 m-6" />
-            </div>
-          ) : (
-            <div className="flex-shrink-0">
-              {/* <img src={ColourLogo.src} alt="Logo" className="w-12 h-12" /> */}
-              <ColorLogo className="w-20 h-20" />
-            </div>
-          )}
-
-          {/* Desktop Navigation */}
-          {!isMobile && (
-            <div className="flex-grow flex justify-center">
-              <NavLinks />
-            </div>
-          )}
-
-          {/* Mobile Menu Button */}
-          {isMobile && (
-            <button onClick={toggleMenu} className="p-5">
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
-              </svg>
-            </button>
-          )}
-
-          {/* Janky fix: */}
-
-          {!isMobile && (
-            <>
-              <div className="flex-shrink-0 w-12 h-12"></div>
-              <div className="absolute top-0 right-4 mr-4">
-                <img
-                  src={mlh.src}
-                  alt="MLH 2025 Badge"
-                  className="h-52 w-auto"
-                />
+  const MobileMenu = () => (
+    <div className="fixed inset-0 z-10 flex justify-center items-center">
+      <div className="relative h-[60%] w-[80%] bg-white p-12 rounded-md shadow-lg">
+        <button
+          onClick={toggleMenu}
+          className="absolute top-2 right-2 p-4 text-[#01A2D9]"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="#ffff"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+        <img
+          src={mlh.src}
+          alt="MLH 2025 Badge"
+          className="absolute top-0 left-11 h-[100px] w-auto"
+        />
+        <div className="mt-24 text-[#01A2D9]">
+          <nav className="flex flex-col space-y-4 text-sm font-normal">
+            {[
+              { href: "https://www.uottahack.ca/", label: "About" },
+              { href: "https://www.uottahack.ca/events", label: "Past Events" },
+              { href: "https://www.uottahack.ca/faq", label: "FAQs" },
+            ].map((link, index) => (
+              <div key={index}>
+                <Link
+                  href={link.href}
+                  target="_blank"
+                  className="relative group"
+                >
+                  <span>{link.label}</span>
+                </Link>
+                {index < 2 && <hr className="border-t mt-4" />}
               </div>
-            </>
-          )}
+            ))}
+          </nav>
+        </div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-6 w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
+          <a href="https://ca.linkedin.com/company/uottahack" target="_blank">
+            <Linkedin className="w-7 h-7" />
+          </a>
+          <a href="https://www.instagram.com/uottahack" target="_blank">
+            <Insta className="w-7 h-7" />
+          </a>
+          <a href="https://discord.gg/XDQ94xsDwB" target="_blank">
+            <Discord className="w-7 h-7" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <header className="relative w-full bg-transparent text-white">
+      <div className="w-full sm:px-6 relative">
+        {/* Logo */}
+        <div className="absolute md:left-[30%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
+          <ColorLogo className="w-20 h-20" />
+        </div>
+
+        {/* Navigation Links - Centered */}
+        <div className="flex p-10 justify-center items-center">
+          <nav className="hidden md:flex space-x-8">
+            <NavLinks />
+          </nav>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 md:hidden">
+          <button onClick={toggleMenu} className="p-2 bg-amber-500">
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="#ffff"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        {/* MLH Badge */}
+        <div className="absolute right-[20%] top-1/2 transform -translate-y-1/2  md:block">
+          <img
+            src={mlh.src}
+            alt="MLH 2025 Badge"
+            className="h-20 md:h-48 md:mt-20  w-auto"
+          />
         </div>
       </div>
 
-      {/* Mobile Menu (unchanged) */}
-      {isMobile && isOpen && (
-        <div className="fixed inset-0 z-10">
-          <div className="absolute h-[60%] w-[80%] bg-white p-12 items-center top-8 m-auto left-0 right-0 shadow-lg rounded-md">
-            <button
-              onClick={toggleMenu}
-              className="absolute top-2 right-2 text-[#01A2D9] p-9"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            </button>
-            <div className="absolute top-0 left-11 h-full flex items-start">
-              <img
-                src={mlh.src}
-                alt="MLH 2025 Badge"
-                className="h-[100px] w-auto"
-              />
-            </div>
-
-            <div className="mt-24  text-[#01A2D9]">
-              <nav
-                className={`${
-                  isMobile ? "flex flex-col space-y-4" : "flex space-x-16"
-                } text-sm font-normal`}
-              >
-                <div>
-                  <Link
-                    href="https://www.uottahack.ca/"
-                    target="_blank"
-                    className="relative group"
-                  >
-                    <span>About</span>
-                  </Link>
-                  <hr className="border-t mt-4" />
-                </div>
-
-                <div>
-                  <Link
-                    href="https://www.uottahack.ca/events"
-                    target="_blank"
-                    className="relative group"
-                  >
-                    <span>Past Events</span>
-                  </Link>
-                  <hr className="border-t mt-4" />
-                </div>
-
-                <div>
-                  <Link
-                    href="https://www.uottahack.ca/faq"
-                    target="_blank"
-                    className="relative group"
-                  >
-                    <span>FAQs</span>
-                  </Link>
-                </div>
-              </nav>
-            </div>
-
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-6 w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
-              <a
-                href="https://ca.linkedin.com/company/uottahack"
-                target="_blank"
-              >
-                <img src={mlh.src} alt="LinkedIn" className="w-7 h-7" />
-              </a>
-              <a href="https://www.instagram.com/uottahack" target="_blank">
-                <img src={mlh.src} alt="Instagram" className="w-6 h-6" />
-              </a>
-              <a href="https://discord.gg/XDQ94xsDwB" target="_blank">
-                <img src={mlh.src} alt="Discord" className="w-7 h-7" />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Mobile Menu */}
+      {isOpen && <MobileMenu />}
     </header>
   );
 };

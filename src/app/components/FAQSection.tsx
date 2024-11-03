@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "../styles/FAQSection.module.css";
 import ReactMarkdown from "react-markdown";
 import styled from "@emotion/styled";
+import InsideTrainSVG from "../assets/Interior_3.svg";
 interface FAQSectionProps {
   question: string;
   answer: string;
@@ -84,7 +85,10 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className={`${styles.container}  text-white`} id="faq">
+    <section
+      className={`${styles.container}  text-white overflow-hidden`}
+      id="faq"
+    >
       <div className={`${styles.titles} pl-10 md:pt-48    md:text-3xl`}>
         <h2 className={styles.title}>FAQ</h2>
         <h3 className={`${styles.subtitle} hidden md:block`}>
@@ -115,8 +119,9 @@ const FAQSection: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className=" flex  flex-row pt-[40%] flex-end justify-center w-full h-full items-end">
-        <div className="flex backdrop-blur-lg w-full flex-col justify-center flex-end items-center">
+      <div className=" flex  flex-row pt-[10%] flex-end justify-center w-full h-full items-end">
+        <div className="flex  w-full flex-col justify-center flex-end items-center">
+          <InsideTrainSVG className="w-[200%] h-auto sm:w-[400%] -translate-x-[27%] sm:translate-x-0 md:w-full mx-auto" />{" "}
           <p>Still got questions?</p>
           <p>
             Contact{" "}
