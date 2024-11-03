@@ -219,12 +219,17 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
         </div>
 
         {/* Community Partners */}
-        <p
+        <motion.p
+          className={styles.partnersContainer}
+          variants={itemVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          transition={{ duration: 1, ease: "easeOut", delay: 7 }}
           className={`${styles.title} pt-10`}
           style={{ fontSize: "clamp(3rem, 5vw ,20rem)" }}
         >
           Community Partners
-        </p>
+        </motion.p>
         <div className={styles.row}>
           <motion.div
             className={styles.partnersContainer}
