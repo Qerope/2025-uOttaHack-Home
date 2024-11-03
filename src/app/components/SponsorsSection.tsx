@@ -21,8 +21,9 @@ import mlh from "../assets/mlhLogo.png";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
 
-import otrain from "../assets/otrain.png";
-import otrainRails from "../assets/otrain_rails.png";
+import OtrainSVG from "../assets/otrain.svg";
+import OtrainRails from "../assets/OtrainRail.svg";
+import { Parallax } from "react-scroll-parallax";
 
 interface SponsorsSectionProps {}
 
@@ -113,11 +114,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
         </div>
       </div>
 
-      <div className={styles.otrain}>
-        <Image src={otrain} alt="OTrain Drawing" />
+      <div className={`${styles.otrain} `}>
+        <Parallax translateX={[-80, 100]} className="otrain">
+          <OtrainSVG />
+        </Parallax>
       </div>
       <div className={styles.otrainrails}>
-        <Image src={otrainRails} alt="Otrain Rails Drawing" />
+        <OtrainRails />
       </div>
 
       <div className={styles.triangle} />

@@ -1,6 +1,8 @@
 "use client";
 import AboutSection from "./components/AboutSection";
 import FAQSection from "./components/FAQSection";
+import { SnackbarProvider } from "notistack";
+
 import HeroSection from "./components/HeroSection";
 import IntroSection from "./components/IntroSection";
 import MainFooter from "./components/MainFooter";
@@ -18,22 +20,24 @@ export default function Home() {
   return (
     <main>
       <ParallaxProvider>
-        <MainHeader />
-        <HeroSection />
+        <SnackbarProvider maxSnack={3}>
+          <MainHeader />
+          <HeroSection />
 
-        <IntroSection />
+          <IntroSection />
 
-        <TracksSection />
-        <UOttaHackHad />
-        <InterestedInSponsoring />
+          <TracksSection />
+          <UOttaHackHad />
+          <InterestedInSponsoring />
 
-        <SponsorsSection />
-        <MapSection />
-        <FAQSection />
+          <SponsorsSection />
+          <MapSection />
+          <FAQSection />
+        </SnackbarProvider>
 
-        <MainFooter />
+        {/* <MainFooter />
 
-        <SponsorUsSection />
+        <SponsorUsSection /> */}
       </ParallaxProvider>
     </main>
   );

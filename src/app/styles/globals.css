@@ -247,12 +247,9 @@ a {
 
 input[type="email"] {
   /* padding: 8px; */
-  border: none;
   /* margin: -5px 12px -5px -20px; */
-  background-color: #fff;
   color: #303030;
   /* width: 19rem; */
-  border-radius: 5px;
 }
 
 

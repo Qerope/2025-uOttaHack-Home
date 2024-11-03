@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import styles from "../styles/HeroCTA.module.css";
+import { FaArrowRightLong, FaCheck } from "react-icons/fa6";
+import { useSnackbar } from "notistack";
 
 import CTA from "../assets/cta.svg";
 import BELL from "../assets/bell.svg";
@@ -19,86 +21,91 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
 }) => {
   const [email, setEmail] = useState<string>("");
   const [emailSubmitted, setEmailSubmitted] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [emailFailed, setEmailFailed] = useState<boolean>(false);
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
+  const isValidEmail = (email: string): boolean => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailRegex.test(email);
+  };
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email) {
-      return;
-    }
-
-    try {
-      await addDoc(collection(db, "emails"), {
-        email: email,
-        timestamp: new Date(),
+    if (isValidEmail(email)) {
+      try {
+        await addDoc(collection(db, "emails"), {
+          email: email,
+          timestamp: new Date(),
+        });
+        setIsSubmitted(true);
+        setEmail("");
+        enqueueSnackbar("Email successfully submitted!", {
+          variant: "success",
+        });
+      } catch (error) {
+        console.error("Error adding email: ", error);
+        enqueueSnackbar("Email submission failed. Please try again.", {
+          variant: "error",
+        });
+      }
+    } else {
+      enqueueSnackbar("Please enter a valid email address.", {
+        variant: "warning",
       });
-
-      setEmail("");
-      alert("Email added successfully!");
-    } catch (error) {
-      console.error("Error adding email: ", error);
-      alert("Failed to add email, please try again later.");
     }
   };
 
   return (
-    <>
+    <div className="flex flex-col w-full ">
       {isNewsLetterActive && (
-        <div className="button-container text-center mt-0">
-          <form onSubmit={handleEmailSubmit}>
-            <div>
-              <button
-                type="submit"
-                className={`text-center md:ml-10 md:mr-10 cta font-light justify-center items-center ${styles.cta} font-bold bg-[#F4A701]`}
-              >
-                {emailSubmitted ? (
-                  <p>Thank you for subscribing!</p>
-                ) : (
-                  <div className="flex flex-row">
-                    <input
-                      type="email"
-                      placeholder="Subscribe to our newsletter"
-                      value={email}
-                      onChange={handleEmailChange}
-                      className="w-full md:w-full  p-3 "
-                    />
-                    {emailFailed && !emailSubmitted ? (
-                      <div
-                        className="flex  justify-center items-center"
-                        style={{ width: "15vh" }}
-                      >
-                        Try Again!
-                      </div>
+        <div className=" flex w-full flex-col">
+          <form
+            onSubmit={handleEmailSubmit}
+            className="flex items-center h-14 p-1 backdrop-blur-md bg-white/70 rounded-lg overflow-hidden w-full max-w-md shadow-xl"
+          >
+            <>
+              {emailSubmitted ? (
+                <p className="text-black text-center w-full font-light">
+                  Thank you for subscribing!
+                </p>
+              ) : (
+                <div className="flex w-full flex-row">
+                  <input
+                    type="email"
+                    placeholder="Subscribe to our newsletter"
+                    value={email}
+                    onChange={handleEmailChange}
+                    className="flex-grow px-4 py-3 w-full mt-[2px] text-sm text-[#4375B6] placeholder-[#4375B6] bg-transparent outline-none leading-none"
+                  />
+                  <button
+                    type="submit"
+                    className="flex items-center justify-center bg-[#F4A701] hover:bg-[#3D6CA9] bg-opacity-90 text-white w-12 h-12 md:w-14 md:h-30 rounded-lg transition-all m-1"
+                  >
+                    {isSubmitted ? (
+                      <FaCheck className="w-4 h-4 md:w-4 md:h-4" />
                     ) : (
-                      <div
-                        className="flex  justify-center items-center"
-                        style={{ width: "20vh" }}
-                      >
-                        Get Notified! ✉️
-                      </div>
+                      <FaArrowRightLong className="w-4 h-4 md:w-4 md:h-4" />
                     )}
-                  </div>
-                )}
-              </button>
-            </div>
+                  </button>
+                </div>
+              )}
+            </>
           </form>
         </div>
       )}
-      <div className="button-container text-center mt-0">
-        <button
-          className={`text-center ${styles.cta} cta font-bold bg-[#F4A701]`}
-        >
+      <div className="button-container p-10 text-center mt-0">
+        <button className={`text-center  font-bold bg-[#F4A701]`}>
           <a target="_blank" rel="noopener noreferrer" href={buttonLink}>
             {buttonText}
           </a>
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const InterestedInSponsoring = () => {
   return (
-    <main className="w-full min-h-screen">
+    <main className="w-full min-h-screen bg-[#ffffff]">
       <div className=" absolute z-2 flex h-full w-full items-center  bg-[rgba(255,255,255,1)]">
         <div className="relative w-full">
           <div className="flex flex-col w-full md:flex-row  md:items-center">
