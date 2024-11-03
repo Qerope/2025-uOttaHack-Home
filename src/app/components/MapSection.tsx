@@ -1,12 +1,11 @@
-import React from 'react';
-import styles from '../styles/MapSection.module.css';
+import React from "react";
+import styles from "../styles/MapSection.module.css";
 
 interface MapSectionProps {}
 
 const MapSection: React.FC<MapSectionProps> = () => {
   return (
-    <section className={styles.container}>
-
+    <section className={`${styles.container} h-auto`}>
       <div className={styles.title}>
         <h2>Where to find us...</h2>
       </div>

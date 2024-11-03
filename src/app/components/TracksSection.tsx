@@ -56,7 +56,7 @@ const TracksSection: React.FC = () => {
 
         <div className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center h-1/2 md:h-full text-white">
           <h1
-            className=" font-bold [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.5)] "
+            className=" font-bold  [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] "
             style={{ fontSize: "clamp(1rem, 7vw, 10rem)" }}
           >
             TRACKS

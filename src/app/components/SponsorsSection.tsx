@@ -28,7 +28,7 @@ interface SponsorsSectionProps {}
 
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="sponsorship">
       <p className={styles.pretitle}>Thank you to our</p>
       <p
         className={styles.title}

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import styles from "../styles/HeroCTA.module.css"
+import styles from "../styles/HeroCTA.module.css";
 
-import CTA from '../assets/cta.svg';
-import BELL from '../assets/bell.svg';
+import CTA from "../assets/cta.svg";
+import BELL from "../assets/bell.svg";
 
 interface HeroCTAProps {
   buttonText: string;
@@ -12,8 +12,12 @@ interface HeroCTAProps {
   isNewsLetterActive: boolean;
 }
 
-const HeroCTA: React.FC<HeroCTAProps> = ({ buttonText, buttonLink, isNewsLetterActive }) => {
-  const [email, setEmail] = useState<string>('');
+const HeroCTA: React.FC<HeroCTAProps> = ({
+  buttonText,
+  buttonLink,
+  isNewsLetterActive,
+}) => {
+  const [email, setEmail] = useState<string>("");
   const [emailSubmitted, setEmailSubmitted] = useState<boolean>(false);
   const [emailFailed, setEmailFailed] = useState<boolean>(false);
 
@@ -23,24 +27,24 @@ const HeroCTA: React.FC<HeroCTAProps> = ({ buttonText, buttonLink, isNewsLetterA
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     if (!email) {
       return;
     }
-  
+
     try {
       await addDoc(collection(db, "emails"), {
         email: email,
         timestamp: new Date(),
       });
-  
+
       setEmail("");
       alert("Email added successfully!");
     } catch (error) {
       console.error("Error adding email: ", error);
       alert("Failed to add email, please try again later.");
     }
-  };  
+  };
 
   return (
     <>
@@ -48,24 +52,37 @@ const HeroCTA: React.FC<HeroCTAProps> = ({ buttonText, buttonLink, isNewsLetterA
         <div className="button-container text-center mt-0">
           <form onSubmit={handleEmailSubmit}>
             <div>
-              <button type="submit" className={`text-center cta font-bold pr-12 ${styles.cta} font-bold bg-[#F4A701]`}>
+              <button
+                type="submit"
+                className={`text-center md:ml-10 md:mr-10 cta font-light justify-center items-center ${styles.cta} font-bold bg-[#F4A701]`}
+              >
                 {emailSubmitted ? (
                   <p>Thank you for subscribing!</p>
                 ) : (
-                  <>
+                  <div className="flex flex-row">
                     <input
                       type="email"
                       placeholder="Subscribe to our newsletter"
                       value={email}
                       onChange={handleEmailChange}
-                      className="mr-2"
+                      className="w-full md:w-full  p-3 "
                     />
                     {emailFailed && !emailSubmitted ? (
-                      <div style={{ display: 'inline' }}>Try Again!</div>
+                      <div
+                        className="flex  justify-center items-center"
+                        style={{ width: "15vh" }}
+                      >
+                        Try Again!
+                      </div>
                     ) : (
-                      <div style={{ display: 'inline' }}>Get Notified! ✉️</div>
+                      <div
+                        className="flex  justify-center items-center"
+                        style={{ width: "20vh" }}
+                      >
+                        Get Notified! ✉️
+                      </div>
                     )}
-                  </>
+                  </div>
                 )}
               </button>
             </div>
@@ -73,9 +90,11 @@ const HeroCTA: React.FC<HeroCTAProps> = ({ buttonText, buttonLink, isNewsLetterA
         </div>
       )}
       <div className="button-container text-center mt-0">
-        <button className={`text-center ${styles.cta} cta font-bold bg-[#F4A701]`}>
+        <button
+          className={`text-center ${styles.cta} cta font-bold bg-[#F4A701]`}
+        >
           <a target="_blank" rel="noopener noreferrer" href={buttonLink}>
-            {buttonText} 
+            {buttonText}
           </a>
         </button>
       </div>
@@ -88,13 +107,39 @@ interface QuickHeroSectionStateProps {
   mainState: number;
 }
 
-const QuickHeroSectionState: React.FC<QuickHeroSectionStateProps> = ({ mainState }) => {
+const QuickHeroSectionState: React.FC<QuickHeroSectionStateProps> = ({
+  mainState,
+}) => {
   const sectionComponents: { [key: number]: JSX.Element | null } = {
-    0: <HeroCTA isNewsLetterActive={true} buttonText="Visit 2024" buttonLink="https://2024.uottahack.ca/" />,
-    1: <HeroCTA isNewsLetterActive={true} buttonText="Visit 2025" buttonLink="https://2025.uottahack.ca/" />,
-    2: <HeroCTA isNewsLetterActive={false} buttonText="Apply!" buttonLink="https://apply.uottahack.ca/" />,
-    3: <HeroCTA isNewsLetterActive={false} buttonText="Live" buttonLink="https://live.uottahack.ca/" />,
-    4: null
+    0: (
+      <HeroCTA
+        isNewsLetterActive={true}
+        buttonText="Visit 2024"
+        buttonLink="https://2024.uottahack.ca/"
+      />
+    ),
+    1: (
+      <HeroCTA
+        isNewsLetterActive={true}
+        buttonText="Visit 2025"
+        buttonLink="https://2025.uottahack.ca/"
+      />
+    ),
+    2: (
+      <HeroCTA
+        isNewsLetterActive={false}
+        buttonText="Apply!"
+        buttonLink="https://apply.uottahack.ca/"
+      />
+    ),
+    3: (
+      <HeroCTA
+        isNewsLetterActive={false}
+        buttonText="Live"
+        buttonLink="https://live.uottahack.ca/"
+      />
+    ),
+    4: null,
   };
 
   return <>{sectionComponents[mainState]}</>;

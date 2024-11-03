@@ -10,11 +10,10 @@
   margin-top: -85px;
   height: 100vh; /* Set it to 100vh to match the full viewport */
   width: 100%;
-  overflow: hidden; /* No scrolling within the container */
+  overflow: hidden; /* No scrolling within the container*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .emailInput {

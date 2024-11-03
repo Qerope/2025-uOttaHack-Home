@@ -88,7 +88,7 @@ const UOttaHackHad: React.FC = () => {
           </div>
 
           <div
-            className=" relative w-full pt-[10%]"
+            className=" relative w-full pt-[10%] pb-10"
             style={
               {
                 // paddingTop: "clamp(5%, 2vw, 1%)",

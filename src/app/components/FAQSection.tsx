@@ -36,14 +36,18 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className={`${styles.container} text-white`}>
-      <div className={styles.titles}>
-        <h2 className={styles.title}>FAQ -</h2>
-        <h3 className={styles.subtitle}>Frequently asked questions</h3>
+    <section className={`${styles.container}  text-white`} id="faq">
+      <div className={`${styles.titles} pl-10 md:pt-48    md:text-3xl`}>
+        <h2 className={styles.title}>FAQ</h2>
+        <h3 className={`${styles.subtitle} hidden md:block`}>
+          - Frequently asked questions
+        </h3>
       </div>
-      <div className={styles.faqContainer}>
+      <div
+        className={`${styles.faqContainer} backdrop-blur-lg rounded p-10 flex justify-center text-sm items-center h-full`}
+      >
         {faqs.map((faq, index) => (
-          <div key={index} className={styles.faqItem}>
+          <div key={index} className={`${styles.faqItem} pt-10`}>
             <div
               className={styles.faqQuestionContainer}
               onClick={() => toggleDropdown(index)}
@@ -61,15 +65,17 @@ const FAQSection: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className={styles.moreQuestions}>
-        <p>Still got questions?</p>
-        <p>
-          Contact{" "}
-          <a href="mailto:hi@uottahack.ca">
-            <u>hi@uottahack.ca</u>
-          </a>{" "}
-          or any of our socials
-        </p>
+      <div className=" flex  flex-row pt-[40%] flex-end justify-center w-full h-full items-end">
+        <div className="flex backdrop-blur-lg w-full flex-col justify-center flex-end items-center">
+          <p>Still got questions?</p>
+          <p>
+            Contact{" "}
+            <a href="mailto:hi@uottahack.ca">
+              <u>hi@uottahack.ca</u>
+            </a>{" "}
+            or any of our socials
+          </p>
+        </div>
       </div>
     </section>
   );

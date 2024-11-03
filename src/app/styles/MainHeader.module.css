@@ -35,10 +35,14 @@
 @media only screen and (max-width: 700px) {
   .headerLogo {
     position: absolute;
-    padding-left: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
+    padding: 0px;
+    top: 0;
+    width: 100vw;
+    margin: 0;
+    /* transform: translateX(-50%); */
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
 }
 

@@ -1,12 +1,13 @@
 
 
 .cta {
-    padding: 10px 20px 10px 25px;
+    /* padding: 10px 20px 10px 25px; */
     text-decoration: none;
     font-size: 1rem;
     margin-top: 20px;
     display: inline-block;
     color: white;
+    
     background: #F4A701;
     transition: 1s;
     box-shadow: 1px 1px 0 black;
@@ -24,7 +25,7 @@
 
 .cta:hover {
     transition: 0.5s;
-    box-shadow: 2px 2px 0 #519e64;
+    box-shadow: 2px 2px 0 #49a3ec;
     padding: 10px 25px 10px 25px;
 }
 
@@ -49,6 +50,7 @@
     transition: 1s;
     box-shadow: 1px 1px 0 black;
     border-radius: 0px;
+    width: 10rem;
     transform: skewX(-0deg);
 }
 
