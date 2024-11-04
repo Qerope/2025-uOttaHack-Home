@@ -2,13 +2,13 @@ import React from "react";
 
 const InterestedInSponsoring = () => {
   return (
-    <main className="w-full min-h-screen bg-[#ffffff] min-h-screen">
-      <div className=" absolute z-2 flex h-full w-full items-center  bg-[rgba(255,255,255,1)]">
+    <main className="w-full min-h-screen   bg-[#ffffff] ">
+      <div className="  z-2 flex h-full w-full items-center  bg-[rgba(255,255,255,1)]">
         <div className="relative w-full">
           <div className="flex flex-col  w-full">
             <div className="w-full">
-              {/* <div
-                class=" w-full  pt-96"
+              <div
+                class=" w-full  md:pt-[10%]  pt-28"
                 style={{
                   backgroundImage:
                     "linear-gradient(to right, white 30%, rgba(54, 106, 207, 1) 0%)",
@@ -16,12 +16,12 @@ const InterestedInSponsoring = () => {
                   backgroundSize: "50px 4px",
                   backgroundRepeat: "repeat-x",
                 }}
-              ></div> */}
+              ></div>
             </div>
             <div className="flex flex-col w-full md:flex-row  md:items-center">
               <div className="flex font-jost flex-col md:w-1/2  p-[10%] space-y-10  text-center md:text-left ">
                 <div
-                  className="   flex flex-col pt-48  md:p-0 w-full font-bold text-[rgba(9,94,174,1)]  leading-tighter "
+                  className="   flex flex-col pt-10  md:pt-0  md:p-0 w-full font-bold text-[rgba(9,94,174,1)]  leading-tighter "
                   style={{
                     fontSize: "clamp(2rem, 3vw, 5rem)",
                   }}
@@ -51,7 +51,7 @@ const InterestedInSponsoring = () => {
                   </button>
                 </div>
               </div>
-              <div className="md:w-1/2  m-1 md:m-10">
+              <div className="md:w-1/2  m-1 md:m-10 pb-10">
                 <div className="w-full bg-blue-400 p-1 md:p-1 h-full rounded-lg flex md:items-center md:justify-center">
                   <div className="relative w-full h-[30vh] md:h-[60vh]">
                     <iframe

@@ -56,307 +56,308 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <section className={styles.container} id="sponsorship">
-      <p className={styles.pretitle}>Thank you to our</p>
-      <p
-        className="z-10 relative font-jost font-bold text-[#366ACF] flex justify-center items-center"
-        style={{ fontSize: "clamp(4rem, 1vw ,20rem)" }}
-      >
-        SPONSORS
-      </p>
-
-      <div ref={sectionRef} className={`${styles.sponsorSection} `}>
-        {/* First Row */}
-        <div className={styles.row}>
-          <motion.div
-            className={styles.sponsorContainer}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"} // Trigger animation based on view
-            transition={{ duration: 1, ease: "easeOut", delay: 0 }}
-          >
-            <Image src={solace} alt="Solace Logo" />
-          </motion.div>
-        </div>
-
-        {/* Second Row */}
-        <div className={styles.row}>
-          <motion.div
-            className={styles.sponsorContainer}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
-          >
-            <Image src={EEF} alt="EEF Logo" />
-          </motion.div>
-        </div>
-
-        {/* Third Row */}
-        <div className={styles.row}>
-          <motion.div
-            className={
-              "w-full realative z-10 m-5 bg-white h-48 rounded-xl justify-center items-center"
-            }
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-          >
-            <CSE className="w-full h-full justify-self-center items-self-center" />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.45 }}
-          >
-            <Image
-              className="   justify-self-center items-self-center"
-              alt="Survey Monkey logo"
-              src={Surveymonkey}
-            />
-          </motion.div>
-        </div>
-
-        {/* Fourth Row */}
-        <div className={styles.row}>
-          <motion.div
-            className={
-              "w-full realative z-10 m-5 bg-white h-48 rounded-xl justify-center items-center"
-            }
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-          >
-            <NavCanada className="w-48 h-full justify-self-center items-self-center" />
-          </motion.div>
-          <motion.div
-            className={
-              "w-full realative z-10 m-5 bg-white h-48 rounded-xl justify-center items-center"
-            }
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.75 }}
-          >
-            <Deepcode className="w-full h-full justify-self-center items-self-center" />
-          </motion.div>
-        </div>
-        <div className={styles.row}>
-          <motion.div
-            className={"block w-1/3 m-5"}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
-          ></motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.05 }}
-          >
-            <Image
-              src={IPSG}
-              className="  w-48 justify-self-center items-self-center"
-              alt="IPSG Logo"
-            />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-          >
-            <Image
-              src={deloitte}
-              className=" justify-self-center items-self-center"
-              alt="deloitte logo"
-            />
-          </motion.div>
-          <motion.div
-            className={"block w-1/3 m-5 "}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 1.35 }}
-          ></motion.div>
-        </div>
-
-        {/* Fifth Row */}
-        <div className={styles.row}>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
-          >
-            <Image src={redbull} className="w-48 " alt="redbull logo" />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.65 }}
-          >
-            <Image src={warp} alt="warp logo" />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.8 }}
-          >
-            <Image src={eleg} alt="Elegoo logo" />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.95 }}
-          >
-            <Image src={voiceflow} alt="Icons8 Logo" />
-          </motion.div>
-        </div>
-
-        {/* Sixth Row */}
-        <div className={styles.row}>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 2.1 }}
-          >
-            <Image src={wolfram} className="w-96" alt="wolfram" />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-40 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 2.25 }}
-          >
-            <Image src={xyz} alt=".xyz Logo" />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 2.4 }}
-          >
-            <Image src={interviewcake} alt="Interview Cake Logo" />
-          </motion.div>
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 2.55 }}
-          >
-            <Image
-              src={standoutStk}
-              className="w-48 h-auto"
-              alt="Standout-Stickers Logo"
-            />
-          </motion.div>
-        </div>
-        <div className={styles.row}>
-          <motion.div
-            className={"block z-10 m-5 w-full"}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 2.55 }}
-          >
-            {" "}
-          </motion.div>
-
-          <motion.div
-            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 2.85 }}
-          >
-            <Image
-              src={icons8}
-              className="justify-self-center flex  items-center"
-              alt="icons8 logo"
-            />
-          </motion.div>
-
-          <motion.div
-            className={"block z-10 m-5 w-full"}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 2.85 }}
-          ></motion.div>
-        </div>
-
-        {/* Community Partners */}
-        <motion.p
-          className=" relative z-10 italic pt-20  text-[#366ACF]"
-          variants={itemVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
-          style={{ fontSize: "clamp(3rem, 1vw , 6rem)" }}
+    <section
+      className="bg-[#E2E2E2] relative z-1 overflow-hidden  justify-center items-center "
+      id="sponsorship"
+    >
+      <div className="md:ml-[10%] pt-10 z-10 relative md:mr-[10%] justify-center items-centerw-full">
+        <p className={`${styles.pretitle} justify-center items-center flex`}>
+          Thank you to our
+        </p>
+        <p
+          className="z-10 relative font-jost font-bold text-[#366ACF] flex justify-center items-center"
+          style={{ fontSize: "clamp(4rem, 1vw ,20rem)" }}
         >
-          Community Partners
-        </motion.p>
-        <div className={styles.row}>
-          <motion.div
-            className={styles.partnersContainer}
+          SPONSORS
+        </p>
+
+        <div ref={sectionRef} className={` `}>
+          {/* First Row - Large Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 0 }}
+            >
+              <Image
+                src={solace}
+                alt="Solace Logo"
+                className="md:h-32  md:h-15 w-auto"
+              />
+            </motion.div>
+          </div>
+
+          {/* Second Row */}
+          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
+            >
+              <Image
+                src={EEF}
+                alt="EEF Logo"
+                className="md:h-32  md:h-15 w-auto"
+              />
+            </motion.div>
+          </div>
+
+          {/* Third Row - Medium Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+            >
+              <CSE className="h-full w-32" />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.45 }}
+            >
+              <Image
+                src={Surveymonkey}
+                alt="Survey Monkey logo"
+                className="h-auto w-full p-5"
+              />
+            </motion.div>
+          </div>
+
+          {/* Fourth Row - Medium Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+            >
+              <NavCanada className="md:w-48 w-32 p-10" />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.75 }}
+            >
+              <Deepcode className="h-auto w-[100%] w-[75%] p-5" />
+            </motion.div>
+          </div>
+
+          {/* Fifth Row - Small Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full  gap-x-5 ">
+            <motion.div
+              className="w-full max-w-full m-5  rounded-xl flex items-center justify-center  w-[5%] md:w-[10%]  h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 1.05 }}
+            ></motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.9 }}
+            >
+              <Image src={IPSG} alt="IPSG Logo" className="h-auto w-48" />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 1.05 }}
+            >
+              <Image
+                src={deloitte}
+                alt="Deloitte logo"
+                className="h-auto w-48"
+              />
+            </motion.div>
+            <motion.div
+              className="w-full max-w-full m-5  rounded-xl flex items-center justify-center w-[5%] md:w-[10%] h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 1.05 }}
+            ></motion.div>
+          </div>
+
+          {/* Sixth Row - Mini Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
+            >
+              <Image
+                src={redbull}
+                alt="Red Bull logo"
+                className="h-auto w-48"
+              />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 1.65 }}
+            >
+              <Image src={warp} alt="Warp logo" className="h-auto w-48" />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 1.8 }}
+            >
+              <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
+            </motion.div>
+          </div>
+
+          {/* Seventh Row - Mini Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 2.1 }}
+            >
+              <Image src={wolfram} alt="Wolfram logo" className="h-auto w-48" />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 2.25 }}
+            >
+              <Image src={xyz} alt=".xyz Logo" className="h-auto w-40" />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 2.4 }}
+            >
+              <Image
+                src={interviewcake}
+                alt="Interview Cake Logo"
+                className="h-auto w-48"
+              />
+            </motion.div>
+          </div>
+
+          {/* Eighth Row - Single Sponsor */}
+          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 2.55 }}
+            >
+              <Image
+                src={standoutStk}
+                alt="Standout-Stickers Logo"
+                className="h-auto w-48"
+              />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 2.85 }}
+            >
+              <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 1.95 }}
+            >
+              <Image
+                src={voiceflow}
+                alt="Voiceflow Logo"
+                className="h-auto w-48"
+              />
+            </motion.div>
+          </div>
+
+          {/* Community Partners */}
+          <motion.p
+            className=" flex font-bold italic pt-20 justify-center items-center w-full  text-[#366ACF]"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+            style={{ fontSize: "clamp(2rem, 1vw , 6rem)" }}
           >
-            <Image src={mlh} alt="MLH Logo" />
-          </motion.div>
-          <motion.div
-            className={styles.partnersContainer}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
-          >
-            <Image src={EEF} alt="EEF Community" />
-          </motion.div>
-          <motion.div
-            className={styles.partnersContainer}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
-          >
-            <Image src={uottawa} alt="uOttawa Logo" />
-          </motion.div>
+            Community Partners
+          </motion.p>
+          <div className={styles.row}>
+            <motion.div
+              className={styles.partnersContainer}
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+            >
+              <Image src={mlh} alt="MLH Logo" className="" />
+            </motion.div>
+            <motion.div
+              className={styles.partnersContainer}
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+            >
+              <Image src={EEF} alt="EEF Community" />
+            </motion.div>
+            <motion.div
+              className={styles.partnersContainer}
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+            >
+              <Image src={uottawa} alt="uOttawa Logo" />
+            </motion.div>
+          </div>
         </div>
       </div>
-
       <div className={`${styles.otrain} `}>
         <Parallax translateX={[-80, 100]} className="otrain">
           <OtrainSVG />
         </Parallax>
       </div>
-      <div className={styles.otrainrails}>
-        <OtrainRails />
+      <div
+        className={`relative z-10  md:w-[100vw] h-full flex justify-center   items-center  `}
+      >
+        <OtrainRails className=" h-full" />
       </div>
-
-      <div className={styles.triangle} />
+      <div className={` absolute top-0 z-0 w-full h-full`}>
+        <div className={`${styles.triangle} absolute `} />
+      </div>
     </section>
   );
 };

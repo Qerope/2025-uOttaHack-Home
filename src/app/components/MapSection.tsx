@@ -14,7 +14,7 @@ const MapSection: React.FC<MapSectionProps> = () => {
   return (
     <section className={`${styles.container} h-auto`}>
       <div
-        className={`bg-[#D5DBE2] text-3xl md:text-7xl text=[#092349] md:pt-10 font-bold p-1`}
+        className={`bg-[#D5DBE2] text-3xl md:text-7xl text=[#092349] font-bold p-1`}
         style={{ fontFamily: "Jost, sans-serif", fontStyle: "italic" }}
       >
         <h2 className="pt-20 p-20">Where to find us...</h2>
