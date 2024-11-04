@@ -57,7 +57,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   };
   return (
     <section
-      className="bg-[#E2E2E2] relative z-1 overflow-hidden  justify-center items-center "
+      className="bg-[#E2E2E2] pb-[10%] w-full relative z-10 overflow-hidden min-h-screen "
       id="sponsorship"
     >
       <div className="md:ml-[10%] pt-10 z-10 relative md:mr-[10%] justify-center items-centerw-full">
@@ -84,7 +84,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image
                 src={solace}
                 alt="Solace Logo"
-                className="md:h-32  md:h-15 w-auto"
+                className="md:h-32  md:h-auto w-32 md:w-96"
               />
             </motion.div>
           </div>
@@ -346,15 +346,15 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
         </div>
       </div>
       <div className={`${styles.otrain} `}>
-        <Parallax translateX={[-80, 100]} className="otrain">
+        <Parallax translateX={[-80, 100]} className="  ">
           <OtrainSVG />
         </Parallax>
       </div>
-      <div
-        className={`relative z-10  md:w-[100vw] h-full flex justify-center   items-center  `}
-      >
-        <OtrainRails className=" h-full" />
-      </div>
+      {/* <div className={` flex justify-center items-center`}> */}
+
+      {/* </div> */}
+
+      <OtrainRails className="absolute z-10 " />
       <div className={` absolute top-0 z-0 w-full h-full`}>
         <div className={`${styles.triangle} absolute `} />
       </div>
