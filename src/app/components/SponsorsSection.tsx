@@ -4,10 +4,10 @@ import Image from "next/image";
 
 import solace from "../assets/solace.png";
 import EEF from "../assets/eef.png";
-import CSE from "../assets/cse.png";
-import surveymonkey from "../assets/surveymonkey.png";
+import CSE from "../assets/cse.svg";
+import Surveymonkey from "../assets/surveryMonkey.svg";
 import deloitte from "../assets/deloitte.png";
-import deepcode from "../assets/deepcode.png";
+import Deepcode from "../assets/Deepcode.svg";
 import voiceflow from "../assets/voiceflow.png";
 import onepassword from "../assets/1password.png";
 import ehub from "../assets/ehub.png";
@@ -15,12 +15,19 @@ import icons8 from "../assets/icons8.png";
 import eleg from "../assets/eleg.png";
 import xyz from "../assets/xyz.png";
 import interviewcake from "../assets/interviewcake.png";
-import balsamiq from "../assets/balsamiq.png";
+import balsamiq from "../assets/balsamiq2.png";
+import NavCanada from "../assets/navCanada.svg";
+import redbull from "../assets/redbull.png";
+import warp from "../assets/warp.png";
+import standoutStk from "../assets/StandOut-Stickers.png";
+import wolfram from "../assets/wolfram.png";
+import eef_community from "../assets/eef-com.png";
 
 import mlh from "../assets/mlhLogo.png";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
 
+import IPSG from "../assets/IPSG.png";
 import OtrainSVG from "../assets/Otrain2.svg";
 import OtrainRails from "../assets/OtrainRail.svg";
 import { Parallax } from "react-scroll-parallax";
@@ -88,44 +95,52 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
         {/* Third Row */}
         <div className={styles.row}>
           <motion.div
-            className={styles.sponsorContainer}
+            className={
+              "w-full realative z-10 m-5 bg-white h-48 rounded-xl justify-center items-center"
+            }
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 1 }}
           >
-            <Image src={CSE} alt="CSE Logo" />
+            <CSE className="w-full h-full justify-self-center items-self-center" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className={
+              "w-full realative z-10 m-5 bg-white h-48 rounded-xl justify-center items-center"
+            }
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
           >
-            <Image src={surveymonkey} alt="SurveyMonkey Logo" />
+            <Surveymonkey className="w-full h-full justify-self-center items-self-center" />
           </motion.div>
         </div>
 
         {/* Fourth Row */}
         <div className={styles.row}>
           <motion.div
-            className={styles.sponsorContainer}
+            className={
+              "w-full realative z-10 m-5 bg-white h-48 rounded-xl justify-center items-center"
+            }
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 2 }}
           >
-            <Image src={deloitte} alt="Deloitte Logo" />
+            <NavCanada className="w-48 h-full justify-self-center items-self-center" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className={
+              "w-full realative z-10 m-5 bg-white h-48 rounded-xl justify-center items-center"
+            }
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 2.5 }}
           >
-            <Image src={deepcode} alt="DeepCode Logo" />
+            <Deepcode className="w-full h-full justify-self-center items-self-center" />
           </motion.div>
           {/* <motion.div
             className={styles.sponsorContainer}
@@ -137,60 +152,102 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <Image src={anotherLogo} alt="Another Logo" />
           </motion.div> */}
         </div>
+        <div className={styles.row}>
+          <motion.div
+            className={"block w-1/3 m-5"}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          ></motion.div>
+          <motion.div
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 2.5 }}
+          >
+            <Image
+              src={IPSG}
+              className="  w-48 justify-self-center items-self-center"
+              alt="IPSG Logo"
+            />
+          </motion.div>
+          <motion.div
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 2.5 }}
+          >
+            <Image
+              src={deloitte}
+              className=" justify-self-center items-self-center"
+              alt="deloitte logo"
+            />
+          </motion.div>
+          <motion.div
+            className={"block w-1/3 m-5 "}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          ></motion.div>
+        </div>
 
         {/* Fifth Row */}
         <div className={styles.row}>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 3 }}
           >
-            <Image src={voiceflow} alt="VoiceFlow Logo" />
+            <Image src={redbull} className="w-48 " alt="redbull logo" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 3.5 }}
           >
-            <Image src={onepassword} alt="1Password Logo" />
+            <Image src={warp} alt="warp logo" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 4 }}
           >
-            <Image src={ehub} alt="Entrepreneurship Hub Logo" />
+            <Image src={eleg} alt="Elegoo logo" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 4.5 }}
           >
-            <Image src={icons8} alt="Icons8 Logo" />
+            <Image src={voiceflow} alt="Icons8 Logo" />
           </motion.div>
         </div>
 
         {/* Sixth Row */}
         <div className={styles.row}>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 5 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 7 }}
           >
-            <Image src={eleg} alt="Elegoo Logo" />
+            <Image src={wolfram} className="w-96" alt="wolfram" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-40 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -199,7 +256,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <Image src={xyz} alt=".xyz Logo" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -208,25 +265,69 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <Image src={interviewcake} alt="Interview Cake Logo" />
           </motion.div>
           <motion.div
-            className={styles.sponsorContainer}
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 6.5 }}
           >
-            <Image src={balsamiq} alt="Balsamiq Logo" />
+            <Image
+              src={standoutStk}
+              className="w-48 h-auto"
+              alt="Standout-Stickers Logo"
+            />
           </motion.div>
+        </div>
+        <div className={styles.row}>
+          <motion.div
+            className="bg-white rounded-[15px] p-2 m-5 flex-1 basis-full min-h-48 max-h-48 flex items-center justify-center z-10"
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 7.5 }}
+          >
+            <Image
+              src={icons8}
+              className="justify-self-center flex  items-center"
+              alt="icons8 logo"
+            />
+          </motion.div>
+          <motion.div
+            className={"block z-10 m-5 w-full"}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 7.5 }}
+          >
+            {" "}
+          </motion.div>
+          <motion.div
+            className={"block z-10 m-5 w-full"}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 7.5 }}
+          >
+            {" "}
+          </motion.div>
+
+          <motion.div
+            className={"block z-10 m-5 w-full"}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 1, ease: "easeOut", delay: 7.5 }}
+          ></motion.div>
         </div>
 
         {/* Community Partners */}
         <motion.p
-          className={styles.partnersContainer}
+          className=" relative z-10 italic  text-[#366ACF]"
           variants={itemVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          transition={{ duration: 1, ease: "easeOut", delay: 7 }}
-          className={`${styles.title} pt-10`}
-          style={{ fontSize: "clamp(3rem, 5vw ,20rem)" }}
+          transition={{ duration: 1, ease: "easeOut", delay: 8 }}
+          style={{ fontSize: "clamp(4rem, 1vw ,20rem)" }}
         >
           Community Partners
         </motion.p>
@@ -236,7 +337,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 7 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 8.5 }}
           >
             <Image src={mlh} alt="MLH Logo" />
           </motion.div>
@@ -245,9 +346,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 7.5 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 9 }}
           >
-            <Image src={github} alt="GitHub Logo" />
+            <Image src={EEF} alt="EEF Community" />
           </motion.div>
           <motion.div
             className={styles.partnersContainer}

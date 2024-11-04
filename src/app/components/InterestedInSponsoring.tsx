@@ -6,7 +6,7 @@ const InterestedInSponsoring = () => {
       <div className=" absolute z-2 flex h-full w-full items-center  bg-[rgba(255,255,255,1)]">
         <div className="relative w-full">
           <div className="flex flex-col w-full md:flex-row  md:items-center">
-            <div className="flex flex-col md:w-1/2  p-[10%] space-y-10 font-['Jost'] text-center md:text-left ">
+            <div className="flex font-jost flex-col md:w-1/2  p-[10%] space-y-10  text-center md:text-left ">
               <div
                 className="   flex flex-col   w-full font-bold text-[rgba(9,94,174,1)]  leading-tighter "
                 style={{
