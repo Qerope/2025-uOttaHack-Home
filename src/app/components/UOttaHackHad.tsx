@@ -32,36 +32,46 @@ const UOttaHackHad: React.FC = () => {
     };
   }, []);
   return (
-    <section className=" w-full    ">
+    <section
+      className=" w-full  -mt-[20%] "
+      style={{
+        background: "linear-gradient(180deg, #366ACF 0%, #74A0F6 100%)",
+      }}
+    >
       <div className="w-full h-full">
-        <div className="absolute z-4  -mt-[20%] z-0 overflow-hidden">
-          <img
+        {/* <div className="absolute z-4  -mt-[20%] z-0 overflow-hidden">
+          {/* <img
             src={RectangleImage.src}
             alt="UOttaHack Background"
             className=""
-          />
-        </div>
+          /> 
+        </div> */}
 
         <div
-          className={` relative z-1 text-white w-full  sm:mt-[1%] md:mt[-40%] lg:mt-[1%]`}
+          className={` relative z-1 text-white w-full  pt-10 sm:mt-[1%] md:mt[-40%] lg:mt-[1%]`}
         >
           <h1
-            className={`${styles.heading} md:text-8xl   w-full flex justify-center items-center`}
+            className={`${styles.heading} md:text-8xl  w-full flex justify-center items-center`}
+            style={{
+              paddingTop: "clamp(20%, 2vw, 10%)",
+            }}
           >
             uOttaHack 2024 had...
           </h1>
 
           <div
-            className={`flex flex-row font-light justify-between items-center p-5  `}
+            className={`flex flex-row font-light justify-between items-center   `}
             style={{
               fontSize: "clamp(1rem, 2vw, 10rem)",
               fontFamily: "Sulphur Point, sans-serif",
-              padding: "clamp(5%, 2vw, 10%)",
+              paddingLeft: "clamp(1%, 2vw, 20%)",
+              paddingRight: "clamp(1%, 2vw, 20%)",
+              paddingBottom: "clamp(5%, 2vw, 20%)",
+
+              paddingTop: "clamp(5%, 2vw, 20%)",
             }}
           >
-            <div
-              className={`  flex flex-col jsutify-center pt=l-10 items-center `}
-            >
+            <div className={`  flex flex-col jsutify-center  items-center `}>
               <h2>2000+</h2>
               <p>Applications</p>
             </div>
@@ -88,12 +98,10 @@ const UOttaHackHad: React.FC = () => {
           </div>
 
           <div
-            className=" relative w-full pt-[10%] pb-10"
-            style={
-              {
-                // paddingTop: "clamp(5%, 2vw, 1%)",
-              }
-            }
+            className=" relative w-full pt-[10%] pb-48"
+            style={{
+              paddingBottom: "clamp(5%, 2vw, 10%)",
+            }}
           >
             {/* <img src={road.src} alt="Road" className={styles.roadImage} />
             <img src={maps.src} alt="Maps" className={styles.mapImage} /> */}

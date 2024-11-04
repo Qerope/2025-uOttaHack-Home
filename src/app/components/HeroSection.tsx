@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section className={`${styles.container} flex min-h-screen  `}>
       <BackgroundSVG className="fixed top-0 left-0 w-full h-full bg-cover bg-center -z-10" />
-      <div className={`absolute z-1 top-10 text-white `}>
+      <div className={`absolute z-1 top-40 text-white `}>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }} // Starting state: faded out and below

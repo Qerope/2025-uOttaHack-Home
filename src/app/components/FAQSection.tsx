@@ -96,7 +96,7 @@ const FAQSection: React.FC = () => {
         </h3>
       </div>
       <div
-        className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10 flex justify-center text-sm items-center h-full`}
+        className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10  md:p-48 flex justify-center text-sm items-center h-full`}
       >
         {faqs.map((faq, index) => (
           <div key={index} className={`${styles.faqItem} pt-10`}>
@@ -119,7 +119,7 @@ const FAQSection: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className=" flex  flex-row pt-[10%] flex-end justify-center w-full h-full items-end">
+      <div className=" flex   flex-row pt-[10%] flex-end justify-center w-full h-full items-end">
         <div className="flex  w-full flex-col justify-center flex-end items-center">
           <InsideTrainSVG className="w-[200%] h-auto sm:w-[400%] -translate-x-[27%] sm:translate-x-0 md:w-full mx-auto" />{" "}
           <p>Still got questions?</p>

@@ -101,7 +101,7 @@ const MainHeader = () => {
     <header className="relative w-full bg-transparent text-white">
       <div className="w-full sm:px-6 relative">
         {/* Logo */}
-        <div className="absolute md:left-[30%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
+        <div className="absolute md:left-[20%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
           <ColorLogo className="w-20 h-20" />
         </div>
 
