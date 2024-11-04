@@ -1,8 +1,8 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, MutableRefObject } from "react";
 
-const useInView = (options) => {
+const useInView = (options: IntersectionObserverInit) => {
   const [isInView, setIsInView] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<any>(null); // Use 'any' to disable strict typing
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -20,7 +20,7 @@ const useInView = (options) => {
     };
   }, [options]);
 
-  return [ref, isInView];
+  return { ref, isInView };
 };
 
 export default useInView;

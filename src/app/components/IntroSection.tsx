@@ -6,7 +6,7 @@ import IntroBuildingsBottom from "../assets/IntroBuildingsBottom.png";
 import { Parallax } from "react-scroll-parallax";
 import useInView from "../hooks/useInView";
 const IntroSection: React.FC = () => {
-  const [ref, isInView] = useInView({ threshold: 0.5 }); // Adjust threshold as needed
+  const { ref, isInView } = useInView({ threshold: 0.5 });
 
   return (
     <section
@@ -52,7 +52,7 @@ const IntroSection: React.FC = () => {
             </p>
 
             <p className="">
-              <b>Not from Ottawa?</b> Well, we've got you covered for food,
+              <b>Not from Ottawa?</b> Well, we&apos;ve got you covered for food,
               lodging, and fun, so you enjoy your experience learning and
               discovering new bounds.
             </p>

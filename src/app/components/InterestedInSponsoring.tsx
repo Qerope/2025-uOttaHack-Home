@@ -8,7 +8,7 @@ const InterestedInSponsoring = () => {
           <div className="flex flex-col  w-full">
             <div className="w-full">
               <div
-                class=" w-full  md:pt-[10%]  pt-28"
+                className=" w-full  md:pt-[10%]  pt-28"
                 style={{
                   backgroundImage:
                     "linear-gradient(to right, white 30%, rgba(54, 106, 207, 1) 0%)",

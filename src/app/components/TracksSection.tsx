@@ -11,7 +11,7 @@ import SeperationImage from "../assets/Seperation.png";
 const TracksSection: React.FC = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [minHeight, setMinHeight] = useState("100vh"); // Initial value as full screen height
-  const [ref, isInView] = useInView({ threshold: 0.5 }); // Adjust threshold as needed
+  const { ref, isInView } = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     // Check if the image is loaded and has a height
@@ -68,15 +68,17 @@ const TracksSection: React.FC = () => {
           </h1>
 
           <p
-            className=" text-white"
-            style={{ fontSize: "clamp(0.7rem, 2vw ,2rem)" }}
+            className="text-white"
+            style={{ fontSize: "clamp(0.7rem, 2vw, 2rem)" }}
           >
-            <span className="font-light">Whether you're passionate about</span>{" "}
+            <span className="font-light">
+              Whether you&apos;re passionate about
+            </span>{" "}
             <strong>health, fintech, AI, or sustainability</strong>
             <span className="font-light">
               , see what we can offer for the perfect platform to focus your
               creativity and build impactful solutions.
-            </span>
+            </span>{" "}
             <u>Choose your challenge</u>, collaborate, and{" "}
             <strong>
               <em>explore your limits!</em>
