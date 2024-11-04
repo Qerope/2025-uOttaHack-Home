@@ -23,7 +23,7 @@ import standoutStk from "../assets/StandOut-Stickers.png";
 import wolfram from "../assets/wolfram.png";
 import eef_community from "../assets/eef-com.png";
 
-import mlh from "../assets/mlhLogo.png";
+import MLH from "../assets/mlh.svg";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
 
@@ -322,7 +322,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
             >
-              <Image src={mlh} alt="MLH Logo" className="" />
+              <MLH className="w-48 md:w-full h-auto" />
             </motion.div>
             <motion.div
               className={styles.partnersContainer}
@@ -331,7 +331,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
             >
-              <Image src={EEF} alt="EEF Community" />
+              <Image
+                src={EEF}
+                alt="EEF Community"
+                className="w-48 md:w-full h-auto"
+              />
             </motion.div>
             <motion.div
               className={styles.partnersContainer}
@@ -340,7 +344,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
             >
-              <Image src={uottawa} alt="uOttawa Logo" />
+              <Image
+                src={uottawa}
+                alt="uOttawa Logo"
+                className="w-48 md:w-full h-auto"
+              />
             </motion.div>
           </div>
         </div>

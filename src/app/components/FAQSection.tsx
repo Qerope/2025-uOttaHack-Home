@@ -89,9 +89,13 @@ const FAQSection: React.FC = () => {
       className={`${styles.container}  text-white overflow-hidden`}
       id="faq"
     >
-      <div className={`${styles.titles} pl-10 md:pt-48    md:text-3xl`}>
-        <h2 className={styles.title}>FAQ</h2>
-        <h3 className={`${styles.subtitle} hidden md:block`}>
+      <div
+        className={`pl-10 md:pt-48 pt-10 flex md:pl-48 flex-row items-center`}
+      >
+        <h2 className="font-jose font-bold text-6xl md:text-8xl ">FAQ</h2>
+        <h3
+          className={`font-jose text-md md:text-6xl font-light italic   text-inline `}
+        >
           - Frequently asked questions
         </h3>
       </div>
@@ -99,7 +103,7 @@ const FAQSection: React.FC = () => {
         className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10  md:p-48 flex justify-center text-sm items-center h-full`}
       >
         {faqs.map((faq, index) => (
-          <div key={index} className={`${styles.faqItem} pt-10`}>
+          <div key={index} className={`${styles.faqItem} pt-5`}>
             <div
               className={styles.faqQuestionContainer}
               onClick={() => toggleDropdown(index)}
