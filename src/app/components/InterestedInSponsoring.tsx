@@ -46,7 +46,12 @@ const InterestedInSponsoring = () => {
                     generosity of our amazing sponsors. Join us in person for a
                     weekend of fun, creativity, and innovation!
                   </p>
-                  <button className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white  rounded-xl font-jose text-md text-3xl w-2/3 h-[10%] mt-10 md:mt-0">
+                  <button
+                    className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white  rounded-xl font-jose text-md text-3xl w-2/3 h-[10%] mt-10 md:mt-0"
+                    onClick={(e) =>
+                      (window.location.href = "mailto:sponsorship@uottahack.ca")
+                    }
+                  >
                     Get in touch!
                   </button>
                 </div>
