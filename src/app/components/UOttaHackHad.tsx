@@ -5,7 +5,17 @@ import road from "../assets/Road.png";
 import maps from "../assets/Maps.png";
 import { useEffect } from "react";
 
+import Car1 from "../assets/car1.svg";
+import Car2 from "../assets/car2.svg";
+import Car3 from "../assets/car3.svg";
+
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 const UOttaHackHad: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
+
   useEffect(() => {
     // Function to handle orientation change
     const handleOrientationChange = () => {
@@ -105,12 +115,51 @@ const UOttaHackHad: React.FC = () => {
           >
             {/* <img src={road.src} alt="Road" className={styles.roadImage} />
             <img src={maps.src} alt="Maps" className={styles.mapImage} /> */}
-            <div className="  relative z-3 h-full flex overflow-hidden ">
+            <div className="  relative z-3 h-full w-full flex overflow-hidden ">
               <img
                 src={road.src}
                 alt="Road"
                 className="w-[120%] overflow-hidden"
               />
+              {/* Car SVG Overlay */}
+              {/* Car SVG Overlay with Animation */}
+              <motion.div
+                className="absolute bottom-[30%] w-full left-0"
+                animate={{ x: ["-10%", "100%"] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              >
+                <Car1 className="w-4 md:w-16 h-auto" />
+              </motion.div>
+              <motion.div
+                className="absolute bottom-[60%] w-full  left-0 "
+                animate={{ x: ["100%", "-20%"] }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: 0,
+                }}
+              >
+                <Car2
+                  className="w-4 md:w-16 h-auto"
+                  style={{ transform: "scaleX(-1)" }} // Flip car horizontally
+                />
+              </motion.div>
+              <motion.div
+                className="absolute bottom-[60%] w-full  left-0 "
+                animate={{ x: ["100%", "-20%"] }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: 2,
+                }}
+              >
+                <Car3
+                  className="w-4 md:w-16 h-auto"
+                  style={{ transform: "scaleX(-1)" }} // Flip car horizontally
+                />
+              </motion.div>
             </div>
             <div className="relative z-4 top-0 flex justify-center w-full -mt-[16%] ">
               <img

@@ -36,7 +36,12 @@ const IntroSection: React.FC = () => {
           </h1>
 
           <div
-            className="felx space-y-10 items-center md:w-[40%] p-10 "
+            ref={ref}
+            className={`felx space-y-10 items-center md:w-[40%] p-10 ${
+              isInView
+                ? "animate-fade-left animate-once animate-duration-1000 animate-ease-out"
+                : ""
+            }`}
             style={{ fontSize: "clamp(1rem, 1vw, 4rem)" }}
           >
             <p className="">
