@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import Car1 from "../assets/car1.svg";
 import Car2 from "../assets/car2.svg";
 import Car3 from "../assets/car3.svg";
-
+import Car4 from "../assets/car4.svg";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
@@ -47,6 +47,7 @@ const UOttaHackHad: React.FC = () => {
       style={{
         background: "linear-gradient(180deg, #366ACF 0%, #74A0F6 100%)",
       }}
+      id="pastevent"
     >
       <div className="w-full h-full">
         {/* <div className="absolute z-4  -mt-[20%] z-0 overflow-hidden">
@@ -129,6 +130,18 @@ const UOttaHackHad: React.FC = () => {
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               >
                 <Car1 className="w-4 md:w-16 h-auto" />
+              </motion.div>
+              <motion.div
+                className="absolute bottom-[30%] w-full left-0"
+                animate={{ x: ["-10%", "100%"] }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: 3,
+                }}
+              >
+                <Car4 className="w-4 md:w-16 h-auto" />
               </motion.div>
               <motion.div
                 className="absolute bottom-[60%] w-full  left-0 "

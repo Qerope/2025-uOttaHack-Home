@@ -2,7 +2,7 @@ import React from "react";
 
 const InterestedInSponsoring = () => {
   return (
-    <main className="w-full min-h-screen   bg-[#ffffff] ">
+    <section className="w-full min-h-screen   bg-[#ffffff] ">
       <div className="  z-2 flex h-full w-full items-center  bg-[rgba(255,255,255,1)]">
         <div className="relative w-full">
           <div className="flex flex-col  w-full">
@@ -47,7 +47,7 @@ const InterestedInSponsoring = () => {
                     weekend of fun, creativity, and innovation!
                   </p>
                   <button
-                    className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white  rounded-xl font-jose text-md text-3xl w-2/3 h-[10%] mt-10 md:mt-0"
+                    className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white  rounded-xl font-jose text-md md:text-3xl  md:w-2/3  md:h-[10%] mt-10 md:mt-0"
                     onClick={(e) =>
                       (window.location.href = "mailto:sponsorship@uottahack.ca")
                     }
@@ -56,9 +56,13 @@ const InterestedInSponsoring = () => {
                   </button>
                 </div>
               </div>
-              <div className="md:w-1/2  m-1 md:m-10 pb-10">
-                <div className="w-full bg-blue-400 p-1 md:p-1 h-full rounded-lg flex md:items-center md:justify-center">
-                  <div className="relative w-full h-[30vh] md:h-[60vh]">
+              <div className="md:w-1/2  m-1 md:m-10 h-full pb-10">
+                <p className="flex w-full justify-end font-light text-2xl italic text-[#686868] font-jose">
+                  Want to see a glimpse into uOttaHack?{" "}
+                </p>
+
+                <div className="w-full  p-1 md:p-3 bg-[#366ACF] h-full rounded-lg flex md:items-center md:justify-center">
+                  <div className="relative w-full md:w-[60vw] h-[30vh] md:h-[60vh]">
                     <iframe
                       className=" w-full h-full"
                       src="https://www.youtube.com/embed/8A1UI3aGjSE"
@@ -72,7 +76,7 @@ const InterestedInSponsoring = () => {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

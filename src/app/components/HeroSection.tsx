@@ -15,6 +15,7 @@ import HeroCTA from "./HeroCTA";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import Metro from "../assets/Metro.svg";
 interface HeroSectionProps {}
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
@@ -27,8 +28,19 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   // const [ref, isInView] = useInView({ threshold: 0.5 }); // Adjust threshold as needed
 
   return (
-    <section className={`${styles.container} flex min-h-screen  `}>
-      <BackgroundSVG className="fixed top-0 left-0 w-full h-full bg-cover bg-center -z-10" />
+    <section className={`${styles.container} flex w-full min-h-screen  `}>
+      <BackgroundSVG className="fixed top-0  w-auto min-h-screen bg-cover bg-center -z-10" />
+      {/* <motion.svg
+          className="fixed top-[47%] right-[19%] bg-cover -z-10"
+          initial={{ width: "100%", height: "0%" }} // Initial SVG dimensions
+          animate={{ width: "50%", height: "50%" }} // Target SVG dimensions
+          transition={{ duration: 1 }} // Animation duration in seconds
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100" // Example viewBox, adjust to your SVG content
+        >
+          <Metro className="fixed top-[65%] left-100 bg-cover  -z-10" />
+        </motion.svg> */}
+
       <div className={`absolute z-1 top-32 text-white `}>
         <motion.div
           ref={ref}

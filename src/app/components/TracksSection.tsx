@@ -46,7 +46,7 @@ const TracksSection: React.FC = () => {
               className=" w-[83%]  "
             />
           </div>
-          <div className="absolute top-[77%]">
+          <div className="absolute top-[77%] ">
             <img
               src={SeperationImage.src}
               alt="Seperation Image"

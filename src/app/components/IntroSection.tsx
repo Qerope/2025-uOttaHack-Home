@@ -11,6 +11,7 @@ const IntroSection: React.FC = () => {
   return (
     <section
       className={`relative overflow-hidden bg-fixed  bg-center bg-[#00B3F0]  w-[100%]  h-[100vh]`}
+      id="about"
     >
       <Parallax className={styles.parallaxImage} translateX={[-50, -55]}>
         <img src={IntroBuildingsTop.src} alt="Top Buildings" />

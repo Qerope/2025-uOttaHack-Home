@@ -18,16 +18,13 @@ const MainHeader = () => {
   const NavLinks = () => (
     <nav className="flex space-x-8 text-xl font-light">
       {[
-        { href: "https://www.uottahack.ca/", label: "About" },
-        { href: "https://www.uottahack.ca/events", label: "Past Events" },
-        { href: "https://www.uottahack.ca/faq", label: "FAQs" },
+        { href: "#about", label: "About" },
+        { href: "#pastevent", label: "Past Event" },
+        { href: "#sponsor", label: "Sponsor" },
+        { href: "#location", label: "Location" },
+        { href: "#faq", label: "FAQs" },
       ].map((link, index) => (
-        <Link
-          key={index}
-          href={link.href}
-          target="_blank"
-          className="relative group"
-        >
+        <Link key={index} href={link.href} className="relative group">
           <span className="text-shadow-navbar-subtle">{link.label}</span>
           <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
         </Link>

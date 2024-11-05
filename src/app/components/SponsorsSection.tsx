@@ -58,7 +58,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   return (
     <section
       className="bg-[#E2E2E2] pb-[10%] w-full relative z-10 overflow-hidden min-h-screen "
-      id="sponsorship"
+      id="sponsors"
     >
       <div className="md:ml-[10%] pt-10 z-10 relative md:mr-[10%] justify-center items-centerw-full">
         <p className={`${styles.pretitle} justify-center items-center flex`}>
@@ -115,7 +115,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
             >
-              <CSE className="h-full w-32" />
+              <CSE className="h-full w-32 md:w-full" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
@@ -157,7 +157,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           {/* Fifth Row - Small Sponsors */}
           <div className="flex flex-row items-center justify-center w-full  gap-x-5 ">
             <motion.div
-              className="w-full max-w-full m-5  rounded-xl flex items-center justify-center  w-[5%] md:w-[10%]  h-20 md:h-48"
+              className=" rounded-xl w-[5%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -186,7 +186,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               />
             </motion.div>
             <motion.div
-              className="w-full max-w-full m-5  rounded-xl flex items-center justify-center w-[5%] md:w-[10%] h-20 md:h-48"
+              className=" rounded-xl w-[5%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -310,7 +310,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
-            style={{ fontSize: "clamp(2rem, 1vw , 6rem)" }}
+            style={{ fontSize: "clamp(2rem, 6vw , 3rem)" }}
           >
             Community Partners
           </motion.p>
