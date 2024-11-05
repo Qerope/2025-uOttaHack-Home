@@ -32,7 +32,7 @@ const InterestedInSponsoring = () => {
                 <div className="md:space-y-10 pb-10 ">
                   <p
                     className="text-[rgba(54,106,207,1)] pb-5 leading-tight font-light text-center md:text-left"
-                    style={{ fontSize: "clamp(1rem, 1.3vw, 5rem)" }}
+                    style={{ fontSize: "clamp(0.7rem, 2vw, 1.7rem)" }}
                   >
                     Over the past 7 years, our sponsors have made it possible
                     for 2700+ developers, designers, product managers, and
@@ -40,14 +40,14 @@ const InterestedInSponsoring = () => {
                   </p>
                   <p
                     className="text-[rgba(54,106,207,1)] text-base font-light h-full leading-tight text-center md:text-left"
-                    style={{ fontSize: "clamp(1rem, 1.3vw, 5rem)" }}
+                    style={{ fontSize: "clamp(0.7rem, 2vw, 1.7rem)" }}
                   >
                     uOttaHack would not be possible without the support and
                     generosity of our amazing sponsors. Join us in person for a
                     weekend of fun, creativity, and innovation!
                   </p>
                   <button
-                    className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white  rounded-xl font-jose text-md md:text-3xl  md:w-2/3  md:h-[10%] mt-10 md:mt-0"
+                    className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white px-16 rounded-xl font-jose text-sm md:text-3xl w-[60%] md:h-[10%] mt-10 md:mt-0"
                     onClick={(e) =>
                       (window.location.href = "mailto:sponsorship@uottahack.ca")
                     }
@@ -57,14 +57,14 @@ const InterestedInSponsoring = () => {
                 </div>
               </div>
               <div className="md:w-1/2  m-1 md:m-10 h-full pb-10">
-                <p className="flex w-full justify-end font-light text-md md:text-2xl italic text-[#686868]  font-jose">
+                <p className="flex w-full justify-end font-light text-md md:text-2xl italic text-[#686868]  font-jost">
                   Want to see a glimpse into uOttaHack?{" "}
                 </p>
 
-                <div className="w-full  p-1 md:p-3 bg-[#366ACF] h-full rounded-lg flex md:items-center md:justify-center">
+                <div className="w-full  p-1 md:p-3 bg-[#366ACF] h-full rounded-2xl flex md:items-center md:justify-center">
                   <div className="relative w-full md:w-[60vw] h-[30vh] md:h-[60vh]">
                     <iframe
-                      className=" w-full h-full"
+                      className=" w-full rounded-2xl h-full"
                       src="https://www.youtube.com/embed/8A1UI3aGjSE"
                       title="uOttaHack 6 Recap"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

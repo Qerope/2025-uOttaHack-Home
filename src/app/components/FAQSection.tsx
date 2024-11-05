@@ -92,23 +92,23 @@ const FAQSection: React.FC = () => {
       <div
         className={`pl-10 md:pt-48 pt-10 flex md:pl-48 flex-row items-center`}
       >
-        <h2 className="font-jose font-bold text-6xl md:text-8xl ">FAQ</h2>
+        <h2 className="font-jost font-bold text-6xl md:text-8xl ">FAQ</h2>
         <h3
-          className={`font-jose text-md md:text-6xl font-light italic   text-inline `}
+          className={`font-jost text-md md:text-6xl font-light italic   text-inline `}
         >
           - Frequently asked questions
         </h3>
       </div>
       <div
-        className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10  md:p-48 flex justify-center text- items-center h-full`}
+        className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10  md:pl-48 md:pr-48 flex justify-center  items-center h-full`}
       >
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`${styles.faqItem} md:text-3xl  text-md pt-5`}
+            className={`${styles.faqItem} md:text-2xl    text-md pt-5`}
           >
             <div
-              className={`${styles.faqQuestionContainer} p-2`}
+              className={`${styles.faqQuestionContainer} font-jost p-2`}
               onClick={() => toggleDropdown(index)}
             >
               <h4 className={styles.faqQuestion}>{faq.question}</h4>
@@ -130,7 +130,7 @@ const FAQSection: React.FC = () => {
       </div>
       <div className=" flex   flex-row  flex-end justify-center w-full h-full items-end">
         <div className="flex  w-full flex-col justify-center flex-end items-center">
-          <div className="flex flex-col justify-center items-center p-10 text-sm md:text-mditems-center">
+          <div className="flex flex-col italic justify-center items-center  font-light font-jost p-10 text-sm md:text-md items-center">
             <p>Still got questions?</p>
             <p>
               Contact{" "}

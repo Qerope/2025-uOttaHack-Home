@@ -56,7 +56,7 @@ const TracksSection: React.FC = () => {
           </div>
         </div>
 
-        <div className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center h-1/2 md:h-full text-white">
+        <div className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center  h-1/2 md:h-full text-white">
           <h1
             ref={ref}
             className={`font-bold  [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${
@@ -69,7 +69,7 @@ const TracksSection: React.FC = () => {
 
           <p
             className="text-white"
-            style={{ fontSize: "clamp(0.7rem, 2vw, 2rem)" }}
+            style={{ fontSize: "clamp(0.7rem, 2vw, 1.3rem)" }}
           >
             <span className="font-light">
               Whether you&apos;re passionate about

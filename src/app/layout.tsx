@@ -3,7 +3,10 @@ import { Inter } from "next/font/google";
 import "./styles/globals.css";
 import { Jost } from "next/font/google";
 
-const jost = Jost({ subsets: ["latin"] });
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost", // Define a custom CSS variable for Jost
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +22,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${jost.variable} font-sans`}>
+      {" "}
+      {/* Use Jost font for specific components or sections */}
+      <body className={` antialiased`}>{children}</body>
     </html>
   );
 }

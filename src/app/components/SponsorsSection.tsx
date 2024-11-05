@@ -127,7 +127,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image
                 src={Surveymonkey}
                 alt="Survey Monkey logo"
-                className="h-auto w-full p-5"
+                className="h-auto w-full md:p-5"
               />
             </motion.div>
           </div>
@@ -150,14 +150,14 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 1, ease: "easeOut", delay: 0.75 }}
             >
-              <Deepcode className="h-auto w-[100%] w-[75%] p-5" />
+              <Deepcode className="h-auto w-[100%] md:w-[75%] p-5" />
             </motion.div>
           </div>
 
           {/* Fifth Row - Small Sponsors */}
           <div className="flex flex-row items-center justify-center w-full  gap-x-5 ">
             <motion.div
-              className=" rounded-xl w-[5%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -186,7 +186,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               />
             </motion.div>
             <motion.div
-              className=" rounded-xl w-[5%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
