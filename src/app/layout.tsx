@@ -8,7 +8,10 @@ const jost = Jost({
   variable: "--font-jost", // Define a custom CSS variable for Jost
 });
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter", // Define a custom CSS variable for Jost
+});
 
 export const metadata: Metadata = {
   title: "uOttahack 7 - 2025",

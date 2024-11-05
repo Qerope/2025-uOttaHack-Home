@@ -27,7 +27,7 @@ const MainFooter: React.FC<MainFooterProps> = () => {
       <div className="md:pl-48 md:pr-48 md:justify-center   pt-20 flex flex-col md:flex-row w-full md:justify-between items-center ">
         <div className="flex md:justify-center items-center flex-col">
           <Wordmark className="text-6xl ">uOttaHack 7</Wordmark>
-          <p>The capital of Canada's largest hackathon.</p>
+          <p>The capital of Canada&apos;s largest hackathon.</p>
         </div>
         <div className="grid grid-cols-1  underline  underline-offset-4 md:grid-cols-2 gap-4 p-10 md:p-0">
           <a
