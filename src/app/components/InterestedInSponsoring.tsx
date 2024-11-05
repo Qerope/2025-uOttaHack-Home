@@ -57,7 +57,7 @@ const InterestedInSponsoring = () => {
                 </div>
               </div>
               <div className="md:w-1/2  m-1 md:m-10 h-full pb-10">
-                <p className="flex w-full justify-end font-light text-2xl italic text-[#686868] font-jose">
+                <p className="flex w-full justify-end font-light text-md md:text-2xl italic text-[#686868]  font-jose">
                   Want to see a glimpse into uOttaHack?{" "}
                 </p>
 
