@@ -62,19 +62,17 @@ const MainHeader = () => {
         <div className="mt-24 text-[#01A2D9]">
           <nav className="flex flex-col space-y-4 text-sm font-normal">
             {[
-              { href: "https://www.uottahack.ca/", label: "About" },
-              { href: "https://www.uottahack.ca/events", label: "Past Events" },
-              { href: "https://www.uottahack.ca/faq", label: "FAQs" },
+              { href: "#about", label: "About" },
+              { href: "#pastevent", label: "Past Event" },
+              { href: "#sponsor", label: "Sponsor" },
+              { href: "#location", label: "Location" },
+              { href: "#faq", label: "FAQs" },
             ].map((link, index) => (
               <div key={index}>
-                <Link
-                  href={link.href}
-                  target="_blank"
-                  className="relative group"
-                >
+                <Link href={link.href} className="relative group">
                   <span>{link.label}</span>
                 </Link>
-                {index < 2 && <hr className="border-t mt-4" />}
+                {index < 4 && <hr className="border-t mt-4" />}
               </div>
             ))}
           </nav>
