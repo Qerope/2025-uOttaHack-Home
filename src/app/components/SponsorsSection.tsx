@@ -305,7 +305,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
           {/* Community Partners */}
           <motion.p
-            className=" flex font-bold italic pt-20 justify-center items-center w-full  text-[#366ACF]"
+            className=" flex font-bold italic pt-20  font-jost justify-center items-center w-full  text-[#366ACF]"
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -334,7 +334,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image
                 src={EEF}
                 alt="EEF Community"
-                className="w-48 md:w-full h-auto"
+                className="w-48  md:w-full h-auto"
               />
             </motion.div>
             <motion.div

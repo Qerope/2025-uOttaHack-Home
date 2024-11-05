@@ -38,12 +38,12 @@ const IntroSection: React.FC = () => {
 
           <div
             ref={ref}
-            className={`felx space-y-10 items-center md:w-[40%] p-10 ${
+            className={`felx space-y-10 items-center font-jost md:w-[40%] p-10 ${
               isInView
                 ? "animate-fade-left animate-once animate-duration-1000 animate-ease-out"
                 : ""
             }`}
-            style={{ fontSize: "clamp(1rem, 1vw, 4rem)" }}
+            style={{ fontSize: "clamp(1rem, 2vw, 1.7rem)" }}
           >
             <p className="">
               uOttaHack is back for their 7th year! Join over{" "}

@@ -32,7 +32,7 @@ const InterestedInSponsoring = () => {
                 <div className="md:space-y-10 pb-10 ">
                   <p
                     className="text-[rgba(54,106,207,1)] pb-5 leading-tight font-light text-center md:text-left"
-                    style={{ fontSize: "clamp(0.7rem, 2vw, 1.7rem)" }}
+                    style={{ fontSize: "clamp(0.7rem, 2vw, 1.3rem)" }}
                   >
                     Over the past 7 years, our sponsors have made it possible
                     for 2700+ developers, designers, product managers, and
@@ -40,14 +40,14 @@ const InterestedInSponsoring = () => {
                   </p>
                   <p
                     className="text-[rgba(54,106,207,1)] text-base font-light h-full leading-tight text-center md:text-left"
-                    style={{ fontSize: "clamp(0.7rem, 2vw, 1.7rem)" }}
+                    style={{ fontSize: "clamp(0.7rem, 2vw, 1.3rem)" }}
                   >
                     uOttaHack would not be possible without the support and
                     generosity of our amazing sponsors. Join us in person for a
                     weekend of fun, creativity, and innovation!
                   </p>
                   <button
-                    className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white px-16 rounded-xl font-jose text-sm md:text-3xl w-[60%] md:h-[10%] mt-10 md:mt-0"
+                    className="bg-[#366ACF] hover:bg-[rgba(9,94,174,0.9)] text-white rounded-xl font-jose  justify-center items-center text-sm md:text-2xl w-2/3 mt-10 md:mt-0"
                     onClick={(e) =>
                       (window.location.href = "mailto:sponsorship@uottahack.ca")
                     }

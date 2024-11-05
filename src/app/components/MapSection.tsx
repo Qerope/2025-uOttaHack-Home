@@ -20,7 +20,7 @@ const MapSection: React.FC<MapSectionProps> = () => {
         className={`bg-[#D5DBE2] text-3xl md:text-7xl  font-bold p-1`}
         style={{ fontFamily: "Jost, sans-serif", fontStyle: "italic" }}
       >
-        <h2 className="pt-20 text-[#092349] p-10 md:p-20">
+        <h2 className="pt-20 text-[#092349] font-jost p-10 md:p-20">
           Where to find us...
         </h2>
       </div>

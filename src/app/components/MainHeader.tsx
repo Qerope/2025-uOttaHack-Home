@@ -16,7 +16,7 @@ const MainHeader = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const NavLinks = () => (
-    <nav className="flex space-x-8 text-xl font-light">
+    <nav className="flex space-x-8 text-xl font-bold font-jost">
       {[
         { href: "#about", label: "About" },
         { href: "#pastevent", label: "Past Event" },
@@ -96,7 +96,7 @@ const MainHeader = () => {
     <header className="relative w-full bg-transparent text-white">
       <div className="w-full sm:px-6 relative">
         {/* Logo */}
-        <div className="absolute md:left-[20%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
+        <div className="absolute md:left-[10%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
           <ColorLogo className="w-20 h-20" />
         </div>
 
@@ -128,7 +128,7 @@ const MainHeader = () => {
         </div>
 
         {/* MLH Badge */}
-        <div className="absolute right-[20%] top-1/2 transform -translate-y-1/2  md:block">
+        <div className="absolute right-[10%] top-1/2 transform -translate-y-1/2  md:block">
           <img
             src={mlh.src}
             alt="MLH 2025 Badge"

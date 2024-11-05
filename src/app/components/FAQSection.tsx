@@ -130,7 +130,7 @@ const FAQSection: React.FC = () => {
       </div>
       <div className=" flex   flex-row  flex-end justify-center w-full h-full items-end">
         <div className="flex  w-full flex-col justify-center flex-end items-center">
-          <div className="flex flex-col italic justify-center items-center  font-light font-jost p-10 text-sm md:text-md items-center">
+          <div className="flex flex-col italic justify-center items-center  font-light font-jost p-10 md:pt-20 text-sm md:text-lg items-center">
             <p>Still got questions?</p>
             <p>
               Contact{" "}
