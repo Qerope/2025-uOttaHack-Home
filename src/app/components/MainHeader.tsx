@@ -97,7 +97,7 @@ const MainHeader = () => {
       <div className="w-full sm:px-6 relative">
         {/* Logo */}
         <div className="absolute md:left-[10%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
-          <ColorLogo className="w-20 h-20" />
+          <ColorLogo className="md:w-20 md:h-20 w-16 h-16" />
         </div>
 
         {/* Navigation Links - Centered */}
@@ -132,7 +132,7 @@ const MainHeader = () => {
           <img
             src={mlh.src}
             alt="MLH 2025 Badge"
-            className="h-20 md:h-48 md:mt-20  w-auto"
+            className="h-20 hidden md:block md:h-48 md:mt-20  w-auto"
           />
         </div>
       </div>

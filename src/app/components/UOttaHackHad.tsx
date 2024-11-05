@@ -73,10 +73,10 @@ const UOttaHackHad: React.FC = () => {
           <div
             className={`flex flex-row font-light justify-between items-center   `}
             style={{
-              fontSize: "clamp(1rem, 2vw, 10rem)",
+              fontSize: "clamp(0.7rem, 2vw, 3rem)",
               fontFamily: "Sulphur Point, sans-serif",
-              paddingLeft: "clamp(1%, 2vw, 20%)",
-              paddingRight: "clamp(1%, 2vw, 20%)",
+              paddingLeft: "clamp(1%, 8vw, 40%)",
+              paddingRight: "clamp(1%, 8vw, 40%)",
               paddingBottom: "clamp(5%, 2vw, 20%)",
 
               paddingTop: "clamp(5%, 2vw, 20%)",
@@ -86,22 +86,22 @@ const UOttaHackHad: React.FC = () => {
               <h2>2000+</h2>
               <p>Applications</p>
             </div>
-            <div className="w-[1px] h-[5vh] bg-white"></div>
+            <div className="w-[1px] h-[2vh] md:h-[5vh]  bg-white"></div>
             <div className={` flex flex-col jsutify-center items-center `}>
               <h2>650</h2>
               <p>Hackers</p>
             </div>
-            <div className="w-[1px] h-[5vh] bg-white"></div>
+            <div className="w-[1px] h-[2vh] md:h-[5vh] bg-white"></div>
             <div className={` flex flex-col jsutify-center items-center `}>
               <h2>30+</h2>
               <p>Schools</p>
             </div>
-            <div className="w-[1px] h-[5vh] bg-white"></div>
+            <div className="w-[1px] h-[2vh] md:h-[5vh] bg-white"></div>
             <div className={`  flex flex-col jsutify-center items-center `}>
               <h2>8</h2>
               <p>Doggos</p>
             </div>
-            <div className="w-[1px] h-[5vh] bg-white"></div>
+            <div className="w-[1px] h-[2vh] md:h-[5vh] bg-white"></div>
             <div className={`  flex flex-col jsutify-center items-center `}>
               <h2>17.1k</h2>
               <p>Prizes</p>
