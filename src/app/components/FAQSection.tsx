@@ -89,9 +89,7 @@ const FAQSection: React.FC = () => {
       className={`${styles.container}  text-white overflow-hidden`}
       id="faq"
     >
-      <div
-        className={`pl-10 md:pt-48 pt-10 flex md:pl-48 flex-row items-center`}
-      >
+      <div className={`pl-10 md:pt- pt-10 flex md:pl-48 flex-row items-center`}>
         <h2 className="font-jost font-bold text-6xl md:text-8xl ">FAQ</h2>
         <h3
           className={`font-jost text-md md:text-6xl font-light italic   text-inline `}
@@ -103,25 +101,22 @@ const FAQSection: React.FC = () => {
         className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10  md:pl-48 md:pr-48 flex justify-center  items-center h-full`}
       >
         {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className={`${styles.faqItem} md:text-2xl    text-md pt-5`}
-          >
+          <div key={index} className={`   md:text-3xl    text-md `}>
             <div
-              className={`${styles.faqQuestionContainer} font-jost p-2`}
+              className={`flex   items-center font-jost `}
               onClick={() => toggleDropdown(index)}
             >
-              <h4 className={styles.faqQuestion}>{faq.question}</h4>
+              <h4 className="hover:underline underline-offset-8">
+                {faq.question}
+              </h4>
               <div
-                className={`${styles.triangle} ${
+                className={`${styles.triangle}  m-2 ${
                   openIndex === index ? styles.open : ""
                 }`}
               ></div>
             </div>
             {openIndex === index && (
-              <p
-                className={` ${styles.faqAnswer} pt-10 md:text-4xl leading-wider`}
-              >
+              <p className={` pt-10 pl-10  italic md:text-xl  w-[90%]`}>
                 <Markdown>{faq.answer}</Markdown>
               </p>
             )}

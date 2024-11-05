@@ -44,7 +44,7 @@
 }
 
 .faqItem {
-    border-bottom: 5px solid white;
+    border-bottom: 0px solid white;
     /* width: 50%; */
 
 
@@ -53,9 +53,9 @@
 .triangle {
     width: 0;
     height: 0;
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-bottom: 15px solid white;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid white;
     transition: transform 0.3s;
     transform: rotate(-90deg);
 }
