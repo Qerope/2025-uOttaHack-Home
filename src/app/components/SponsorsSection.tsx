@@ -40,7 +40,16 @@ interface SponsorsSectionProps {}
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true }); // Detect when the section comes into view
+  const numElements = 24; // Total number of motion.div elements
+  const maxDelay = 2.0; // Maximum delay in seconds
+  const delayIncrement = maxDelay / (numElements - 1);
 
+  // Generate delays
+  const delays = Array.from(
+    { length: numElements },
+    (_, i) => i * delayIncrement
+  );
+  console.log(delays[20]);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -79,7 +88,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[0] }}
             >
               <Image
                 src={solace}
@@ -96,7 +105,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[1] }}
             >
               <Image
                 src={EEF}
@@ -113,7 +122,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[2] }}
             >
               <CSE className="h-full w-32 md:w-full" />
             </motion.div>
@@ -122,7 +131,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.45 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[3] }}
             >
               <Image
                 src={Surveymonkey}
@@ -139,7 +148,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[5] }}
             >
               <NavCanada className="md:w-48 w-32 p-10" />
             </motion.div>
@@ -148,7 +157,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.75 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[6] }}
             >
               <Deepcode className="h-auto w-[100%] md:w-[75%] p-5" />
             </motion.div>
@@ -161,14 +170,14 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: 1.05 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: delays[7] }}
             ></motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: 0.9 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: delays[8] }}
             >
               <Image src={IPSG} alt="IPSG Logo" className="h-auto w-48" />
             </motion.div>
@@ -177,7 +186,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: 1.05 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: delays[9] }}
             >
               <Image
                 src={deloitte}
@@ -190,7 +199,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: 1.05 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: delays[10] }}
             ></motion.div>
           </div>
 
@@ -201,7 +210,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[11] }}
             >
               <Image
                 src={redbull}
@@ -214,7 +223,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 1.65 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[12] }}
             >
               <Image src={warp} alt="Warp logo" className="h-auto w-48" />
             </motion.div>
@@ -223,7 +232,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 1.8 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[13] }}
             >
               <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
             </motion.div>
@@ -236,7 +245,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 2.1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[14] }}
             >
               <Image src={wolfram} alt="Wolfram logo" className="h-auto w-48" />
             </motion.div>
@@ -245,7 +254,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 2.25 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: delays[15] }}
             >
               <Image src={xyz} alt=".xyz Logo" className="h-auto w-40" />
             </motion.div>
@@ -254,7 +263,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 2.4 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[16] }}
             >
               <Image
                 src={interviewcake}
@@ -271,7 +280,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 2.55 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[17] }}
             >
               <Image
                 src={standoutStk}
@@ -284,7 +293,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 2.85 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
             >
               <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
             </motion.div>
@@ -293,7 +302,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 1.95 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[19] }}
             >
               <Image
                 src={voiceflow}
@@ -309,7 +318,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             variants={itemVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: delays[20] }}
             style={{ fontSize: "clamp(2rem, 6vw , 3rem)" }}
           >
             Community Partners
@@ -320,7 +329,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[21] }}
             >
               <MLH className="w-48 md:w-full h-auto" />
             </motion.div>
@@ -329,7 +338,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[22] }}
             >
               <Image
                 src={EEF}
@@ -342,7 +351,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: 3.0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: delays[23] }}
             >
               <Image
                 src={uottawa}

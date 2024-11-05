@@ -27,7 +27,7 @@ const TracksSection: React.FC = () => {
       style={{ minHeight }} // Apply the dynamically calculated minHeight
       // style={{ background: "#FFAF00" }}
     >
-      <div className="flex w-full  bg=[#FFAF00]">
+      <div className="flex w-full  bg-[#FFAF00]">
         <div className="h-full  ">
           <div className=" absolute z-1 ">
             <img
@@ -56,7 +56,7 @@ const TracksSection: React.FC = () => {
           </div>
         </div>
 
-        <div className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center  h-1/2 md:h-full text-white">
+        <div className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center  h-2/3  text-white">
           <h1
             ref={ref}
             className={`font-bold  [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${

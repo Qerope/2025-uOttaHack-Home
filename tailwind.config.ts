@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         jost: ['var(--font-jost)', 'sans-serif'],
+        harabara: ['var(--font-harabara)','sans-serif']
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

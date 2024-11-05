@@ -22,10 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
 
-  const [email, setEmail] = useState<string>("");
   const [mainState, setMainState] = useState<number>(0);
-
-  // const [ref, isInView] = useInView({ threshold: 0.5 }); // Adjust threshold as needed
 
   return (
     <section className={`${styles.container} flex w-full min-h-screen  `}>
@@ -52,7 +49,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             January 17 - 19, 2025
           </p>
 
-          <h1 className={`${styles.title} mb-2 text-shadow-hero`}>
+          <h1 className={`${styles.title} mb-2 font-harabara text-shadow-hero`}>
             uOttaHack 7
           </h1>
           <p className="mb-24 text-md md:text-lg text-center font-inter font-medium text-shadow-hero">

@@ -6,27 +6,17 @@ import Linkedin from "../assets/linkedin.svg";
 import Discord from "../assets/discord.svg";
 import styled from "@emotion/styled";
 import ReactMarkdown from "react-markdown";
+
 interface MainFooterProps {}
 
 const MainFooter: React.FC<MainFooterProps> = () => {
-  const Headline = styled(ReactMarkdown as any)`
-    font-family: Inter;
-    font-weight: 800;
-    color: white;
-  `;
-  const Wordmark = styled(Headline)`
-    font-family: "Harabara";
-    line-height: 100%;
-    margin-bottom: 4px;
-    color: white;
-  `;
   return (
     <section
       className={` flex flex-col   w-full text-white bg-[#1F4172] w-full h-full flex`}
     >
       <div className="md:pl-48 md:pr-48 md:justify-center   pt-20 flex flex-col md:flex-row w-full md:justify-between items-center ">
         <div className="flex md:justify-center items-center flex-col">
-          <Wordmark className="text-6xl ">uOttaHack 7</Wordmark>
+          <h1 className="text-6xl font-harabara mb-[4px]">uOttaHack 7</h1>
           <p>The capital of Canada&apos;s largest hackathon.</p>
         </div>
         <div className="grid grid-cols-1  underline  underline-offset-4 md:grid-cols-2 gap-4 p-10 md:p-0">
