@@ -19,26 +19,26 @@ const IntroSection: React.FC = () => {
       <div className="flex justify-center items-center  h-full">
         <div className="flex flex-col  text-white w-[full]  justify-center items-center h-full md:flex-row md:p-10">
           <h1 className="flex flex-col text-5xl items-center md:w-[50%]  [text-shadow:_10px_2px_4px_rgb(0_0_0_/_0.3)]  md:text-8xl ">
-            <span className=" " style={{ fontSize: "clamp(3rem, 4vw, 9rem)" }}>
+            <span className="font-jost " style={{ fontSize: "clamp(3rem, 4vw, 9rem)" }}>
               UOTTAHACK
             </span>
             <span
               ref={ref}
-              className={`font-bold text-7xl md:text-8xl ${
+              className={`font-bold font-jost text-7xl md:text-8xl ${
                 isInView ? "animate-jump-in" : ""
               }`}
               style={{ fontSize: "clamp(4rem, 7vw, 10rem)" }}
             >
               IS BACK
             </span>
-            <span className="" style={{ fontSize: "clamp(3rem, 4vw, 9rem)" }}>
+            <span className="font-jost" style={{ fontSize: "clamp(3rem, 4vw, 9rem)" }}>
               FOR YEAR <strong>7!</strong>
             </span>
           </h1>
 
           <div
             ref={ref}
-            className={`felx space-y-10 items-center font-jost md:w-[40%] p-10 ${
+            className={`space-y-10 items-center font-jost md:w-[40%] p-10 mt-10 ${
               isInView
                 ? "animate-fade-left animate-once animate-duration-1000 animate-ease-out"
                 : ""
