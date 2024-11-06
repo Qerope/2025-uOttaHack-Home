@@ -16,20 +16,20 @@ const MainHeader = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const NavLinks = () => (
-    <nav className="flex space-x-8 text-xl font-bold font-jost">
-      {[
-        { href: "#about", label: "About" },
-        { href: "#pastevent", label: "Past Event" },
-        { href: "#sponsor", label: "Sponsor" },
-        { href: "#location", label: "Location" },
-        { href: "#faq", label: "FAQs" },
-      ].map((link, index) => (
-        <Link key={index} href={link.href} className="relative group">
-          <span className="text-shadow-navbar-subtle">{link.label}</span>
-          <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
-        </Link>
-      ))}
-    </nav>
+      <nav className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 xl:space-x-16 text-base md:text-sm lg:text-base font-jost">
+        {[
+          { href: "#about", label: "About" },
+          { href: "#sponsor", label: "Sponsors" },
+          { href: "#location", label: "Location" },
+          { href: "#pastevent", label: "2024" },
+          { href: "#faq", label: "FAQ" }, 
+        ].map((link, index) => (
+          <Link key={index} href={link.href} className="relative group">
+            <span className="text-shadow-navbar-subtle">{link.label}</span>
+            <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+          </Link>
+        ))}
+      </nav>
   );
 
   const MobileMenu = () => (
@@ -60,7 +60,7 @@ const MainHeader = () => {
           className="absolute top-0 left-11 h-[100px] w-auto"
         />
         <div className="mt-24 text-[#01A2D9]">
-          <nav className="flex flex-col space-y-4 text-sm font-normal">
+          <nav className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 text-base md:text-sm lg:text-base font-normal ">
             {[
               { href: "#about", label: "About" },
               { href: "#pastevent", label: "Past Event" },
@@ -96,9 +96,10 @@ const MainHeader = () => {
     <header className="relative w-full bg-transparent text-white">
       <div className="w-full sm:px-6 relative">
         {/* Logo */}
-        <div className="absolute md:left-[10%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
-          <ColorLogo className="md:w-20 md:h-20 w-16 h-16" />
+        <div style={{ left: "5%", position: "absolute", top: "50%", transform: "translateY(-50%)" }}>
+          <ColorLogo className="w-16 h-16 md:w-12 md:h-12 lg:w-14 lg:h-14" />
         </div>
+
 
         {/* Navigation Links - Centered */}
         <div className="flex p-10 justify-center items-center">
@@ -128,12 +129,8 @@ const MainHeader = () => {
         </div>
 
         {/* MLH Badge */}
-        <div className="absolute right-[10%] top-1/2 transform -translate-y-1/2  md:block">
-          <img
-            src={mlh.src}
-            alt="MLH 2025 Badge"
-            className="h-20 hidden md:block md:h-48 md:mt-20  w-auto"
-          />
+        <div className="mlhBadge absolute right-5 md:right-16 top-0 transform -translate-y-1/2">
+          <MLHBadge /> 
         </div>
       </div>
 
@@ -144,124 +141,3 @@ const MainHeader = () => {
 };
 
 export default MainHeader;
-
-// OLD SECTION TO BE REUSED, DO NOT DELETE
-// return (
-//   <header className={`${styles.header} items-center p-4 shadow-md`}>
-//     {(width < 700) && (
-//       <>
-//         <div className="md:hidden inline-block items-center">
-//           <button onClick={toggleMenu} className="pt-1 text-white focus:outline-none">
-//             <svg
-//               className="w-6 h-6"
-//               fill="none"
-//               stroke="currentColor"
-//               viewBox="0 0 24 24"
-//               xmlns="http://www.w3.org/2000/svg"
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 strokeWidth="2"
-//                 d="M4 6h16M4 12h16m-7 6h7"
-//               ></path>
-//             </svg>
-//           </button>
-//         </div>
-//         <div className={styles.headerLogo}>
-//           <img width="50px" src={logoImage.src} alt="Logo" />
-//         </div>
-//         <nav className={`w-full flex flex-col space-y-2 mt-8 text-center md:hidden ${styles.vertMenu} ${isOpen ? styles.open : ''}`}>
-//           <Link className="pt-2" href="#">
-//             <span className="text-white hover-coloured-text">Home</span>
-//           </Link>
-//           <Link className="pt-2" href="#mission">
-//             <span className="text-white hover-coloured-text">Mission</span>
-//           </Link>
-//           <Link className="pt-2" href="#impact">
-//             <span className="text-white hover-coloured-text">Impact</span>
-//           </Link>
-//           <Link className="pt-2" href="#sponsorship">
-//             <span className="text-white hover-coloured-text">Sponsors</span>
-//           </Link>
-//           <Link className="pt-2" href="#pastevents">
-//             <span className="text-white hover-coloured-text">Past Events</span>
-//           </Link>
-//           <Link className="pt-2" href="https://2024.uottahack.ca">
-//             <span className="text-white coloured-text hover-coloured-text">2024</span>
-//           </Link>
-//           <Link className="pt-2" href="#faq">
-//             <span className="text-white hover-coloured-text">FAQ</span>
-//           </Link>
-//           <img src={mlh.src} alt=""className="absolute top-0 right-20 w-[8.24rem] h-[15.5rem] " />
-//         <img/>
-//         </nav>
-//       </>
-
-{
-  /* <div className={styles.headerLogo}>
-            <img width="50px" src={logoImage.src} alt="Logo" />
-          </div>
-          <div className={styles.horMenu}>
-            <Link href="#">
-              <span className="text-white p-10 hover-coloured-text">Home</span>
-            </Link>
-            <Link href="#mission">
-              <span className="text-white p-10 hover-coloured-text">Mission</span>
-            </Link>
-            <Link href="#impact">
-              <span className="text-white p-10 hover-coloured-text">Impact</span>
-            </Link>
-            <Link href="#sponsorship">
-              <span className="text-white p-10 hover-coloured-text">Sponsors</span>
-            </Link>
-            <Link href="#pastevents">
-              <span className="text-white p-10 hover-coloured-text">Past Events</span>
-            </Link>
-            <Link href="https://2024.uottahack.ca">
-              <span className="text-white coloured-text p-10 hover-coloured-text">2024</span>
-            </Link>
-            <Link href="#faq">
-              <span className="text-white p-10 hover-coloured-text">FAQ</span>
-            </Link>
-            <img src={mlh.src} alt="" className="absolute top-0 right-20 w-[8.24rem] h-[15.5rem] "/>
-        </div> */
-}
-/*
-        <Link href="https://2018.uottahack.ca/">
-              <div className='photoColumn'>
-                <img width="50px" src={Logo2018.src} alt = "Logo"/>
-                <span className="text-white p-10 hover-coloured-text">2018</span>
-              </div>
-            </Link>
-            <Link href="https://2019.uottahack.ca/">
-              <div className='photoColumn'>
-                <img width="50px" src={Logo2019.src} alt = "Logo"/>
-                <span className="text-white p-10 hover-coloured-text">2019</span>
-              </div>
-            </Link>
-            <Link href="https://2020.uottahack.ca/">
-              <div className='photoColumn'>
-                <img width="50px" src={Logo2020.src} alt = "Logo"/>
-                <span className="text-white p-10 hover-coloured-text">2020</span>
-              </div>
-            </Link>
-            <Link href="https://2021.uottahack.ca/">
-              <div className='photoColumn'>
-                <img width="50px" src={Logo2021.src} alt = "Logo"/>
-                <span className="text-white p-10 hover-coloured-text">2021</span>
-              </div>
-            </Link>
-            <Link href="https://2023.uottahack.ca">
-              <div className='photoColumn'>
-                <img width="50px" src={Logo2023.src} alt = "Logo"/>
-                <span className="text-white coloured-text p-10 hover-coloured-text">2023</span>
-              </div>
-            </Link>
-            <Link href="https://2024.uottahack.ca/">
-              <div className='photoColumn'>
-                <img width="50px" src={Logo2024.src} alt = "Logo"/>
-                <span className="text-white p-10 hover-coloured-text">2024</span>
-              </div>
-            </Link>
-            */
