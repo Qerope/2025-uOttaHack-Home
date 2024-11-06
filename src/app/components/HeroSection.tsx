@@ -44,8 +44,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-          className="w-full h-full flex justify-center"
-        >
+          className="w-full h-full flex justify-center">
           <HeroCTA mainState={mainState} />
         </motion.div>
       </div>
