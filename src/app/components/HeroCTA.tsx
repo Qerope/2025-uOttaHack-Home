@@ -109,12 +109,15 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
           initial={{ opacity: 0, y: 50 }} // Starting state: faded out and below
           animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible and in place
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Animation duration and easing
-          className={`text-center  font-bold bg-[#F4A701]`}
+          className={`text-center font-bold cta ${
+            buttonText === "Visit 2024" ? styles.enlargeOnHover : ""
+          }`}
         >
           <a target="_blank" rel="noopener noreferrer" href={buttonLink}>
             {buttonText}
           </a>
         </motion.button>
+        
       </div>
     </div>
   );
