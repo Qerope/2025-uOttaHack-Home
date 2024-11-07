@@ -71,7 +71,7 @@ const UOttaHackHad: React.FC = () => {
           </h1>
 
           <div
-            className={`flex flex-row justify-between items-center`}
+            className={`flex flex-row justify-between items-center text-sulphur-point`}
             style={{
               fontSize: "clamp(0.7rem, 2vw, 3rem)",
               paddingLeft: "clamp(1%, 8vw, 40%)",

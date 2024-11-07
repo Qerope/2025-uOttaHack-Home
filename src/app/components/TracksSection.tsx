@@ -12,17 +12,24 @@ const TracksSection: React.FC = () => {
   const updateMinHeight = () => {
     const viewportHeight = window.innerHeight;
     const viewportWidth = window.innerWidth;
-    const portraitMode = viewportHeight > viewportWidth;
-
+    const isPortrait = viewportHeight > viewportWidth;
+  
     if (ref.current) {
-      const elementHeight = ref.current.clientHeight;
-      setMinHeight(
-        portraitMode
-          ? `calc(${viewportHeight * 0.6}px + 5vh)`
-          : `calc(${elementHeight}px + 10vh)`
-      );
+      let calculatedHeight;
+  
+      if (isPortrait) {
+        // **Portrait Mode: responsiveness
+        calculatedHeight = viewportHeight * 0.6 + viewportHeight * 0.5; // 60% of viewport height + 5vh
+      } else {
+        // **Landscape Mode:** Maintain a fixed height-to-width ratio
+        const aspectRatio = 11 / 16; //**11:16 aspect ratio
+        calculatedHeight = viewportWidth * aspectRatio;
+      }
+  
+      setMinHeight(`${calculatedHeight}px`);
     }
   };
+  
 
   useEffect(() => {
     updateMinHeight();
@@ -45,17 +52,17 @@ const TracksSection: React.FC = () => {
         />
       </div>
       <div
-        className={`relative z-2 md:w-[40%] w-[50%] flex flex-col items-start justify-center text-left h-full text-white ${styles.textContainer}`}
+        className={`relative z-2 md:w-[40%] w-[50%] flex flex-col items-start justify-center text-left h-full text-white text-jost ${styles.textContainer}`}
       >
         <h1
           ref={inViewRef}
-          className={`font-bold [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${
+          className={`font-bold ${styles.heading} ${
             isInView ? "animate-flip-down" : ""
           }`}
           style={{
             fontSize: "clamp(1.5rem, 7vw, 8rem)",
             textAlign: "left",
-            paddingLeft: "4rem",
+            /*paddingLeft: "4rem",*/
           }}
         >
           TRACKS
@@ -63,7 +70,7 @@ const TracksSection: React.FC = () => {
         <p
           style={{
             fontSize: "clamp(0.7rem, 2vw, 1.9rem)",
-            paddingLeft: "4rem",
+            paddingLeft: "0rem",
             paddingBottom: "6rem",
           }}
         >
