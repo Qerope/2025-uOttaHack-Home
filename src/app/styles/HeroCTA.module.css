@@ -98,13 +98,14 @@ path.two {
     
 }
 
-.enlargeOnHover {
-    background-color: #F4A701; /* Initial yellow background */
-    color: white; /* Initial white text */
+.enlargeOnHover { /* initial */
+    background-color: #F4A701; 
+    color: white; 
     transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
   }
   
-  .enlargeOnHover:hover {
-    background-color: white; /* Change background to white */
-    color: #F4A701; /* Change text to yellow */
+  .enlargeOnHover:hover { /*invert colours*/
+    background-color: white; 
+    color: #F4A701; 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }

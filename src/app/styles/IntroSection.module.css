@@ -58,9 +58,6 @@
   font-weight: 300;
 }
 
-
-
-
 .title {
   font-family: 'Jost', sans-serif;
   font-style: normal;
@@ -102,4 +99,27 @@
 
 .link:hover {
   text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+.headerShadow {
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Adjust to match the shadow in Figma */
+}
+
+
+.portraitHeading {
+  font-size: clamp(3rem, 6vw, 7rem); 
+}
+
+.portraitText {
+  font-size: clamp(1rem, 2.5vw, 2rem); 
+  line-height: 2.0;
+}
+
+.landscapeHeading {
+  font-size: clamp(2rem, 4vw, 5rem);
+}
+
+.landscapeText {
+  font-size: clamp(0.8rem, 1.5vw, 2.0rem); 
+  line-height: 1.4;
 }
