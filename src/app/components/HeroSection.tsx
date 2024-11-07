@@ -25,18 +25,8 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   const [mainState, setMainState] = useState<number>(0);
 
   return (
-    <section className={`${styles.container} flex w-full min-h-screen  `}>
-      <BackgroundSVG className="fixed top-0  w-auto min-h-screen bg-cover bg-center -z-10" />
-      {/* <motion.svg
-          className="fixed top-[47%] right-[19%] bg-cover -z-10"
-          initial={{ width: "100%", height: "0%" }} // Initial SVG dimensions
-          animate={{ width: "50%", height: "50%" }} // Target SVG dimensions
-          transition={{ duration: 1 }} // Animation duration in seconds
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 100 100" // Example viewBox, adjust to your SVG content
-        >
-          <Metro className="fixed top-[65%] left-100 bg-cover  -z-10" />
-        </motion.svg> */}
+    <section className={`${styles.container} flex w-full  min-h-screen  `}>
+      <BackgroundSVG className="fixed top-0  w-auto  -ml-1 -mr-1 min-h-screen bg-cover bg-center -z-10" />
 
       <div className={`absolute z-1 top-32 text-white `}>
         <motion.div
