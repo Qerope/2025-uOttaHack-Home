@@ -11,7 +11,6 @@ interface FAQSectionProps {
 const Markdown = styled(ReactMarkdown as any)`
   * {
     font-family: Inter;
-    font-size: 19px;
   }
 
   a {
@@ -28,7 +27,7 @@ const faqs: FAQSectionProps[] = [
   },
   {
     question: "Will uOttaHack happen in person or virtually?",
-    answer: `No. After 2 years the hackathon will be hosted on the beautiful campus of the University of Ottawa and will take place from February 10th - 12th, 2023. Don’t worry about getting lost! We'll have plenty of signage and volunteers around campus to guide you. We can't wait to see you there!`,
+    answer: `The hackathon will be hosted on the beautiful campus of the University of Ottawa and will take place from January 17th - 19th, 2025. Don’t worry about getting lost! We'll have plenty of signage and volunteers around campus to guide you. We can't wait to see you there!`,
   },
   {
     question: "Who can participate?",
@@ -85,23 +84,20 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section
-      className={`${styles.container}  text-white overflow-hidden`}
-      id="faq"
-    >
-      <div className={`pl-10 md:pt- pt-10 flex md:pl-48 flex-row items-center`}>
-        <h2 className="font-jost font-bold text-6xl md:text-8xl ">FAQ</h2>
+    <section className={` bg-[#1f4172]  text-white overflow-hidden`} id="faq">
+      <div className={`pl-10  pt-10 flex  flex-row items-center`}>
+        <h2 className="font-jost font-bold text-6xl md:text-6xl ">FAQ</h2>
         <h3
-          className={`font-jost text-md md:text-6xl font-light italic   text-inline `}
+          className={`font-jost text-md md:text-[3vw] font-light italic   text-inline `}
         >
           - Frequently asked questions
         </h3>
       </div>
       <div
-        className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10  md:pl-48 md:pr-48 flex justify-center  items-center h-full`}
+        className={` grid md:grid-cols-2 grid-cols-1 backdrop-blur-lg relative left-[10%] rounded     w-full  h-full`}
       >
         {faqs.map((faq, index) => (
-          <div key={index} className={`   md:text-3xl    text-md `}>
+          <div key={index} className={`   md:text-[1.2vw]  pt-[2vw]  text-sm `}>
             <div
               className={`flex   items-center font-jost `}
               onClick={() => toggleDropdown(index)}
@@ -116,7 +112,9 @@ const FAQSection: React.FC = () => {
               ></div>
             </div>
             {openIndex === index && (
-              <p className={` pt-10 pl-10  italic md:text-xl  w-[90%]`}>
+              <p
+                className={` pt-2 md:pt-10 pl-2 md:pl-10 italic md:text-xl   w-[90%]`}
+              >
                 <Markdown>{faq.answer}</Markdown>
               </p>
             )}

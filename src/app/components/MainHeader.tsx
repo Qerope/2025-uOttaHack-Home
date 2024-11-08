@@ -16,7 +16,7 @@ const MainHeader = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const NavLinks = () => (
-    <nav className="flex space-x-8 text-xl font-bold font-jost">
+    <nav className="flex space-x-8 text-xl  font-jost">
       {[
         { href: "#about", label: "About" },
         { href: "#pastevent", label: "Past Event" },
@@ -33,7 +33,7 @@ const MainHeader = () => {
   );
 
   const MobileMenu = () => (
-    <div className="fixed inset-0 z-10 flex justify-center items-center">
+    <div className="fixed inset-0 z-[1000] flex justify-center items-center">
       <div className="relative h-[60%] w-[80%] bg-white p-12 rounded-md shadow-lg">
         <button
           onClick={toggleMenu}
@@ -136,11 +136,11 @@ const MainHeader = () => {
               maxWidth: "100px",
               minWidth: "60px",
               position: "absolute",
-              right: "50px",
               top: "0",
               width: "10%",
               zIndex: 10000,
             }}
+            className="right-[80px] md:right-[50px]"
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
             target="_blank"
           >

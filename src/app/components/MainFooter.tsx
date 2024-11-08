@@ -12,14 +12,18 @@ interface MainFooterProps {}
 const MainFooter: React.FC<MainFooterProps> = () => {
   return (
     <section
-      className={` flex flex-col   w-full text-white bg-[#1F4172] w-full h-full flex`}
+      className={` flex flex-col divide-y-2  divide-[#264e88] w-full text-white bg-[#1F4172] w-full h-full flex`}
     >
-      <div className="md:pl-48 md:pr-48 md:justify-center   pt-20 flex flex-col md:flex-row w-full md:justify-between items-center ">
-        <div className="flex md:justify-center items-center flex-col">
-          <h1 className="text-6xl font-harabara mb-[4px]">uOttaHack 7</h1>
-          <p>The capital of Canada&apos;s largest hackathon.</p>
+      <div className="p-[1vw] md:justify-center   p-20 flex flex-col md:flex-row w-full md:justify-between items-center ">
+        <div className="flex justify-center items-start flex-col">
+          <h1 className=" text-6xl md:text-[3vw] font-harabara mb-[4px]">
+            uOttaHack 7
+          </h1>
+          <p className="text-sm font-light">
+            The capital of Canada&apos;s largest hackathon.
+          </p>
         </div>
-        <div className="grid grid-cols-1  underline  underline-offset-4 md:grid-cols-2 gap-4 p-10 md:p-0">
+        <div className="grid grid-cols-1 md:text-[0.7vw]  underline  underline-offset-4 md:grid-cols-2 gap-4 p-10 md:p-0">
           <a
             href="https://mlh.io/privacy"
             className="text-center md:text-start text-white "
@@ -61,7 +65,7 @@ const MainFooter: React.FC<MainFooterProps> = () => {
             <Discord className="w-7 h-7" />
           </a>
         </div>
-        <div className="flex flex-end justify-center items-center pt-10 italic font-light w-full h-full">
+        <div className="flex flex-end justify-center text-[10px] md:text-sm items-center pt-10 italic font-light w-full h-full">
           Made with 💓 in Ottawa, Ontario by the uOttaHack team!
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function Home() {
           <IntroSection />
 
           <TracksSection />
-          <UOttaHackHad />
+          {/* <UOttaHackHad /> */}
           <InterestedInSponsoring />
 
           <SponsorsSection />

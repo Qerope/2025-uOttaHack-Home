@@ -13,7 +13,7 @@ import onepassword from "../assets/1password.png";
 import ehub from "../assets/ehub.png";
 import icons8 from "../assets/icons8.png";
 import eleg from "../assets/eleg.png";
-import xyz from "../assets/xyz.png";
+import XYZ from "../assets/xyz-logo.svg";
 import interviewcake from "../assets/interviewcake.png";
 import balsamiq from "../assets/balsamiq2.png";
 import NavCanada from "../assets/navCanada.svg";
@@ -82,7 +82,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
         <div ref={sectionRef} className={` `}>
           {/* First Row - Large Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 gap-x-5 ">
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
@@ -99,7 +99,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
 
           {/* Second Row */}
-          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
@@ -116,7 +116,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
 
           {/* Third Row - Medium Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pt-5 pl-5 pr-5 gap-x-5 ">
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
@@ -142,7 +142,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
 
           {/* Fourth Row - Medium Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
@@ -164,9 +164,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
 
           {/* Fifth Row - Small Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full  gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
             <motion.div
-              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20  md:h-48"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -179,7 +179,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 0.9, ease: "easeOut", delay: delays[8] }}
             >
-              <Image src={IPSG} alt="IPSG Logo" className="h-auto w-48" />
+              <Image src={IPSG} alt="IPSG Logo" className="h-auto  w-[10vw]" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 h-20 md:h-48"
@@ -204,9 +204,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
 
           {/* Sixth Row - Mini Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-5 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -219,7 +219,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5  h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -228,7 +228,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image src={warp} alt="Warp logo" className="h-auto w-48" />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -236,30 +236,34 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             >
               <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
             </motion.div>
-          </div>
-
-          {/* Seventh Row - Mini Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 1, ease: "easeOut", delay: delays[14] }}
             >
-              <Image src={wolfram} alt="Wolfram logo" className="h-auto w-48" />
+              <Image
+                src={wolfram}
+                alt="Wolfram logo"
+                className="h-auto w-[20vw]"
+              />
             </motion.div>
+          </div>
+
+          {/* Seventh Row - Mini Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full   pl-5 pr-5 gap-x-5 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl  w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 0.6, ease: "easeOut", delay: delays[15] }}
             >
-              <Image src={xyz} alt=".xyz Logo" className="h-auto w-40" />
+              <XYZ className="md:w-32 w-10" />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -271,12 +275,8 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                 className="h-auto w-48"
               />
             </motion.div>
-          </div>
-
-          {/* Eighth Row - Single Sponsor */}
-          <div className="flex flex-row items-center justify-center w-full p-5 gap-x-5 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -285,20 +285,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image
                 src={standoutStk}
                 alt="Standout-Stickers Logo"
-                className="h-auto w-48"
+                className="h-auto w-[10vw]"
               />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
-              variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
-            >
-              <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
-            </motion.div>
-            <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -310,6 +301,36 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                 className="h-auto w-48"
               />
             </motion.div>
+          </div>
+
+          {/* Eighth Row - Single Sponsor */}
+
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
+            <motion.div
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-20 md:h-40"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
+            >
+              {" "}
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-[25%] flex items-center justify-center p-5 h-20 md:h-40"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
+            >
+              <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
+            </motion.div>
+            <motion.div
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-20 md:h-40"
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
+            ></motion.div>
           </div>
 
           {/* Community Partners */}
