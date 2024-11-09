@@ -14,12 +14,12 @@ const MainFooter: React.FC<MainFooterProps> = () => {
     <section
       className={` flex flex-col divide-y-2  divide-[#264e88] w-full text-white bg-[#1F4172] w-full h-full flex`}
     >
-      <div className="p-[1vw] md:justify-center   p-20 flex flex-col md:flex-row w-full md:justify-between items-center ">
-        <div className="flex justify-center items-start flex-col">
-          <h1 className=" text-6xl md:text-[3vw] font-harabara mb-[4px]">
+      <div className="  pt-10  md:p-20 flex flex-col md:flex-row w-full md:justify-between items-center ">
+        <div className="flex justify-center items-center md:items-start w-full flex-col">
+          <h1 className=" text-5xl    md:text-[3vw] font-harabara mb-[4px]">
             uOttaHack 7
           </h1>
-          <p className="text-sm font-light">
+          <p className="text-sm justify-center md:justify-start flex w-full font-light">
             The capital of Canada&apos;s largest hackathon.
           </p>
         </div>
