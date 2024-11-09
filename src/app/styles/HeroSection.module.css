@@ -104,7 +104,7 @@
   }
 }
 
-@media (max-height: 932px) and (orientation: landscape) {
+@media (max-height: 700px) and (orientation: landscape) {
   .title {
     font-size: 3rem;
     text-align: center;

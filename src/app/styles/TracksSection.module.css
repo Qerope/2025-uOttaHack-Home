@@ -1,8 +1,9 @@
-/* TracksSection.module.css */
+/* Default styles */
 .section {
   display: flex;
-  align-items: left;
-  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  justify-content: center ;
   flex-direction: column;
   background-color: #ffaf00;
   min-height: 100vh;
@@ -12,38 +13,26 @@
   padding: 5vh 2rem;
 }
 
-.relativeDiv {
-  position: relative;
-}
-
-.absoluteText {
-  position: absolute;
-  top: 40%;
-  left: 6%;
-  transform: translateY(-50%);
-  z-index: 2;
-  color: white;
-  max-width: 470px;
-  font-family: 'Jost', sans-serif; 
-}
-
 .heading {
-  font-size: clamp(3rem, 6vw, 6rem); /* Responsive font size */
+  font-size: clamp(3rem, 6vw, 6rem);
   margin-bottom: 1rem;
   font-weight: bold;
   text-shadow: 6px 6px 1px rgba(0, 0, 0, 0.5);
   padding-top: 4vh;
-  /*padding-left: 5vh;*/
 }
 
-/*.paragraph {
-  font-size: "clamp(0.7rem, 2vw, 1.9rem)";
-  padding-left: "4rem";
-  padding-bottom: "6rem";
-  /*line-height: 1.6;
-  margin-top: 0;
-} */
-
+.tracksText {
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1rem, 2.5vw, 1.9rem);
+  line-height: 1.6em;
+  color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  z-index: 2;
+}
 
 .diagonalSeparator {
   position: absolute;
@@ -59,57 +48,58 @@
   padding-left: 10vh;
 }
 
-/* Medium screens (tablets and small laptops) */
-@media (max-width: 1024px) and (orientation: landscape) {
-  .section {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Slightly shallower angle */
-  }
-  .container {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
-  }
-  .textContainer {
-    padding-bottom: 0vh;
-  }
+/* Bottom image container - temporarily hidden */
+.bottomImageContainer {
+  display: none;
 }
 
-/* Small screens (mobile devices) */
-@media (max-width: 768px) and (orientation: landscape) {
-  .section{
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); 
-  }
-  .container {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-  }
-  .textContainer {
-    padding-bottom: 0vh;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) and (orientation: landscape) {
-  .container {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-  }
-  .textContainer {
-    padding-bottom: 0vh;
-  }
-}
-
+/* Portrait mode adjustments */
 @media (orientation: portrait) {
   .section {
     flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    justify-content: flex-start; /* Pushes text up to make space for the image */
+    padding-top:3vh;
+    padding-left: 2rem; 
+    padding-right: 2rem;
+    min-height: 110vh; /* Increased height to ensure space for all elements */
+    overflow: hidden; /* Ensures no overflow outside the section */
   }
 
   .textContainer {
-    width: 90%; /* Make text container take up more width */
-    text-align: center;
-    padding-left: 0;
-    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5vw;
+    margin-top: 2vh; /* Reduced margin for more space */
   }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .tracksText {
+    max-width: 90vw;
+    padding: 0;
+    margin: 0;
+  }
+  /* Floor container styles */
+.floorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem; /* Adjust this padding as needed for spacing */
+}
+
+.floorContainer svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+   /* Adjust this max height if needed */
+}
+  
 }

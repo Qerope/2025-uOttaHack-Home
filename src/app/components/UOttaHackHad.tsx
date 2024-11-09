@@ -12,6 +12,7 @@ import Car4 from "../assets/car4.svg";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+
 const UOttaHackHad: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
@@ -71,7 +72,7 @@ const UOttaHackHad: React.FC = () => {
           </h1>
 
           <div
-            className={`flex flex-row justify-between items-center text-sulphur-point`}
+            className={`flex flex-row justify-between items-center font-sulphur-point`}
             style={{
               fontSize: "clamp(0.7rem, 2vw, 3rem)",
               paddingLeft: "clamp(1%, 8vw, 40%)",
@@ -80,11 +81,11 @@ const UOttaHackHad: React.FC = () => {
               paddingTop: "clamp(5%, 2vw, 20%)",
             }}
           >
-            <div className={`  flex flex-col jsutify-center  items-center `}>
+            <div className={`  flex flex-col jsutify-center  items-center text-sulphur-point`}>
               <h2>2000+</h2>
               <p>Applications</p>
             </div>
-            <div className="w-[1px] h-[2vh] md:h-[5vh]  bg-white"></div>
+            <div className="w-[1px] h-[2vh] md:h-[5vh]  bg-white "></div>
             <div className={` flex flex-col jsutify-center items-center `}>
               <h2>650</h2>
               <p>Hackers</p>

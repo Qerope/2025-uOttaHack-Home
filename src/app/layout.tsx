@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Sulphur_Point } from "next/font/google";
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import { Jost } from "next/font/google";
@@ -21,10 +21,17 @@ const inter = Inter({
   variable: "--font-inter", // Define a custom CSS variable for Jost
 });
 
+/*const sulphurPoint = Sulphur_Point({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  display: "swap", // Optional
+  // Remove 'variable' option for now
+});*/
 
+export { jost, harabara, inter };
 
 export const metadata: Metadata = {
-  title: "uOttahack 7 - 2025",
+  title: "uOttahack 7",
   description:
     "The largest Ottawa-based hackathon for the last half-decade, uOttaHack is returning for its most exciting iteration yet! To celebrate this momentous occasion, uOttaHack 6 is expanding the hacker experience with new initiatives to create an unforgettable weekend for its hackers.",
 };
