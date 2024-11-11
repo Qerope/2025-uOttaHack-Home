@@ -8,7 +8,7 @@ import useInView from "../hooks/useInView";
 interface MapSectionProps {}
 
 const MapSection: React.FC<MapSectionProps> = () => {
-  const { ref, isInView } = useInView({ threshold: 0.01 });
+  const { ref, isInView } = useInView({ threshold: 0.0001 });
 
   return (
     <section

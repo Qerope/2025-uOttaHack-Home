@@ -97,7 +97,7 @@ const MainHeader = () => {
       <div className="w-full sm:px-6 relative">
         {/* Logo */}
         <div className="absolute md:left-[10%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
-          <ColorLogo className="md:w-20 md:h-20 w-16 h-16" />
+          <ColorLogo className="md:w-20 md:h-20 w-12 h-12" />
         </div>
 
         {/* Navigation Links - Centered */}

@@ -29,7 +29,7 @@ import uottawa from "../assets/uottawa.png";
 
 import IPSG from "../assets/IPSG.png";
 import OtrainSVG from "../assets/Otrain2.svg";
-import OtrainRails from "../assets/OtrainRail.svg";
+import OtrainRails from "../assets/train_rail.svg";
 import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";

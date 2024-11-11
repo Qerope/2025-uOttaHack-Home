@@ -97,7 +97,7 @@ const TracksSection: React.FC = () => {
                     : "hidden"
                 } ${
                   !isMobile && isInView
-                    ? "animate-flip-down animate-once animate-duration-1000 animate-delay-200 animate-ease-in"
+                    ? "animate-flip-down animate-once animate-duration-300 animate-delay-200 animate-ease-in"
                     : ""
                 }`}
                 style={{

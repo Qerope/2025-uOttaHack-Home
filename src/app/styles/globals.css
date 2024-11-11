@@ -42,6 +42,10 @@ body {
   background-attachment: fixed;
   overflow-x: hidden;
 }
+.text-shadow-hero {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
+}
 
 .hero-container-bg {
   background-image: url("../assets/Background.png");

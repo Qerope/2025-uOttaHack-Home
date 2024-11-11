@@ -56,7 +56,7 @@ const UOttaHackHad: React.FC = () => {
     >
       <div className="w-full h-full">
         <div
-          className={` relative z-1 text-white w-full  pt-10 sm:mt-[1%] mt-[20%] lg:mt-[1%]`}
+          className={` relative z-1 text-white w-full  pt-10  mt-[5%] lg:mt-[1%]`}
         >
           <h1
             className={`   w-full flex justify-center font-jost items-center`}
