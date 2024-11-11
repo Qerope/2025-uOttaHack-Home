@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
-import { Jost } from "next/font/google";
+import { Jost, Sulphur_Point } from "next/font/google";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -29,6 +29,12 @@ const inter = Inter({
 });*/
 
 export { jost, harabara, inter };
+
+/*const sulphurPoint = Sulphur_Point({
+  subsets: ["latin"],
+  weight: ["300", "400"], 
+  variable: "--font-sulphur-point",
+}); */
 
 export const metadata: Metadata = {
   title: "uOttahack 7",
