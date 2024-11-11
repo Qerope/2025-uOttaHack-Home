@@ -35,7 +35,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible and in place
           transition={{ duration: 0.6, ease: "easeOut" }} // Animation duration and easing
         >
-          <p className="text-md md:text-lg text-center font-inter font-medium text-shadow-hero">
+          <p className="text-md md:text-lg  text-center font-inter font-medium text-shadow-hero">
             January 17 - 19, 2025
           </p>
 

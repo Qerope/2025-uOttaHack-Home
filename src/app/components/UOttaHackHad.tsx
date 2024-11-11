@@ -26,7 +26,7 @@ const UOttaHackHad: React.FC = () => {
 
   return (
     <section
-      className="relative  -mt-[20%]  w-full"
+      className="relative z-[1] md:-mt-[20%] overflow-hidden  -mt-[20%] w-full"
       style={{
         background: "linear-gradient(180deg, #366ACF 0%, #74A0F6 100%)",
       }}
@@ -34,13 +34,13 @@ const UOttaHackHad: React.FC = () => {
     >
       <div className="w-full h-full">
         <div
-          className={` relative z-1 text-white w-full  pt-10 sm:mt-[1%] md:mt[-40%] lg:mt-[1%]`}
+          className={` relative z-1 text-white w-full  pt-10 sm:mt-[1%] mt-[20%] lg:mt-[1%]`}
         >
           <h1
             className={`   w-full flex justify-center font-jost items-center`}
             style={{
               paddingTop: "clamp(20%, 2vw, 10%)",
-              fontSize: "clamp(1.5rem, 5vw, 6rem)",
+              fontSize: "clamp(2rem, 5vw, 6rem)",
             }}
           >
             uOttaHack 2024 had...

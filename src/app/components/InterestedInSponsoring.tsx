@@ -2,7 +2,7 @@ import React from "react";
 import useInView from "../hooks/useInView";
 
 const InterestedInSponsoring = () => {
-  const { ref, isInView } = useInView({ threshold: 0.01 });
+  const { ref, isInView } = useInView({ threshold: 0.5 });
 
   return (
     <section className="w-full min-h-screen  overflow-hidden bg-[#ffffff] ">
@@ -37,7 +37,14 @@ const InterestedInSponsoring = () => {
                   <p>INTERESTED IN</p>
                   <p>SPONSORING?</p>
                 </div>
-                <div className="md:space-y-10 pb-10 ">
+                <div
+                  ref={ref}
+                  className={` md:space-y-10 pb-10  ${
+                    isInView
+                      ? "animate-fade-right animate-once animate-duration-1000 animate-ease-out"
+                      : ""
+                  }`}
+                >
                   <p
                     className="text-[rgba(54,106,207,1)] pb-5 leading-tight font-light text-center md:text-left"
                     style={{ fontSize: "clamp(0.7rem, 2vw, 1.3rem)" }}

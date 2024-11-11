@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../styles/TracksSection.module.css";
 import TracksImageTop from "../assets/track-yellow-bg.svg";
-import TracksImageBottom from "../assets/Train Station.png";
+import TrainStation from "../assets/Train Station.svg";
 import RectangleImage from "../assets/Rectangle 1280.png";
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
 
-import SeperationImage from "../assets/Seperation.png";
+import Seperation from "../assets/Seperation.svg";
 import { image } from "framer-motion/client";
 import { motion } from "framer-motion";
 import useInView from "../hooks/useInView";
@@ -44,47 +44,47 @@ const TracksSection: React.FC = () => {
     };
   }, [imageRef.current]);
   return (
-    <div className="overflow-hidden h-auto ">
+    <div className="overflow-hidden ">
       <section
         id="tracks"
-        className="relative z-10  w-full font-jost  "
-        style={{ minHeight }} // Apply the dynamically calculated minHeight
-        // style={{ background: "#FFAF00" }}
+        className="relative    w-full font-jost  "
+        style={{ height: minHeight, background: "#FFAF00" }} // Apply the dynamically calculated minHeight
       >
-        <div className="flex w-full  bg-[#FFAF00]">
+        <div className="flex w-full ">
           <div className="h-full  ">
             <div
-              className=" absolute z-1 w-full"
+              className=" absolute z-[2] w-full"
               ref={imageRef} // Attach the ref to the image
             >
               <TracksImageTop
                 // src={TracksImageTop.src}
                 // alt="Top Tracks Image"
-                className="w-[100%] relative z-[0] bg-cover"
+                className=" md:h-[86vw] h-[70vh] relative z-[0] bg-cover"
               />
             </div>
           </div>
-          <div className="absolute w-full  z-2 ">
-            <div className="w-full justify-end items-end  flex">
-              <img
-                src={TracksImageBottom.src}
-                alt="Bottom Tracks Image"
-                className=" w-[83%]   "
-              />
-            </div>
-            <div className="absolute top-[77%] ">
-              <img
-                src={SeperationImage.src}
-                alt="Seperation Image"
-                // style={{ marginTop: '-260px' }}
-                className=" "
-              />
+          <div
+            className="relative w-full overflow-hidden  flex    items-end z-[2] "
+            style={{ height: minHeight }}
+          >
+            <div className="   w-full  ">
+              <TrainStation className="md:w-[100vw]  overflow-hidden   relative " />
             </div>
           </div>
-
+          <div
+            className="  flex justify-end items-end absolute z-[4] "
+            style={{ height: minHeight }}
+          >
+            <Seperation
+              // alt="Seperation Image"
+              // // style={{ marginTop: '-260px' }}
+              className="w-[160vw] z-[4] top-[7vw] -translate-x-[10%] relative"
+              // className="w-[240%] z-[4] -translate-x-[2%] md:-mt-[63%]  relative h-auto "
+            />
+          </div>
           {minHeight != "0" ? (
             <div
-              className=" absolute z-2 md:w-[40%] w-[50%] md:space-y-10 p-5 md:p-10 flex flex-col  md:justify-center  h-full  text-white"
+              className=" absolute z-[3] md:w-[40%] w-full  p-5 md:p-10 flex flex-col md:top-[20%]  top-0  text-white"
               style={{ minHeight }}
             >
               <h1
@@ -96,7 +96,7 @@ const TracksSection: React.FC = () => {
                     : "hidden"
                 }`}
                 style={{
-                  fontSize: "clamp(1rem, 7vw, 10rem)", // Set the origin to the top for a flip-down effect
+                  fontSize: "clamp(3rem, 7vw, 10rem)", // Set the origin to the top for a flip-down effect
                 }}
               >
                 TRACKS
@@ -104,12 +104,11 @@ const TracksSection: React.FC = () => {
 
               <p
                 ref={ref}
-                className={` text-white  ${
+                className={` text-white  md:text-2xl text-sm ${
                   isInView
-                    ? "animate-fade-right animate-once animate-duration-1000 animate-ease-out"
+                    ? "animate-fade-right animate-once animate-duration-500 animate-ease-out"
                     : ""
                 }`}
-                style={{ fontSize: "clamp(0.7rem, 2vw, 1.3rem)" }}
               >
                 <span className="font-light">
                   Whether you&apos;re passionate about
