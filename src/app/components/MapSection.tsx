@@ -41,7 +41,7 @@ const MapSection: React.FC<MapSectionProps> = () => {
             : ""
         }`}
       >
-        <TrainBord className="w-[200%] bg-[#D5DBE2] h-auto sm:w-[400%] -translate-x-[25%] sm:translate-x-0 md:w-full mx-auto" />
+        <TrainBord className="w-[200%] bg-[#D5DBE2] h-auto -translate-x-[25%] sm:translate-x-0 md:w-full mx-auto" />
       </div>
     </section>
   );

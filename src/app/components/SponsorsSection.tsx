@@ -20,7 +20,7 @@ import NavCanada from "../assets/navCanada.svg";
 import redbull from "../assets/redbull.png";
 import warp from "../assets/warp.png";
 import standoutStk from "../assets/StandOut-Stickers.png";
-import wolfram from "../assets/wolfram.png";
+import wolfram from "../assets/wolfram-1.png";
 import eef_community from "../assets/eef-com.png";
 
 import MLH from "../assets/mlh.svg";
@@ -231,7 +231,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image src={IPSG} alt="IPSG Logo" className="h-auto  w-[10vw]" />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 h-20 md:h-48 "
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -248,7 +248,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               />
             </motion.div>
             <motion.div
-              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -263,7 +263,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           {/* Sixth Row - Mini Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-5 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -280,7 +280,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5  h-20 md:h-40"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -293,7 +293,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image src={warp} alt="Warp logo" className="h-auto w-48" />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -306,7 +306,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -316,18 +316,14 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[13] }
               }
             >
-              <Image
-                src={wolfram}
-                alt="Wolfram logo"
-                className="h-auto w-[20vw]"
-              />
+              <Image src={wolfram} alt="Wolfram logo" className="h-auto " />
             </motion.div>
           </div>
 
           {/* Seventh Row - Mini Sponsors */}
           <div className="flex flex-row items-center justify-center w-full   pl-5 pr-5 gap-x-5 ">
             <motion.div
-              className="bg-white rounded-xl  w-full flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl  w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -337,10 +333,10 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[14] }
               }
             >
-              <XYZ className="md:w-32 w-10" />
+              <XYZ className=" w-8 md:w-32 h-auto object-contain " />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -357,7 +353,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -374,7 +370,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               />
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -396,7 +392,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-20 md:h-40"
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -409,7 +405,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               {" "}
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-[25%] flex items-center justify-center p-5 h-20 md:h-40"
+              className="bg-white rounded-xl w-[25%] flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -422,7 +418,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
             </motion.div>
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-20 md:h-40"
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -501,7 +497,10 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
         </div>
       </div>
       <div className={`${styles.otrain} `}>
-        <Parallax translateX={[-80, 100]} className="  ">
+        <Parallax
+          translateX={isMobile ? [-20, 20] : [-80, 100]} // Adjust values for mobile
+          className="will-change-transform  "
+        >
           <OtrainSVG />
         </Parallax>
       </div>

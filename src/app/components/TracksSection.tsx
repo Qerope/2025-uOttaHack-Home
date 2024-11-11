@@ -10,11 +10,13 @@ import { image } from "framer-motion/client";
 import { motion } from "framer-motion";
 import useInView from "../hooks/useInView";
 import UOttaHackHad from "./UOttaHackHad";
+import useIsMobile from "../hooks/useInMobile";
 
 const TracksSection: React.FC = () => {
   const imageRef = useRef<any | null>(null);
   const sectionRef = useRef(null);
   const { ref, isInView } = useInView({ threshold: 0.01 });
+  const isMobile = useIsMobile();
 
   const [minHeight, setMinHeight] = useState("0"); // Initial value as full screen height
 
@@ -89,11 +91,14 @@ const TracksSection: React.FC = () => {
             >
               <h1
                 ref={ref}
-                // className="font-bold text-white animate-flip-down animate-once animate-duration-1000 animate-ease-out [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)]"
                 className={`font-bold text-white [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${
-                  isInView
-                    ? " visible animate-flip-down animate-once animate-duration-1000-delay-200 animate-ease-in"
+                  isMobile || isInView
+                    ? "visible" // Immediately visible on mobile, or if in view on larger screens
                     : "hidden"
+                } ${
+                  !isMobile && isInView
+                    ? "animate-flip-down animate-once animate-duration-1000 animate-delay-200 animate-ease-in"
+                    : ""
                 }`}
                 style={{
                   fontSize: "clamp(3rem, 7vw, 10rem)", // Set the origin to the top for a flip-down effect
