@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link } from 'react-scroll';
+import { Link } from "react-scroll";
 import ColorLogo from "../assets/colourLogo.svg";
 import mlh from "../assets/MLH.png";
 import mlh_black from "../assets/black.svg";
@@ -24,7 +24,13 @@ const MainHeader = () => {
         { href: "location", label: "Location" },
         { href: "faq", label: "FAQs" },
       ].map((link, index) => (
-        <Link key={index} to={link.href} className="relative group cursor-pointer" smooth={true} duration={800}>
+        <Link
+          key={index}
+          to={link.href}
+          className="relative group cursor-pointer"
+          smooth={true}
+          duration={800}
+        >
           <span className="text-shadow-navbar-subtle">{link.label}</span>
           <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
         </Link>
@@ -54,11 +60,29 @@ const MainHeader = () => {
             ></path>
           </svg>
         </button>
-        <img
-          src={mlh.src}
-          alt="MLH 2025 Badge"
-          className="absolute top-0 left-11 h-[100px] w-auto"
-        />
+        <div className="">
+          <a
+            id="mlh-trust-badge"
+            style={{
+              display: "block",
+              maxWidth: "100px",
+              minWidth: "60px",
+              position: "absolute",
+              top: "0",
+              width: "10%",
+              zIndex: 10000,
+            }}
+            className="left-[10%] md:right-[50px]"
+            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
+            target="_blank"
+          >
+            <img
+              src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-white.svg"
+              alt="Major League Hacking 2025 Hackathon Season"
+              style={{ width: "100%", maxHeight: "150px" }}
+            />
+          </a>
+        </div>
         <div className="mt-24 text-[#01A2D9]">
           <nav className="flex flex-col space-y-4 text-sm font-normal">
             {[
@@ -69,7 +93,13 @@ const MainHeader = () => {
               { href: "faq", label: "FAQs" },
             ].map((link, index) => (
               <div key={index}>
-                <Link to={link.href} className="relative group cursor-pointer" smooth={true} duration={800} onClick={toggleMenu}>
+                <Link
+                  to={link.href}
+                  className="relative group cursor-pointer"
+                  smooth={true}
+                  duration={800}
+                  onClick={toggleMenu}
+                >
                   <span>{link.label}</span>
                 </Link>
                 {index < 4 && <hr className="border-t mt-4" />}
