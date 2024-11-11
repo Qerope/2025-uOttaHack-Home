@@ -101,10 +101,8 @@
   text-decoration: underline; /* Underline on hover for better visibility */
 }
 
-.headerShadow {
-  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3); /* Adjust to match the shadow in Figma */
-}
 
+/* styles for orientation only */
 
 .portraitHeading {
   font-size: clamp(3rem, 6vw, 7rem); 

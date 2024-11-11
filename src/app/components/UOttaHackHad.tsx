@@ -12,6 +12,7 @@ import Car4 from "../assets/car4.svg";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+
 const UOttaHackHad: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
@@ -43,13 +44,13 @@ const UOttaHackHad: React.FC = () => {
   }, []);
   return (
     <section
-      className=" w-full  -mt-[20%] "
+      className=" w-full  -mt-[20%]"
       style={{
         background: "linear-gradient(180deg, #366ACF 0%, #74A0F6 100%)",
       }}
       id="pastevent"
     >
-      <div className="w-full h-full">
+      <div className="w-full h-full pb-5 ">
         {/* <div className="absolute z-4  -mt-[20%] z-0 overflow-hidden">
           {/* <img
             src={RectangleImage.src}
@@ -59,7 +60,7 @@ const UOttaHackHad: React.FC = () => {
         </div> */}
 
         <div
-          className={` relative z-1 text-white w-full  pt-10 sm:mt-[1%] md:mt[-40%] lg:mt-[1%]`}
+          className={` relative z-1 text-white w-full pt-10 sm:mt-[1%] md:mt[-40%] lg:mt-[1%]`}
         >
           <h1
             className={`${styles.heading} md:text-8xl  w-full flex justify-center items-center`}
@@ -71,22 +72,20 @@ const UOttaHackHad: React.FC = () => {
           </h1>
 
           <div
-            className={`flex flex-row font-light justify-between items-center   `}
+            className={`flex flex-row justify-between items-center font-sulphur-point`}
             style={{
               fontSize: "clamp(0.7rem, 2vw, 3rem)",
-              fontFamily: "Sulphur Point, sans-serif",
               paddingLeft: "clamp(1%, 8vw, 40%)",
               paddingRight: "clamp(1%, 8vw, 40%)",
               paddingBottom: "clamp(5%, 2vw, 20%)",
-
               paddingTop: "clamp(5%, 2vw, 20%)",
             }}
           >
-            <div className={`  flex flex-col jsutify-center  items-center `}>
+            <div className={`  flex flex-col jsutify-center  items-center text-sulphur-point`}>
               <h2>2000+</h2>
               <p>Applications</p>
             </div>
-            <div className="w-[1px] h-[2vh] md:h-[5vh]  bg-white"></div>
+            <div className="w-[1px] h-[2vh] md:h-[5vh]  bg-white "></div>
             <div className={` flex flex-col jsutify-center items-center `}>
               <h2>650</h2>
               <p>Hackers</p>

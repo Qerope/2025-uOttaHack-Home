@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        jost: ['var(--font-jost)', 'sans-serif'],
-        harabara: ['var(--font-harabara)','sans-serif']
+        'sulphur-point': ['"Sulphur Point"', 'sans-serif'],
+        jost: ['"Jost"', 'sans-serif'],
+        harabara: ['"Harabara"', 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

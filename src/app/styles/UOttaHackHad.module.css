@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@100;400;600&display=swap');
 
 .imageContainer {
   position: relative;
@@ -11,7 +10,7 @@
 .rectangleImage {
   width: 100%;
   height: auto;
-  margin-top: -390px; 
+  margin-top: -390px;
   z-index: -99;
 }
 
@@ -49,12 +48,17 @@
   justify-content: center;
 }
 
+.text-sulphur-point {
+  font-family: "Sulphur Point", sans-serif;
+  font-weight: 400; /* Ensure compatibility */
+}
+
 .stat {
     min-width: 180px;
     text-align: center;
     flex-shrink: 0;
     font-family: 'Sulphur Point', sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     position: relative; 
   }
   
@@ -109,13 +113,20 @@
   margin-left: 230px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 932px) and (orientation: landscape) {
   .heading {
+    padding-top: 15%;
     font-size: 1.5rem;
   }
 
   .statsContainer {
     flex-direction: row;
     overflow-x: scroll;
-  }
+  } 
 }
+
+/*@media (orientation: portrait) {
+  .heading {
+    padding-top:
+  } 
+} */

@@ -31,7 +31,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             January 17 - 19, 2025
           </p>
 
-          <h1 className={`${styles.title} mb-2 ${styles["text-shadow-dark"]}`}>
+          <h1 className={`${styles.title} mb-2`}>
             uOttaHack 7
           </h1>
           <p className={`mb-24 text-md md:text-lg text-center font-jost font-medium ${styles["text-shadow-dark"]}`}>

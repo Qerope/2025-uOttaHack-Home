@@ -1,33 +1,44 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from "../styles/TracksSection.module.css";
-import TracksImageBottom from "../assets/Train Station.png";
-import SeperatorImage from "../assets/Seperation.png";
+import TrainStation from "../assets/TrainStation.svg";
+import FloorSVG from '../assets/Floor.svg';
+import Seperator from "../assets/separation.svg";
 import useInView from "../hooks/useInView";
+import { Parallax } from "react-scroll-parallax";
 
 const TracksSection: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [minHeight, setMinHeight] = useState("110vh");
   const { ref: inViewRef, isInView } = useInView({ threshold: 0.5 });
+  const [isPortrait, setIsPortrait] = useState(false)
 
   const updateMinHeight = () => {
     const viewportHeight = window.innerHeight;
     const viewportWidth = window.innerWidth;
-    const portraitMode = viewportHeight > viewportWidth;
+    const isCurrentlyPortrait = viewportHeight > viewportWidth;
+
+    setIsPortrait(isCurrentlyPortrait);
 
     if (ref.current) {
-      const elementHeight = ref.current.clientHeight;
-      setMinHeight(
-        portraitMode
-          ? `calc(${viewportHeight * 0.6}px + 5vh)`
-          : `calc(${elementHeight}px + 10vh)`
-      );
+      let calculatedHeight;
+
+      if (isCurrentlyPortrait) {
+        calculatedHeight = viewportHeight * 0.6 + viewportHeight * 0.5;
+      } else {
+        const aspectRatio = 11 / 16; // aspect ratio
+        calculatedHeight = viewportWidth * aspectRatio;
+      }
+
+      setMinHeight(`${calculatedHeight}px`);
     }
   };
 
   useEffect(() => {
-    updateMinHeight();
-    window.addEventListener("resize", updateMinHeight);
-    return () => window.removeEventListener("resize", updateMinHeight);
+    if (typeof window !== "undefined") {
+      updateMinHeight();
+      window.addEventListener("resize", updateMinHeight);
+      return () => window.removeEventListener("resize", updateMinHeight);
+    }
   }, []);
 
   return (
@@ -37,35 +48,25 @@ const TracksSection: React.FC = () => {
       style={{ minHeight }}
       ref={ref}
     >
-      <div className={`absolute w-full flex justify-end items-end z-2 ${styles.bottomImageContainer}`}>
-        <img
-          src={TracksImageBottom.src}
-          alt="Bottom Tracks Image"
-          className="w-[83%]"
-        />
-      </div>
+      {/*<Parallax className={styles.bottomImageContainer} translateX={[-50, -55]}>
+        <TrainStation />
+  </Parallax> */}
+
       <div
-        className={`relative z-2 md:w-[40%] w-[50%] flex flex-col items-start justify-center text-left h-full text-white ${styles.textContainer}`}
+        className={`relative z-2 md:w-[40%] w-[50%] flex flex-col ${
+          isPortrait ? "items-center text-center" : "items-start text-left"
+        } h-full text-white text-jost ${styles.textContainer}`}
       >
         <h1
           ref={inViewRef}
-          className={`font-bold [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${
-            isInView ? "animate-flip-down" : ""
-          }`}
-          style={{
-            fontSize: "clamp(1.5rem, 7vw, 8rem)",
-            textAlign: "left",
-            paddingLeft: "4rem",
-          }}
+          className={`font-bold ${styles.heading} ${isInView ? styles.animateFadeInLeft : ""}`}
+          style={{ textAlign: isPortrait ? "center" : "left" }}
         >
           TRACKS
         </h1>
         <p
-          style={{
-            fontSize: "clamp(0.7rem, 2vw, 1.9rem)",
-            paddingLeft: "4rem",
-            paddingBottom: "6rem",
-          }}
+          className={`${styles.tracksText} ${isInView ? styles.animateFadeInLeft : ""}`}
+          style={{ textAlign: isPortrait ? "center" : "left" }}
         >
           <span className="font-light">
             Whether you&apos;re passionate about
@@ -82,8 +83,13 @@ const TracksSection: React.FC = () => {
         </p>
       </div>
 
+      {isPortrait && (
+      <div className={styles.floorContainer}>
+          <FloorSVG />
+      </div>
+    )}
       <div className={styles.diagonalSeparator}>
-        <img src={SeperatorImage.src} alt="Separator" className="w-full h-auto" />
+        <Seperator className="w-full h-auto" />
       </div>
     </section>
   );

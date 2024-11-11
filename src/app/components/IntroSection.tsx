@@ -22,7 +22,7 @@ const IntroSection: React.FC = () => {
         setIsLandscape(window.innerWidth > window.innerHeight);
       };
 
-      // Listen for both resize and orientationchange events
+      // Listen for both resize and orientation change events
       window.addEventListener("resize", handleOrientationChange);
       window.addEventListener("orientationchange", handleOrientationChange);
 
