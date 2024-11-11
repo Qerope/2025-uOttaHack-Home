@@ -53,17 +53,16 @@
 .triangle {
     width: 0;
     height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 10px solid white;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 15px solid white;
     transition: transform 0.3s;
-    transform: rotate(-90deg);
-}
-
-.open {
     transform: rotate(-180deg);
 }
 
+.open {
+    transform: rotate(0deg); /* Points downward when open */
+}
 .faqQuestionContainer {
     display: flex;
     justify-content: space-between;
