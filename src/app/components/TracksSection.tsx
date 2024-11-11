@@ -20,15 +20,15 @@ const TracksSection: React.FC = () => {
 
   useLayoutEffect(() => {
     const handleResize = () => {
-      console.log("handleResize called");
-      console.log("imageRef.current:", imageRef.current); // Debugging
+      // console.log("handleResize called");
+      // console.log("imageRef.current:", imageRef.current); // Debugging
 
       if (imageRef.current) {
         const svgHeight = imageRef.current.clientHeight;
-        console.log("SVG Height:", svgHeight);
+        // console.log("SVG Height:", svgHeight);
         setMinHeight(`${svgHeight}px`);
       } else {
-        console.warn("imageRef.current is null");
+        // console.warn("imageRef.current is null");
       }
     };
 

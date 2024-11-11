@@ -5,17 +5,47 @@ import IntroBuildingsTop from "../assets/IntroBuildingsTop.png";
 import IntroBuildingsBottom from "../assets/IntroBuildingsBottom.png";
 import { Parallax } from "react-scroll-parallax";
 import useInView from "../hooks/useInView";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
 const IntroSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.5 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+      console.log(window.innerWidth < 768);
+    };
+
+    // Set initial screen size
+    handleResize();
+
+    // Update `isMobile` on resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section
       className={`relative overflow-hidden bg-fixed font-jost bg-center bg-[#00B3F0]  w-[100%]  h-[100vh]`}
       id="about"
     >
-      <Parallax className={styles.parallaxImage} translateX={[-50, -55]}>
-        <img src={IntroBuildingsTop.src} alt="Top Buildings" />
-      </Parallax>
+      <>
+        {isMobile ? (
+          <img
+            src={IntroBuildingsTop.src}
+            alt="Top Buildings"
+            className={styles.staticImage}
+          />
+        ) : (
+          <Parallax className={styles.parallaxImage} translateX={[-50, -55]}>
+            <img src={IntroBuildingsTop.src} alt="Top Buildings" />
+          </Parallax>
+        )}
+      </>
       <div className="flex justify-center items-center  h-full">
         <div className="flex flex-col  text-white w-full  justify-center items-center h-full md:flex-row ">
           <h1 className="flex flex-col text-5xl items-center justify-between w-full  [text-shadow:_10px_2px_4px_rgb(0_0_0_/_0.3)]  text-[6vh] md:text-[6vw]">
@@ -64,12 +94,23 @@ const IntroSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <Parallax
-        className={`${styles.parallaxImage} ${styles.parallaxImageBottom}`}
-        translateX={[-50, -40]}
-      >
-        <img src={IntroBuildingsBottom.src} alt="Bottom Buildings" />
-      </Parallax>
+
+      <>
+        {isMobile ? (
+          <img
+            src={IntroBuildingsBottom.src}
+            alt="Top Buildings"
+            className={`${styles.parallaxImage} ${styles.parallaxImageBottom}`}
+          />
+        ) : (
+          <Parallax
+            className={`${styles.parallaxImage} ${styles.parallaxImageBottom}`}
+            translateX={[-50, -40]}
+          >
+            <img src={IntroBuildingsBottom.src} alt="Bottom Buildings" />
+          </Parallax>
+        )}
+      </>
     </section>
   );
 };

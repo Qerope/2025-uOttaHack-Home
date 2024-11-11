@@ -32,7 +32,7 @@ import OtrainSVG from "../assets/Otrain2.svg";
 import OtrainRails from "../assets/OtrainRail.svg";
 import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 
 interface SponsorsSectionProps {}
@@ -40,7 +40,7 @@ interface SponsorsSectionProps {}
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true }); // Detect when the section comes into view
-  const numElements = 24; // Total number of motion.div elements
+  const numElements = 25; // Total number of motion.div elements
   const maxDelay = 2.0; // Maximum delay in seconds
   const delayIncrement = maxDelay / (numElements - 1);
 
@@ -49,7 +49,6 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
     { length: numElements },
     (_, i) => i * delayIncrement
   );
-  console.log(delays[20]);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,6 +63,24 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Only run on the client side
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Update `isMobile` on resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <section
       className="bg-[#E2E2E2] pb-[10%] w-full relative z-10 overflow-hidden min-h-screen "
@@ -86,9 +103,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[0] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[0] }
+              }
             >
               <Image
                 src={solace}
@@ -103,9 +124,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[1] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[1] }
+              }
             >
               <Image
                 src={EEF}
@@ -120,18 +145,26 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[2] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[2] }
+              }
             >
               <CSE className="h-full w-32 md:w-full" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[3] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[3] }
+              }
             >
               <Image
                 src={Surveymonkey}
@@ -146,18 +179,26 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[5] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[4] }
+              }
             >
               <NavCanada className="md:w-48 w-32 p-10" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[6] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[5] }
+              }
             >
               <Deepcode className="h-auto w-[100%] md:w-[75%] p-5" />
             </motion.div>
@@ -168,25 +209,37 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20  md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: delays[7] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[6] }
+              }
             ></motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: delays[8] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[7] }
+              }
             >
               <Image src={IPSG} alt="IPSG Logo" className="h-auto  w-[10vw]" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: delays[9] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[8] }
+              }
             >
               <Image
                 src={deloitte}
@@ -197,9 +250,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-20 md:h-48"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.9, ease: "easeOut", delay: delays[10] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[9] }
+              }
             ></motion.div>
           </div>
 
@@ -208,9 +265,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[11] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[10] }
+              }
             >
               <Image
                 src={redbull}
@@ -221,27 +282,39 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5  h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[12] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[11] }
+              }
             >
               <Image src={warp} alt="Warp logo" className="h-auto w-48" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[13] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[12] }
+              }
             >
               <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[14] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[13] }
+              }
             >
               <Image
                 src={wolfram}
@@ -256,18 +329,26 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl  w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeOut", delay: delays[15] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[14] }
+              }
             >
               <XYZ className="md:w-32 w-10" />
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[16] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[15] }
+              }
             >
               <Image
                 src={interviewcake}
@@ -278,9 +359,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[17] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[16] }
+              }
             >
               <Image
                 src={standoutStk}
@@ -291,9 +376,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[19] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[17] }
+              }
             >
               <Image
                 src={voiceflow}
@@ -309,27 +398,39 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[18] }
+              }
             >
               {" "}
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-[25%] flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
             >
               <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
             </motion.div>
             <motion.div
               className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-20 md:h-40"
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 0.6, ease: "easeOut", delay: delays[18] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[20] }
+              }
             ></motion.div>
           </div>
 
@@ -338,8 +439,12 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             className=" flex font-bold italic pt-20  font-jost justify-center items-center w-full  text-[#366ACF]"
             variants={itemVariants}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 1, ease: "easeOut", delay: delays[20] }}
+            animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+            transition={
+              isMobile
+                ? {}
+                : { duration: 1, ease: "easeOut", delay: delays[21] }
+            }
             style={{ fontSize: "clamp(2rem, 6vw , 3rem)" }}
           >
             Community Partners
@@ -348,18 +453,26 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className={styles.partnersContainer}
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[21] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[22] }
+              }
             >
               <MLH className="w-48 md:w-full h-auto" />
             </motion.div>
             <motion.div
               className={styles.partnersContainer}
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[22] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[23] }
+              }
             >
               <Image
                 src={EEF}
@@ -370,9 +483,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             <motion.div
               className={styles.partnersContainer}
               variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{ duration: 1, ease: "easeOut", delay: delays[23] }}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[24] }
+              }
             >
               <Image
                 src={uottawa}
