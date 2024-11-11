@@ -99,47 +99,50 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
         <div ref={sectionRef} className={` `}>
           {/* First Row - Large Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 gap-x-5 ">
-            <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[0] }
-              }
-            >
-              <Image
-                src={solace}
-                alt="Solace Logo"
-                className="md:h-32  md:h-auto w-32 md:w-96"
-              />
-            </motion.div>
-          </div>
+          <a href="https://solace.com" target="_blank" rel="noreferrer">
+            <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 gap-x-5 ">
+              <motion.div
+                className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+                variants={itemVariants}
+                initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+                animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+                transition={
+                  isMobile
+                    ? {}
+                    : { duration: 1, ease: "easeOut", delay: delays[0] }
+                }
+              >
+                <Image
+                  src={solace}
+                  alt="Solace Logo"
+                  className="md:h-32  md:h-auto w-32 md:w-96"
+                />
+              </motion.div>
+            </div>
+          </a>
 
           {/* Second Row */}
-          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
-            <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[1] }
-              }
-            >
-              <Image
-                src={EEF}
-                alt="EEF Logo"
-                className="md:h-32  md:h-15 w-auto"
-              />
-            </motion.div>
-          </div>
-
+          <a href="https://www.uottawa.ca/faculty-engineering/student-experience/funding-student-initiatives" target="_blank" rel="noreferrer">
+            <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
+              <motion.div
+                className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+                variants={itemVariants}
+                initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+                animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+                transition={
+                  isMobile
+                    ? {}
+                    : { duration: 1, ease: "easeOut", delay: delays[1] }
+                }
+              >
+                <Image
+                  src={EEF}
+                  alt="EEF Logo"
+                  className="md:h-32  md:h-15 w-auto"
+                />
+              </motion.div>
+            </div>
+          </a>
           {/* Third Row - Medium Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pt-5 pl-5 pr-5 gap-x-5 ">
             <motion.div
@@ -153,7 +156,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[2] }
               }
             >
-              <CSE className="h-full w-32 md:w-full" />
+              <a href="https://www.cse-cst.gc.ca/en" target="_blank" rel="noreferrer">
+                <CSE className="h-full w-32 md:w-full" />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
@@ -166,11 +171,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[3] }
               }
             >
-              <Image
-                src={Surveymonkey}
-                alt="Survey Monkey logo"
-                className="h-auto w-full md:p-5"
-              />
+              <a href="https://www.surveymonkey.com/" target="_blank" rel="noreferrer">
+                <Image
+                  src={Surveymonkey}
+                  alt="Survey Monkey logo"
+                  className="h-auto w-full md:p-5"
+                />
+              </a>
             </motion.div>
           </div>
 
@@ -187,7 +194,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[4] }
               }
             >
-              <NavCanada className="md:w-48 w-32 p-10" />
+              <a href="https://www.navcanada.ca/en/" target="_blank" rel="noreferrer">
+                <NavCanada className="md:w-48 w-32 p-10" />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
@@ -200,7 +209,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[5] }
               }
             >
-              <Deepcode className="h-auto w-[100%] md:w-[75%] p-5" />
+              <a href="https://www.deepcode.ca/" target="_blank" rel="noreferrer">
+                <Deepcode className="h-auto w-[100%] md:w-[75%] p-5" />
+              </a>
             </motion.div>
           </div>
 
@@ -228,7 +239,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[7] }
               }
             >
-              <Image src={IPSG} alt="IPSG Logo" className="h-auto  w-[10vw]" />
+              <a href="https://ipsgtechnology.com/" target="_blank" rel="noreferrer">
+                <Image src={IPSG} alt="IPSG Logo" className="h-auto  w-[10vw]" />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 h-20 md:h-48 "
@@ -241,11 +254,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[8] }
               }
             >
-              <Image
-                src={deloitte}
-                alt="Deloitte logo"
-                className="h-auto w-48"
-              />
+              <a href="https://www2.deloitte.com/ca/en/pages/about-deloitte/articles/home.html" target="_blank" rel="noreferrer">
+                <Image
+                  src={deloitte}
+                  alt="Deloitte logo"
+                  className="h-auto w-48"
+                />
+              </a>
             </motion.div>
             <motion.div
               className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-[3vh] md:h-[15vh]"
@@ -273,11 +288,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[10] }
               }
             >
-              <Image
-                src={redbull}
-                alt="Red Bull logo"
-                className="h-auto w-48"
-              />
+              <a href="https://www.redbull.com/ca-en" target="_blank" rel="noreferrer">
+                <Image
+                  src={redbull}
+                  alt="Red Bull logo"
+                  className="h-auto w-48"
+                />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
@@ -290,7 +307,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[11] }
               }
             >
-              <Image src={warp} alt="Warp logo" className="h-auto w-48" />
+              <a href="https://www.warp.dev/" target="_blank" rel="noreferrer">
+                <Image src={warp} alt="Warp logo" className="h-auto w-48" />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
@@ -303,7 +322,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[12] }
               }
             >
-              <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
+              <a href="https://www.elegoo.com/" target="_blank" rel="noreferrer">
+                <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
@@ -316,7 +337,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[13] }
               }
             >
-              <Image src={wolfram} alt="Wolfram logo" className="h-auto " />
+              <a href="https://www.wolfram.com/" target="_blank" rel="noreferrer">
+                <Image src={wolfram} alt="Wolfram logo" className="h-auto " />
+              </a>
             </motion.div>
           </div>
 
@@ -333,7 +356,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[14] }
               }
             >
-              <XYZ className=" w-8 md:w-32 h-auto object-contain " />
+              <a href="https://gen.xyz/" target="_blank" rel="noreferrer">
+                <XYZ className=" w-8 md:w-32 h-auto object-contain " />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
@@ -346,11 +371,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[15] }
               }
             >
-              <Image
-                src={interviewcake}
-                alt="Interview Cake Logo"
-                className="h-auto w-48"
-              />
+              <a href="https://www.interviewcake.com/" target="_blank" rel="noreferrer">
+                <Image
+                  src={interviewcake}
+                  alt="Interview Cake Logo"
+                  className="h-auto w-48"
+                />
+              </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
@@ -363,11 +390,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[16] }
               }
             >
+            <a href="https://www.standoutstickers.com/" target="_blank" rel="noreferrer">
               <Image
                 src={standoutStk}
                 alt="Standout-Stickers Logo"
                 className="h-auto w-[10vw]"
               />
+            </a>
             </motion.div>
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
@@ -380,11 +409,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[17] }
               }
             >
-              <Image
-                src={voiceflow}
-                alt="Voiceflow Logo"
-                className="h-auto w-48"
-              />
+              <a href="https://www.voiceflow.com/" target="_blank" rel="noreferrer">
+                <Image
+                  src={voiceflow}
+                  alt="Voiceflow Logo"
+                  className="h-auto w-48"
+                />
+              </a>
             </motion.div>
           </div>
 
@@ -415,7 +446,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[19] }
               }
             >
-              <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
+              <a href="https://icons8.com/" target="_blank" rel="noreferrer">
+                <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
+              </a>
             </motion.div>
             <motion.div
               className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
@@ -457,7 +490,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[22] }
               }
             >
-              <MLH className="w-48 md:w-full h-auto" />
+              <a href="https://mlh.io/" target="_blank" rel="noreferrer">
+                <MLH className="w-48 md:w-full h-auto" />
+              </a>
             </motion.div>
             <motion.div
               className={styles.partnersContainer}
@@ -470,11 +505,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[23] }
               }
             >
-              <Image
-                src={EEF}
-                alt="EEF Community"
-                className="w-48  md:w-full h-auto"
-              />
+              <a href="https://www.uottawa.ca/faculty-engineering/student-experience/funding-student-initiatives" target="_blank" rel="noreferrer">
+                <Image
+                  src={EEF}
+                  alt="EEF Community"
+                  className="w-48  md:w-full h-auto"
+                />
+              </a>
             </motion.div>
             <motion.div
               className={styles.partnersContainer}
@@ -487,11 +524,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[24] }
               }
             >
-              <Image
-                src={uottawa}
-                alt="uOttawa Logo"
-                className="w-48 md:w-full h-auto"
-              />
+              <a href="https://www.uottawa.ca/faculty-engineering/" target="_blank" rel="noreferrer">
+                <Image
+                  src={uottawa}
+                  alt="uOttawa Logo"
+                  className="w-48 md:w-full h-auto"
+                />
+              </a>
             </motion.div>
           </div>
         </div>
