@@ -62,14 +62,14 @@ const MainHeader = () => {
         <div className="mt-24 text-[#01A2D9]">
           <nav className="flex flex-col space-y-4 text-sm font-normal">
             {[
-              { href: "#about", label: "About" },
-              { href: "#pastevent", label: "Past Event" },
-              { href: "#sponsors", label: "Sponsors" },
-              { href: "#location", label: "Location" },
-              { href: "#faq", label: "FAQs" },
+              { href: "about", label: "About" },
+              { href: "pastevent", label: "Past Event" },
+              { href: "sponsors", label: "Sponsors" },
+              { href: "location", label: "Location" },
+              { href: "faq", label: "FAQs" },
             ].map((link, index) => (
               <div key={index}>
-                <Link href={link.href} className="relative group">
+                <Link to={link.href} className="relative group cursor-pointer" smooth={true} duration={800} onClick={toggleMenu}>
                   <span>{link.label}</span>
                 </Link>
                 {index < 4 && <hr className="border-t mt-4" />}
