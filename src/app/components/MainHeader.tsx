@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from 'react-scroll';
 import ColorLogo from "../assets/colourLogo.svg";
 import mlh from "../assets/MLH.png";
 import mlh_black from "../assets/black.svg";
@@ -18,13 +18,13 @@ const MainHeader = () => {
   const NavLinks = () => (
     <nav className="flex space-x-8 text-xl  font-jost">
       {[
-        { href: "#about", label: "About" },
-        { href: "#pastevent", label: "Past Event" },
-        { href: "#sponsor", label: "Sponsor" },
-        { href: "#location", label: "Location" },
-        { href: "#faq", label: "FAQs" },
+        { href: "about", label: "About" },
+        { href: "pastevent", label: "Past Event" },
+        { href: "sponsors", label: "Sponsors" },
+        { href: "location", label: "Location" },
+        { href: "faq", label: "FAQs" },
       ].map((link, index) => (
-        <Link key={index} href={link.href} className="relative group">
+        <Link key={index} to={link.href} className="relative group cursor-pointer" smooth={true} duration={800}>
           <span className="text-shadow-navbar-subtle">{link.label}</span>
           <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
         </Link>
@@ -64,7 +64,7 @@ const MainHeader = () => {
             {[
               { href: "#about", label: "About" },
               { href: "#pastevent", label: "Past Event" },
-              { href: "#sponsor", label: "Sponsor" },
+              { href: "#sponsors", label: "Sponsors" },
               { href: "#location", label: "Location" },
               { href: "#faq", label: "FAQs" },
             ].map((link, index) => (
