@@ -1,0 +1,105 @@
+/* Default styles */
+.section {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  justify-content: center ;
+  flex-direction: column;
+  background-color: #ffaf00;
+  min-height: 100vh;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  overflow: hidden;
+  text-align: left;
+  padding: 5vh 2rem;
+}
+
+.heading {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 6px 6px 1px rgba(0, 0, 0, 0.5);
+  padding-top: 4vh;
+}
+
+.tracksText {
+  font-family: 'Jost', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1rem, 2.5vw, 1.9rem);
+  line-height: 1.6em;
+  color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  z-index: 2;
+}
+
+.diagonalSeparator {
+  position: absolute;
+  bottom: -1px; 
+  left: 0;
+  width: 105%; 
+  height: auto;
+  transform: translateX(-2.5%) rotate(-1deg); 
+}
+
+.textContainer {
+  padding-bottom: 10vh;
+  padding-left: 10vh;
+}
+
+/* Bottom image container - temporarily hidden */
+.bottomImageContainer {
+  display: none;
+}
+
+/* Portrait mode adjustments */
+@media (orientation: portrait) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Pushes text up to make space for the image */
+    padding-top:3vh;
+    padding-left: 2rem; 
+    padding-right: 2rem;
+    min-height: 110vh; /* Increased height to ensure space for all elements */
+    overflow: hidden; /* Ensures no overflow outside the section */
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5vw;
+    margin-top: 2vh; /* Reduced margin for more space */
+  }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .tracksText {
+    max-width: 90vw;
+    padding: 0;
+    margin: 0;
+  }
+  /* Floor container styles */
+.floorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem; /* Adjust this padding as needed for spacing */
+}
+
+.floorContainer svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+   /* Adjust this max height if needed */
+}
+  
+}

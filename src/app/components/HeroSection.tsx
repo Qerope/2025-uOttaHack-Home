@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { collection, addDoc } from "firebase/firestore";
 //Asset Imports Below
 import styles from "../styles/HeroSection.module.css";
@@ -13,53 +12,55 @@ import buildingRight from "../assets/BuildingRight.png";
 import EmailInputBox from '../components/ui/EmailInputBox';
 import mlh from "../assets/MLH.png";
 import { DEV_MIDDLEWARE_MANIFEST } from "next/dist/shared/lib/constants";
+import { db } from "../../firebase";
+import BackgroundSVG from "../assets/BACKGROUND.svg";
+import HeroCTA from "./HeroCTA";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
 interface HeroSectionProps { }
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const [email, setEmail] = useState<string>("");
-  
+  const [mainState, setMainState] = useState<number>(0);
+
   return (
-    <section className={`${styles.container} flex items-center justify-center`}>
-      <div className={`${styles.textContainer} mt-4 md:mt-32`}>
-        <p className="text-md md:text-lg text-center font-inter font-medium text-shadow-hero">
-          January 17 - 19, 2025
-        </p>
-        <h1 className={`${styles.title} mb-2 text-shadow-hero`}>uOttaHack 7</h1>
-        <p className="mb-24 text-md md:text-lg text-center font-inter font-medium text-shadow-hero">
-          In-person @ the University of Ottawa
-        </p>
-  
-        <div className="flex justify-center">
-          <EmailInputBox />
-        </div>
+    <section className={`${styles.container} flex w-full min-h-screen`}>
+      <BackgroundSVG className="fixed top-0 w-auto min-h-screen bg-cover bg-center -z-10" />
+      
+      <div className="absolute z-10 top-28 lg:top-32 text-white">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <p className={`text-md md:text-lg text-center font-jost font-regular ${styles["text-shadow-dark"]}`}>
+            January 17 - 19, 2025
+          </p>
+
+          <h1 className={`${styles.title} mb-2`}>
+            uOttaHack 7
+          </h1>
+          <p className={`mb-24 text-md md:text-lg text-center font-jost font-medium ${styles["text-shadow-dark"]}`}>
+            In-person @ the University of Ottawa
+          </p>
+        </motion.div>
+
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          className="w-full h-full flex justify-center">
+          <HeroCTA mainState={mainState} />
+        </motion.div>
       </div>
     </section>
-  );    
+  );
 };
 
 export default HeroSection;
-
-
-
-/* <input
-            type="email"
-            placeholder="Enter your email to be notified when applications open"
-            name=""
-            id="email"
-            value={email}
-            className="w-full md:w-[75%] mx-auto md:ml-16 ml-0 font-jost p-3 border border-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-white bg-gray-500 bg-opacity-50 text-center"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <div className="flex justify-center">
-            {" "}
-            <button
-              onClick={handleEmailSubmit}
-              className="mx-auto font-jost bg-[#0c7ebc] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 transition duration-200 w-full max-w-xs mt-10"
-            >
-              Enter
-            </button>
-          </div>
-  */

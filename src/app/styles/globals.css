@@ -1,13 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/harabara");
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-@import url("https://fonts.cdnfonts.com/css/harabara");
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap");
-
 .text-jost {
-  font-family: "Jost", sans-serif; /* Optional: Create a class for specific elements */
+  font-family: var(--font-jost), sans-serif /* Optional: Create a class for specific elements */
+}
+
+.text-sulphur-point{
+  font-family: var(--font-sulphur-point), sans-serif;
+  font-weight: 300;
 }
 
 :root {
@@ -16,12 +21,16 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* No scrolling within the container */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body {
@@ -30,11 +39,19 @@ body {
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: rgb(var(--foreground-rgb));
-  background-image: url("../assets/bg.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.hero-container-bg {
+  background-image: url("../assets/Background.png");
+}
+
+.intro-container-bg {
+  background-color: #01A2D9;
 }
 
 @layer utilities {
@@ -236,4 +253,75 @@ a {
 .text-shadow-navbar-subtle {
   color: white;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
+
+
+
+input[type="email"] {
+  /* padding: 8px; */
+  /* margin: -5px 12px -5px -20px; */
+  color: #303030;
+  /* width: 19rem; */
+}
+
+
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+      fill: white;
+  }
+
+  50% {
+      fill: #cbb8cc;
+  }
+
+  100% {
+      fill: white;
+  }
+}
+
+
+button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #519e64;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #F4A701;
 }

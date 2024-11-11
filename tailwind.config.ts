@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        jost: ['"Jost"', "sans-serif"], // Add Jost font
+        'sulphur-point': ['"Sulphur Point"', 'sans-serif'],
+        jost: ['"Jost"', 'sans-serif'],
+        harabara: ['"Harabara"', 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,7 +20,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [  require('tailwindcss-animated')],
 };
 
 export default config;

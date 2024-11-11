@@ -1,7 +1,9 @@
 "use client";
-import { SnackbarProvider } from 'notistack';
 import AboutSection from "./components/AboutSection";
 import FAQSection from "./components/FAQSection";
+import { SnackbarProvider } from "notistack";
+/*import TrainStation from './assets/TrainStation.svg';*/
+
 import HeroSection from "./components/HeroSection";
 import IntroSection from "./components/IntroSection";
 import MainFooter from "./components/MainFooter";
@@ -9,21 +11,35 @@ import MainHeader from "./components/MainHeader";
 import MapSection from "./components/MapSection";
 import SponsorsSection from "./components/SponsorsSection";
 import SponsorUsSection from "./components/SponsorUsSection";
+import TracksSection from "./components/TracksSection";
+import UOttaHackHad from "./components/UOttaHackHad";
+import InterestedInSponsoring from "./components/InterestedInSponsoring";
+
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function Home() {
   return (
     <main>
-      <SnackbarProvider maxSnack={3}>
-        <MainHeader/>
-        <HeroSection />
+      <ParallaxProvider>
+        <SnackbarProvider maxSnack={3}>
+          <MainHeader />
+          <HeroSection />
 
-        {/*<IntroSection/>
-      <MainFooter/>
-      <MainHeader/>
-      <MapSection/>
-      <SponsorsSection/>
-      <SponsorUsSection/> */}
-      </SnackbarProvider>
+          <IntroSection />
+
+          <TracksSection />
+          <UOttaHackHad />
+          <InterestedInSponsoring />
+
+          <SponsorsSection />
+          <MapSection />
+          <FAQSection />
+        </SnackbarProvider>
+
+        <MainFooter />
+
+        {/* <SponsorUsSection />  */}
+      </ParallaxProvider>
     </main>
   );
 }
