@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/TracksSection.module.css";
 import TracksImageTop from "../assets/track-yellow-bg.svg";
-import TrainStation from "../assets/Train Station.svg";
+import TrainStation from "../assets/Train-Station-mini.svg";
 import RectangleImage from "../assets/Rectangle 1280.png";
 import { useRef, useEffect, useLayoutEffect, useState } from "react";
 
@@ -59,7 +59,7 @@ const TracksSection: React.FC = () => {
               <TracksImageTop
                 // src={TracksImageTop.src}
                 // alt="Top Tracks Image"
-                className=" md:h-[86vw] h-[70vh] relative z-[0] bg-cover"
+                className=" md:h-[86vw] h-[65vh] relative z-[0] bg-cover"
               />
             </div>
           </div>
@@ -84,7 +84,7 @@ const TracksSection: React.FC = () => {
           </div>
           {minHeight != "0" ? (
             <div
-              className=" absolute z-[3] md:w-[40%] w-full  p-5 md:p-10 flex flex-col md:top-[20%]  top-0  text-white"
+              className=" absolute z-[3] md:w-[40%] w-[] p-5 md:p-10 flex flex-col md:top-[20%]  top-0  text-white"
               style={{ minHeight }}
             >
               <h1
