@@ -33,8 +33,8 @@ const MainHeader = () => {
   );
 
   const MobileMenu = () => (
-    <div className="fixed inset-0 z-[1000] flex justify-center items-center">
-      <div className="relative h-[60%] w-[80%] bg-white p-12 rounded-md shadow-lg">
+    <div className="fixed inset-0  z-[1000] pt-10 flex justify-center items-center">
+      <div className="relative h-[70%] w-[80%] bg-white p-12 rounded-md shadow-lg">
         <button
           onClick={toggleMenu}
           className="absolute top-2 right-2 p-4 text-[#01A2D9]"
@@ -77,7 +77,7 @@ const MainHeader = () => {
             ))}
           </nav>
         </div>
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-6 w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-2  w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
           <a href="https://ca.linkedin.com/company/uottahack" target="_blank">
             <Linkedin className="w-7 h-7" />
           </a>
