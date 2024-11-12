@@ -12,7 +12,7 @@ This repository contains the source code for the 2025 uOttaHack landing page, bu
 - [Project Structure](#project-structure)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
-- [License](#license)
+- [License](#license) 
 
 ## Introduction
 
