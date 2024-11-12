@@ -8,12 +8,13 @@ import rightImage from "../assets/Vector Graphic.png";
 import sun from "../assets/Retro sun.png";
 import rock from "../assets/Rock.png";
 import parliament from "../assets/Parliam.png";
-import BackgroundSVG from "../assets/bg-back.svg";
-import Train from "../assets/metro_anim.svg";
+import BackgroundSVG from "../assets/bg-back2.svg";
+import Train from "../assets/test_metro2.svg";
 import BackgroudFront from "../assets/bg-front.svg";
 import buildingRight from "../assets/BuildingRight.png";
 import mlh from "../assets/MLH.png";
 import HeroCTA from "./HeroCTA";
+import useIsMobile from "../hooks/useInMobile";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { motion } from "framer-motion";
@@ -27,39 +28,49 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
 
   const [mainState, setMainState] = useState<number>(0);
+  const isMobile = useIsMobile();
 
   return (
     <section className={`${styles.container} flex w-full  min-h-screen  `}>
-      {/* <div className="  w-full  h-full -z-10">
-        {" "} */}
-      <div className="relative w-auto h-screen flex justify-center overflow-hidden">
-        {/* Background Image Container with overflow-hidden */}
-        <div className="relative w-full h-full bg-center overflow-hidden">
-          <BackgroundSVG className="fixed top-0 left-0 w-auto min-h-screen bg-center object-cover -z-[20]" />
-          <BackgroudFront className="fixed top-0 left-0 w-auto min-h-screen bg-center object-cover -z-[10]" />
-          <div className="w-1/2 overflow-hidden fixed -z-[11]">
-            {/* Animated Train positioned relative to the Background */}
-            <motion.div
-              className="fixed top-0 left-0 w-full h-full -z-15"
-              initial={{ x: -700, y: -150 }} // Start off-screen to the left
-              animate={{
-                x: [-700, 0, 0, 1300], // Move to the right, ending off-screen
-                y: [-150, 0, 0, 250], // Move downward as it moves to the right
-              }}
-              transition={{
-                times: [0, 0.3, 0.6, 1], // Pause between 30% and 60% of the duration
-                duration: 15, // Duration of the movement
-                repeat: Infinity, // Repeat indefinitely
-                repeatType: "loop", // Restart from the initial position after delay
-                repeatDelay: 10, // Pause 10 seconds before the next train appears
-                ease: "easeInOut", // Smooth easing for natural motion
-              }}
-            >
-              <Train className=" fixed top-0 left-0 w-auto min-h-screen object-cover" />
-            </motion.div>
+      {isMobile ? (
+        <>
+          <BackgroundSVG className="fixed top-0 w-auto min-h-screen bg-center object-cover -z-[20]" />
+          <BackgroudFront className="fixed top-0  w-auto min-h-screen bg-center object-cover -z-[10]" />
+          <Train className=" fixed top-0  w-auto min-h-screen object-cover -z-[11]" />
+        </>
+      ) : (
+        <div className="relative w-auto h-screen flex overflow-hidden">
+          {/* Background Image Container with overflow-hidden */}
+          <div className="relative w-full h-full  overflow-hidden">
+            <BackgroundSVG className="fixed top-0 left-0 w-auto min-h-screen bg-center object-cover -z-[20]" />
+            <BackgroudFront className="fixed top-0  left-0 w-auto min-h-screen bg-center object-cover -z-[10]" />
+            <div className="w-1/2 overflow-hidden fixed -z-[11]">
+              {/* Animated Train positioned relative to the Background */}
+              <motion.div
+                className="fixed top-0 left-0 w-full h-full -z-15"
+                initial={{ x: -1300, y: -250 }} // Start off-screen to the left
+                animate={{
+                  x: [-1300, 0, 0, 1300], // Move to the right, ending off-screen
+                  y: [-250, 0, 0, 250], // Move downward as it moves to the right
+                }}
+                transition={{
+                  times: [0, 0.3, 0.6, 1], // Pause between 30% and 60% of the duration
+                  duration: 15, // Duration of the movement
+                  repeat: Infinity, // Repeat indefinitely
+                  repeatType: "loop", // Restart from the initial position after delay
+                  repeatDelay: 5, // Pause 10 seconds before the next train appears
+                  ease: "easeInOut", // Smooth easing for natural motion
+                }}
+              >
+                <Train className=" fixed top-0 left-0 w-auto min-h-screen object-cover" />
+              </motion.div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+
+      {/* <div className="  w-full  h-full -z-10">
+        {" "} */}
 
       <div className={`absolute z-1 top-32 text-white `}>
         <motion.div
