@@ -53,7 +53,29 @@
   font-weight: 700;
 }
 
-.vertMenu.open {
+.vertMenu.open {  
   transition: max-height 0.3s ease-out;
   max-height: 15rem;
+}
+
+@keyframes menuSlideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menuSlideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }

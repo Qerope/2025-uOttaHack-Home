@@ -1,22 +1,21 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import ColorLogo from "../assets/colourLogo.svg";
 import mlh from "../assets/MLH.png";
-import mlh_black from "../assets/black.svg";
 import Insta from "../assets/insta.svg";
 import Linkedin from "../assets/linkedin.svg";
 import Discord from "../assets/discord.svg";
-import MLHBadge from "./MLHBadge";
+import { motion, AnimatePresence } from "framer-motion";
 
 const MainHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const closeMenu = () => setIsOpen(false);
+
   const NavLinks = () => (
-    <nav className="flex space-x-8 text-xl  font-jost">
+    <nav className="flex space-x-8 text-xl font-jost">
       {[
         { href: "#about", label: "About" },
         { href: "#pastevent", label: "Past Event" },
@@ -24,7 +23,12 @@ const MainHeader = () => {
         { href: "#location", label: "Location" },
         { href: "#faq", label: "FAQs" },
       ].map((link, index) => (
-        <Link key={index} href={link.href} className="relative group">
+        <Link
+          key={index}
+          href={link.href}
+          className="relative group"
+          onClick={closeMenu}
+        >
           <span className="text-shadow-navbar-subtle">{link.label}</span>
           <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
         </Link>
@@ -33,10 +37,22 @@ const MainHeader = () => {
   );
 
   const MobileMenu = () => (
-    <div className="fixed inset-0  z-[1000] pt-10 flex justify-center items-center">
-      <div className="relative h-[70%] w-[80%] bg-white p-12 rounded-md shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 z-[1000] pt-10 flex justify-center items-center"
+    >
+      <motion.div
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.3 }}
+        className="relative h-[70%] w-[80%] bg-white p-12 rounded-md shadow-lg"
+      >
         <button
-          onClick={toggleMenu}
+          onClick={closeMenu} // Close menu when clicked
           className="absolute top-2 right-2 p-4 text-[#01A2D9]"
         >
           <svg
@@ -69,7 +85,7 @@ const MainHeader = () => {
               { href: "#faq", label: "FAQs" },
             ].map((link, index) => (
               <div key={index}>
-                <Link href={link.href} className="relative group">
+                <Link href={link.href} className="relative group" onClick={closeMenu}>
                   <span>{link.label}</span>
                 </Link>
                 {index < 4 && <hr className="border-t mt-4" />}
@@ -77,7 +93,7 @@ const MainHeader = () => {
             ))}
           </nav>
         </div>
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-2  w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-2 w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
           <a href="https://ca.linkedin.com/company/uottahack" target="_blank">
             <Linkedin className="w-7 h-7" />
           </a>
@@ -88,8 +104,8 @@ const MainHeader = () => {
             <Discord className="w-7 h-7" />
           </a>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 
   return (
@@ -126,35 +142,12 @@ const MainHeader = () => {
             </svg>
           </button>
         </div>
-
-        {/* MLH Badge */}
-        <div className="">
-          <a
-            id="mlh-trust-badge"
-            style={{
-              display: "block",
-              maxWidth: "100px",
-              minWidth: "60px",
-              position: "absolute",
-              top: "0",
-              width: "10%",
-              zIndex: 10000,
-            }}
-            className="right-[80px] md:right-[50px]"
-            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
-            target="_blank"
-          >
-            <img
-              src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-white.svg"
-              alt="Major League Hacking 2025 Hackathon Season"
-              style={{ width: "100%" }}
-            />
-          </a>
-        </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && <MobileMenu />}
+      {/* Wrap MobileMenu with AnimatePresence */}
+      <AnimatePresence>
+        {isOpen && <MobileMenu />}
+      </AnimatePresence>
     </header>
   );
 };
