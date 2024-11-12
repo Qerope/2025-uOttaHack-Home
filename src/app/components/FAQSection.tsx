@@ -105,7 +105,7 @@ const FAQSection: React.FC = () => {
             <AnimatePresence key={index} initial={false}>
               <motion.div
                 layout
-                // transition={{ type: "spring", stiffness: 300, damping: 40 }}
+                transition={{ type: "spring", stiffness: 300, damping: 40 }}
                 className="md:text-[1.6vw] pt-[2vw] text-sm"
               >
                 <div
@@ -128,7 +128,7 @@ const FAQSection: React.FC = () => {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{
                       opacity: { duration: 0.3 },
-                      height: { duration: 0.4, ease: "easeInOut" },
+                      height: { duration: 0.1, ease: "easeInOut" },
                     }}
                     className="flex flex-col mt-5 h-auto pl-1 md:pl-3 italic md:text-lg w-[80%] bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl"
                   >
@@ -144,7 +144,7 @@ const FAQSection: React.FC = () => {
                   animate={{ scaleX: 1 }}
                   exit={{ scaleX: 0 }}
                   transition={{
-                    duration: 0.4,
+                    duration: 0.2,
                     ease: "easeInOut",
                     delay: openIndex === index ? 0 : 0,
                   }}
@@ -182,16 +182,16 @@ const FAQSection: React.FC = () => {
                 {openIndex === index + columnOneFAQs.length && (
                   <motion.div
                     layout
-                    initial={{ opacity: 0, height: 0 }}
+                    initial={{ opacity: 1, height: 1 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{
                       opacity: { duration: 0.3 },
                       height: { duration: 0.4, ease: "easeInOut" },
                     }}
-                    className="flex flex-col mt-5 h-auto pl-1 md:pl-3 italic md:text-lg w-[80%] bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl"
+                    className="flex flex-col mt-5 h-auto m-10 pl-1 md:pl-3 italic md:text-lg w-[80%] bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl"
                   >
-                    <div className="flex h-full pl-5 bg-[#1f4172] flex-row">
+                    <div className="flex h-[full] pl-5 bg-[#1f4172] flex-row">
                       <Markdown>{faq.answer}</Markdown>
                     </div>
                   </motion.div>

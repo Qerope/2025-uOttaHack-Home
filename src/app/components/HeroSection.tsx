@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 //Asset Imports Below
@@ -8,17 +8,21 @@ import rightImage from "../assets/Vector Graphic.png";
 import sun from "../assets/Retro sun.png";
 import rock from "../assets/Rock.png";
 import parliament from "../assets/Parliam.png";
-import BackgroundSVG from "../assets/BACKGROUND.svg";
+import BackgroundSVG from "../assets/bg-back.svg";
+import Train from "../assets/metro_anim.svg";
+import BackgroudFront from "../assets/bg-front.svg";
 import buildingRight from "../assets/BuildingRight.png";
 import mlh from "../assets/MLH.png";
 import HeroCTA from "./HeroCTA";
-import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Metro from "../assets/Metro.svg";
 interface HeroSectionProps {}
 
 const HeroSection: React.FC<HeroSectionProps> = () => {
+  const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
+  const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
 
@@ -26,7 +30,36 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
 
   return (
     <section className={`${styles.container} flex w-full  min-h-screen  `}>
-      <BackgroundSVG className="fixed top-0  w-auto  -ml-1 -mr-1 min-h-screen bg-cover bg-center -z-10" />
+      {/* <div className="  w-full  h-full -z-10">
+        {" "} */}
+      <div className="relative w-auto h-screen flex justify-center overflow-hidden">
+        {/* Background Image Container with overflow-hidden */}
+        <div className="relative w-full h-full bg-center overflow-hidden">
+          <BackgroundSVG className="fixed top-0 left-0 w-auto min-h-screen bg-center object-cover -z-[20]" />
+          <BackgroudFront className="fixed top-0 left-0 w-auto min-h-screen bg-center object-cover -z-[10]" />
+          <div className="w-1/2 overflow-hidden fixed -z-[11]">
+            {/* Animated Train positioned relative to the Background */}
+            <motion.div
+              className="fixed top-0 left-0 w-full h-full -z-15"
+              initial={{ x: -700, y: -150 }} // Start off-screen to the left
+              animate={{
+                x: [-700, 0, 0, 1300], // Move to the right, ending off-screen
+                y: [-150, 0, 0, 250], // Move downward as it moves to the right
+              }}
+              transition={{
+                times: [0, 0.3, 0.6, 1], // Pause between 30% and 60% of the duration
+                duration: 15, // Duration of the movement
+                repeat: Infinity, // Repeat indefinitely
+                repeatType: "loop", // Restart from the initial position after delay
+                repeatDelay: 10, // Pause 10 seconds before the next train appears
+                ease: "easeInOut", // Smooth easing for natural motion
+              }}
+            >
+              <Train className=" fixed top-0 left-0 w-auto min-h-screen object-cover" />
+            </motion.div>
+          </div>
+        </div>
+      </div>
 
       <div className={`absolute z-1 top-32 text-white `}>
         <motion.div
