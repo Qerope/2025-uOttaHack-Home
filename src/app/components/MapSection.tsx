@@ -2,18 +2,20 @@ import React from "react";
 import styles from "../styles/MapSection.module.css";
 import TrainBord from "../assets/board.svg";
 import { motion } from "framer-motion";
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface MapSectionProps {}
 
 const MapSection: React.FC<MapSectionProps> = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Animation triggers once when the element comes into view
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true, // This ensures the animation runs only once
+  });
 
   return (
     <section
-      className={`${styles.container} w-auto h-auto overflow-hidden`}
+      className={`${styles.container} bg-[#D5DBE2] w-auto h-auto overflow-hidden`}
       id="location"
     >
       <div
@@ -34,7 +36,14 @@ const MapSection: React.FC<MapSectionProps> = () => {
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
 
-      <TrainBord className="w-[200%] h-auto sm:w-[400%] -translate-x-[25%] sm:translate-x-0 md:w-full mx-auto" />
+      <div
+        ref={ref}
+        className={`${
+          inView ? "animate-flip-down animate-duration-500 animate-ease-in" : ""
+        }`}
+      >
+        <TrainBord className="w-[200%] bg-[#D5DBE2] h-auto -translate-x-[25%] sm:translate-x-0 md:w-full mx-auto" />
+      </div>
     </section>
   );
 };

@@ -1,8 +1,11 @@
 import React from "react";
+import useInView from "../hooks/useInView";
 
 const InterestedInSponsoring = () => {
+  const { ref, isInView } = useInView({ threshold: 0.5 });
+
   return (
-    <section className="w-full min-h-screen   bg-[#ffffff] ">
+    <section className="w-full min-h-screen  overflow-hidden bg-[#ffffff] ">
       <div className="  z-2 flex h-full w-full items-center  bg-[rgba(255,255,255,1)]">
         <div className="relative w-full">
           <div className="flex flex-col  w-full">
@@ -21,7 +24,12 @@ const InterestedInSponsoring = () => {
             <div className="flex flex-col w-full md:flex-row  md:items-center">
               <div className="flex font-jost flex-col md:w-1/2  p-[10%] space-y-10  text-center md:text-left ">
                 <div
-                  className="   flex flex-col pt-10  md:pt-0  md:p-0 w-full font-bold text-[rgba(9,94,174,1)]  leading-tighter "
+                  ref={ref}
+                  className={`flex flex-col pt-10  md:pt-0  md:p-0 w-full font-bold text-[rgba(9,94,174,1)]  leading-tighter ${
+                    isInView
+                      ? "  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-linear"
+                      : ""
+                  }`}
                   style={{
                     fontSize: "clamp(2rem, 3vw, 5rem)",
                   }}
@@ -29,7 +37,14 @@ const InterestedInSponsoring = () => {
                   <p>INTERESTED IN</p>
                   <p>SPONSORING?</p>
                 </div>
-                <div className="md:space-y-10 pb-10 ">
+                <div
+                  ref={ref}
+                  className={` md:space-y-10 pb-10  ${
+                    isInView
+                      ? "animate-fade-right animate-once animate-duration-1000 animate-ease-out"
+                      : ""
+                  }`}
+                >
                   <p
                     className="text-[rgba(54,106,207,1)] pb-5 leading-tight font-light text-center md:text-left"
                     style={{ fontSize: "clamp(0.7rem, 2vw, 1.3rem)" }}

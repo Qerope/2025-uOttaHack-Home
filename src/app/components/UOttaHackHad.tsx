@@ -49,7 +49,7 @@ const UOttaHackHad: React.FC = () => {
 
   return (
     <section
-      className="relative z-[1] md:-mt-[20%] overflow-hidden  -mt-[20%] w-full md:pb-[2%] lg:pb-[5%]"
+      className="relative z-[1] md:-mt-[20%] overflow-hidden  -mt-[20%] w-full"
       style={{
         background: "linear-gradient(180deg, #366ACF 0%, #74A0F6 100%)",
       }}
@@ -60,7 +60,7 @@ const UOttaHackHad: React.FC = () => {
           className={` relative z-1 text-white w-full  pt-10  mt-[5%] lg:mt-[1%]`}
         >
           <h1
-            className={`w-full flex justify-center font-jost items-center`}
+            className={`   w-full flex justify-center font-jost items-center`}
             style={{
               paddingTop: "clamp(20%, 2vw, 10%)",
               fontSize: "clamp(2rem, 5vw, 6rem)",
@@ -75,13 +75,14 @@ const UOttaHackHad: React.FC = () => {
               {width >= 768 ? (
                 <div>
                   <div
-                    className={`flex md:flex-row flex-col justify-between items-center`}
+                    className={`flex md:flex-row flex-col font-light justify-between items-center   `}
                     style={{
-                      fontFamily: '"Sulphur Point", sans-serif',
-                      fontSize: "clamp(1.5rem, 3vw, 3rem)",
-                      paddingLeft: "clamp(1%, 15vw, 40%)",
-                      paddingRight: "clamp(1%, 15vw, 40%)",
+                      fontSize: "clamp(1.5rem, 2vw, 3rem)",
+                      fontFamily: "Sulphur Point, sans-serif",
+                      paddingLeft: "clamp(1%, 8vw, 40%)",
+                      paddingRight: "clamp(1%, 8vw, 40%)",
                       paddingBottom: "clamp(5%, 2vw, 20%)",
+
                       paddingTop: "clamp(5%, 2vw, 20%)",
                     }}
                   >
@@ -295,6 +296,7 @@ const UOttaHackHad: React.FC = () => {
                         paddingLeft: "clamp(1%, 8vw, 40%)",
                         paddingRight: "clamp(1%, 8vw, 40%)",
                         paddingBottom: "clamp(5%, 2vw, 20%)",
+
                         paddingTop: "clamp(5%, 2vw, 20%)",
                       }}
                     >

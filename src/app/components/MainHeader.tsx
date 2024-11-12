@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import Link from "next/link";
+"use client";
+
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 import ColorLogo from "../assets/colourLogo.svg";
 import mlh from "../assets/MLH.png";
 import Insta from "../assets/insta.svg";
@@ -15,19 +17,20 @@ const MainHeader = () => {
   const closeMenu = () => setIsOpen(false);
 
   const NavLinks = () => (
-    <nav className="flex space-x-8 text-xl font-jost">
+    <nav className="flex space-x-8 text-xl  font-jost">
       {[
-        { href: "#about", label: "About" },
-        { href: "#pastevent", label: "Past Event" },
-        { href: "#sponsor", label: "Sponsor" },
-        { href: "#location", label: "Location" },
-        { href: "#faq", label: "FAQs" },
+        { href: "about", label: "About" },
+        { href: "pastevent", label: "Past Event" },
+        { href: "sponsors", label: "Sponsors" },
+        { href: "location", label: "Location" },
+        { href: "faq", label: "FAQs" },
       ].map((link, index) => (
         <Link
           key={index}
-          href={link.href}
-          className="relative group"
-          onClick={closeMenu}
+          to={link.href}
+          className="relative group cursor-pointer"
+          smooth={true}
+          duration={800}
         >
           <span className="text-shadow-navbar-subtle">{link.label}</span>
           <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
@@ -37,6 +40,7 @@ const MainHeader = () => {
   );
 
   const MobileMenu = () => (
+   
     <motion.div
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -70,22 +74,46 @@ const MainHeader = () => {
             ></path>
           </svg>
         </button>
-        <img
-          src={mlh.src}
-          alt="MLH 2025 Badge"
-          className="absolute top-0 left-11 h-[100px] w-auto"
-        />
+        <div className="">
+          <a
+            id="mlh-trust-badge"
+            style={{
+              display: "block",
+              maxWidth: "100px",
+              minWidth: "60px",
+              position: "absolute",
+              top: "0",
+              width: "10%",
+              zIndex: 10000,
+            }}
+            className="left-[10%] md:right-[50px]"
+            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
+            target="_blank"
+          >
+            <img
+              src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-white.svg"
+              alt="Major League Hacking 2025 Hackathon Season"
+              style={{ width: "100%", maxHeight: "150px" }}
+            />
+          </a>
+        </div>
         <div className="mt-24 text-[#01A2D9]">
           <nav className="flex flex-col space-y-4 text-sm font-normal">
             {[
-              { href: "#about", label: "About" },
-              { href: "#pastevent", label: "Past Event" },
-              { href: "#sponsor", label: "Sponsor" },
-              { href: "#location", label: "Location" },
-              { href: "#faq", label: "FAQs" },
+              { href: "about", label: "About" },
+              { href: "pastevent", label: "Past Event" },
+              { href: "sponsors", label: "Sponsors" },
+              { href: "location", label: "Location" },
+              { href: "faq", label: "FAQs" },
             ].map((link, index) => (
               <div key={index}>
-                <Link href={link.href} className="relative group" onClick={closeMenu}>
+                <Link
+                  to={link.href}
+                  className="relative group cursor-pointer"
+                  smooth={true}
+                  duration={800}
+                  onClick={toggleMenu}
+                >
                   <span>{link.label}</span>
                 </Link>
                 {index < 4 && <hr className="border-t mt-4" />}
@@ -93,7 +121,7 @@ const MainHeader = () => {
             ))}
           </nav>
         </div>
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-2 w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-[#01A2D9] p-2  w-[170px] rounded-t-sm flex justify-center items-center space-x-8">
           <a href="https://ca.linkedin.com/company/uottahack" target="_blank">
             <Linkedin className="w-7 h-7" />
           </a>
@@ -113,7 +141,7 @@ const MainHeader = () => {
       <div className="w-full sm:px-6 relative">
         {/* Logo */}
         <div className="absolute md:left-[10%] left-10 md:p-0 pt-10 top-1/2 transform -translate-y-1/2 flex-shrink-0">
-          <ColorLogo className="md:w-20 md:h-20 w-16 h-16" />
+          <ColorLogo className="md:w-20 md:h-20 w-12 h-12" />
         </div>
 
         {/* Navigation Links - Centered */}
@@ -141,6 +169,31 @@ const MainHeader = () => {
               ></path>
             </svg>
           </button>
+        </div>
+
+        {/* MLH Badge */}
+        <div className="">
+          <a
+            id="mlh-trust-badge"
+            style={{
+              display: "block",
+              maxWidth: "100px",
+              minWidth: "60px",
+              position: "absolute",
+              top: "0",
+              width: "10%",
+              zIndex: 10000,
+            }}
+            className="right-[80px] md:right-[50px]"
+            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
+            target="_blank"
+          >
+            <img
+              src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-white.svg"
+              alt="Major League Hacking 2025 Hackathon Season"
+              style={{ width: "100%" }}
+            />
+          </a>
         </div>
       </div>
 

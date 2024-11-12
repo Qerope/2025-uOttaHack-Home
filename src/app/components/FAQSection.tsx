@@ -4,6 +4,8 @@ import styles from "../styles/FAQSection.module.css";
 import ReactMarkdown from "react-markdown";
 import styled from "@emotion/styled";
 import InsideTrainSVG from "../assets/Interior_3.svg";
+import { motion, AnimatePresence } from "framer-motion";
+
 interface FAQSectionProps {
   question: string;
   answer: string;
@@ -11,7 +13,6 @@ interface FAQSectionProps {
 const Markdown = styled(ReactMarkdown as any)`
   * {
     font-family: Inter;
-    font-size: 19px;
   }
 
   a {
@@ -28,7 +29,7 @@ const faqs: FAQSectionProps[] = [
   },
   {
     question: "Will uOttaHack happen in person or virtually?",
-    answer: `No. After 2 years the hackathon will be hosted on the beautiful campus of the University of Ottawa and will take place from February 10th - 12th, 2023. Don’t worry about getting lost! We'll have plenty of signage and volunteers around campus to guide you. We can't wait to see you there!`,
+    answer: `The hackathon will be hosted on the beautiful campus of the University of Ottawa and will take place from January 17th - 19th, 2025. Don’t worry about getting lost! We'll have plenty of signage and volunteers around campus to guide you. We can't wait to see you there!`,
   },
   {
     question: "Who can participate?",
@@ -83,45 +84,136 @@ const FAQSection: React.FC = () => {
   const toggleDropdown = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const columnOneFAQs = faqs.filter((_, i) => i % 2 === 0);
+  const columnTwoFAQs = faqs.filter((_, i) => i % 2 !== 0);
 
   return (
-    <section
-      className={`${styles.container}  text-white overflow-hidden`}
-      id="faq"
-    >
-      <div className={`pl-10 md:pt- pt-10 flex md:pl-48 flex-row items-center`}>
-        <h2 className="font-jost font-bold text-6xl md:text-8xl ">FAQ</h2>
+    <section className={` bg-[#1f4172]  text-white overflow-hidden`} id="faq">
+      <div className={`pl-10  pt-10 flex  flex-row items-center`}>
+        <h2 className="font-jost font-bold text-6xl md:text-6xl ">FAQ</h2>
         <h3
-          className={`font-jost text-md md:text-6xl font-light italic   text-inline `}
+          className={`font-jost text-md md:text-[3vw] font-light italic   text-inline `}
         >
           - Frequently asked questions
         </h3>
       </div>
-      <div
-        className={`${styles.faqContainer} backdrop-blur-lg  rounded p-10  md:pl-48 md:pr-48 flex justify-center  items-center h-full`}
-      >
-        {faqs.map((faq, index) => (
-          <div key={index} className={`   md:text-3xl    text-md `}>
-            <div
-              className={`flex   items-center font-jost `}
-              onClick={() => toggleDropdown(index)}
-            >
-              <h4 className="hover:underline underline-offset-8">
-                {faq.question}
-              </h4>
-              <div
-                className={`${styles.triangle}  m-2 ${
-                  openIndex === index ? styles.open : ""
-                }`}
-              ></div>
-            </div>
-            {openIndex === index && (
-              <p className={` pt-10 pl-10  italic md:text-xl  w-[90%]`}>
-                <Markdown>{faq.answer}</Markdown>
-              </p>
-            )}
-          </div>
-        ))}
+
+      <div className="grid md:grid-cols-2 grid-cols-1 backdrop-blur-lg relative p-10 rounded w-full h-full gap-8">
+        {/* Column One */}
+        <div>
+          {columnOneFAQs.map((faq, index) => (
+            <AnimatePresence key={index} initial={false}>
+              <motion.div
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 40 }}
+                className="md:text-[1.6vw] pt-[2vw] text-sm"
+              >
+                <div
+                  className="flex w-full items-center font-jost"
+                  onClick={() => toggleDropdown(index)}
+                >
+                  <h4 className="w-3/4">{faq.question}</h4>
+                  <div
+                    className={`${styles.triangle} m-2 ${
+                      openIndex === index ? styles.open : ""
+                    }`}
+                  ></div>
+                </div>
+
+                {openIndex === index && (
+                  <motion.div
+                    layout
+                    initial={{ opacity: 1, height: 1 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{
+                      opacity: { duration: 0.3 },
+                      height: { duration: 0.4, ease: "easeInOut" },
+                    }}
+                    className="flex flex-col mt-5 h-auto pl-1 md:pl-3 italic md:text-lg w-[80%] bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl"
+                  >
+                    <div className="flex h-[full] pl-5 bg-[#1f4172] flex-row">
+                      <Markdown>{faq.answer}</Markdown>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Line under each question */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  exit={{ scaleX: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                    delay: openIndex === index ? 0.1 : 0,
+                  }}
+                  className="w-[80%] shadow-4xl shadow-indigo-red rounded-lg mt-4 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 origin-left"
+                  style={{ transformOrigin: "left" }}
+                ></motion.div>
+              </motion.div>
+            </AnimatePresence>
+          ))}
+        </div>
+
+        {/* Column Two */}
+        <div>
+          {columnTwoFAQs.map((faq, index) => (
+            <AnimatePresence key={index + columnOneFAQs.length} initial={false}>
+              <motion.div
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 40 }}
+                className="md:text-[1.6vw] pt-[2vw] text-sm"
+              >
+                <div
+                  className="flex w-full items-center font-jost"
+                  onClick={() => toggleDropdown(index + columnOneFAQs.length)}
+                >
+                  <h4 className="w-3/4">{faq.question}</h4>
+                  <div
+                    className={`${styles.triangle} m-2 ${
+                      openIndex === index + columnOneFAQs.length
+                        ? styles.open
+                        : ""
+                    }`}
+                  ></div>
+                </div>
+
+                {openIndex === index + columnOneFAQs.length && (
+                  <motion.div
+                    layout
+                    initial={{ opacity: 1, height: 1 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{
+                      opacity: { duration: 0.3 },
+                      height: { duration: 0.4, ease: "easeInOut" },
+                    }}
+                    className="flex flex-col mt-5 h-auto pl-1 md:pl-3 italic md:text-lg w-[80%] bg-gradient-to-r from-blue-200 to-cyan-200 rounded-3xl"
+                  >
+                    <div className="flex h-[full] pl-5 bg-[#1f4172] flex-row">
+                      <Markdown>{faq.answer}</Markdown>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Line under each question */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  exit={{ scaleX: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                    delay: openIndex === index + columnOneFAQs.length ? 0.1 : 0,
+                  }}
+                  className="w-[80%] shadow-4xl shadow-indigo-red rounded-lg mt-4 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 origin-left"
+                  style={{ transformOrigin: "left" }}
+                ></motion.div>
+              </motion.div>
+            </AnimatePresence>
+          ))}
+        </div>
       </div>
       <div className=" flex   flex-row  flex-end justify-center w-full h-full items-end">
         <div className="flex  w-full flex-col justify-center flex-end items-center">
