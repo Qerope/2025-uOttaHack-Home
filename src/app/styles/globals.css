@@ -252,8 +252,7 @@ a {
 .text-shadow-navbar-subtle {
   color: white;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
-
-
+}
 
 input[type="email"] {
   /* padding: 8px; */
