@@ -1,3 +1,4 @@
+
 import React from "react";
 import styles from "../styles/UOttaHackHad.module.css";
 import RectangleImage from "../assets/Rectangle 1280.png";
@@ -83,7 +84,7 @@ const UOttaHackHad: React.FC = () => {
                       paddingBottom: "clamp(5%, 2vw, 20%)",
                       paddingTop: "clamp(5%, 2vw, 20%)",
                     }}
-                    >
+                  >
                     <div
                       className={`  flex flex-col justify-center pb-10 md:pb-0 anianimate-once animate-duration-1000 animate-delay-100 animate-ease-out items-center `}
                     >
@@ -294,7 +295,6 @@ const UOttaHackHad: React.FC = () => {
                         paddingLeft: "clamp(1%, 8vw, 40%)",
                         paddingRight: "clamp(1%, 8vw, 40%)",
                         paddingBottom: "clamp(5%, 2vw, 20%)",
-
                         paddingTop: "clamp(5%, 2vw, 20%)",
                       }}
                     >

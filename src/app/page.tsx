@@ -2,7 +2,6 @@
 import AboutSection from "./components/AboutSection";
 import FAQSection from "./components/FAQSection";
 import { SnackbarProvider } from "notistack";
-/*import TrainStation from './assets/TrainStation.svg';*/
 
 import HeroSection from "./components/HeroSection";
 import IntroSection from "./components/IntroSection";
@@ -28,7 +27,7 @@ export default function Home() {
           <IntroSection />
 
           <TracksSection />
-          <UOttaHackHad />
+          {/* <UOttaHackHad /> */}
           <InterestedInSponsoring />
 
           <SponsorsSection />

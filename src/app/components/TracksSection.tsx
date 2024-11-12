@@ -1,97 +1,141 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import styles from "../styles/TracksSection.module.css";
-import TrainStation from "../assets/TrainStation.svg";
-import FloorSVG from '../assets/Floor.svg';
-import Seperator from "../assets/separation.svg";
+import TracksImageTop from "../assets/track-yellow-bg.svg";
+import TrainStation from "../assets/Train-Station-mini.svg";
+import RectangleImage from "../assets/Rectangle 1280.png";
+import { useRef, useEffect, useLayoutEffect, useState } from "react";
+
+import Seperation from "../assets/Seperation.svg";
+import { image } from "framer-motion/client";
+import { motion } from "framer-motion";
 import useInView from "../hooks/useInView";
-import { Parallax } from "react-scroll-parallax";
+import UOttaHackHad from "./UOttaHackHad";
+import useIsMobile from "../hooks/useInMobile";
 
 const TracksSection: React.FC = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [minHeight, setMinHeight] = useState("110vh");
-  const { ref: inViewRef, isInView } = useInView({ threshold: 0.5 });
-  const [isPortrait, setIsPortrait] = useState(false)
+  const imageRef = useRef<any | null>(null);
+  const sectionRef = useRef(null);
+  const { ref, isInView } = useInView({ threshold: 0.01 });
+  const isMobile = useIsMobile();
 
-  const updateMinHeight = () => {
-    const viewportHeight = window.innerHeight;
-    const viewportWidth = window.innerWidth;
-    const isCurrentlyPortrait = viewportHeight > viewportWidth;
+  const [minHeight, setMinHeight] = useState("0"); // Initial value as full screen height
 
-    setIsPortrait(isCurrentlyPortrait);
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      // console.log("handleResize called");
+      // console.log("imageRef.current:", imageRef.current); // Debugging
 
-    if (ref.current) {
-      let calculatedHeight;
-
-      if (isCurrentlyPortrait) {
-        calculatedHeight = viewportHeight * 0.6 + viewportHeight * 0.5;
+      if (imageRef.current) {
+        const svgHeight = imageRef.current.clientHeight;
+        // console.log("SVG Height:", svgHeight);
+        setMinHeight(`${svgHeight}px`);
       } else {
-        const aspectRatio = 11 / 16; // aspect ratio
-        calculatedHeight = viewportWidth * aspectRatio;
+        // console.warn("imageRef.current is null");
       }
+    };
 
-      setMinHeight(`${calculatedHeight}px`);
-    }
-  };
+    // Delay initial measurement to ensure SVG is mounted
+    requestAnimationFrame(handleResize);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      updateMinHeight();
-      window.addEventListener("resize", updateMinHeight);
-      return () => window.removeEventListener("resize", updateMinHeight);
-    }
-  }, []);
+    // Update on window resize
+    window.addEventListener("resize", handleResize);
 
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [imageRef.current]);
   return (
-    <section
-      id="tracks"
-      className={`relative w-full ${styles.section}`}
-      style={{ minHeight }}
-      ref={ref}
-    >
-      {/*<Parallax className={styles.bottomImageContainer} translateX={[-50, -55]}>
-        <TrainStation />
-  </Parallax> */}
-
-      <div
-        className={`relative z-2 md:w-[40%] w-[50%] flex flex-col ${
-          isPortrait ? "items-center text-center" : "items-start text-left"
-        } h-full text-white text-jost ${styles.textContainer}`}
+    <div className="overflow-hidden ">
+      <section
+        id="tracks"
+        className="relative    w-full font-jost  "
+        style={{ height: minHeight, background: "#FFAF00" }} // Apply the dynamically calculated minHeight
       >
-        <h1
-          ref={inViewRef}
-          className={`font-bold ${styles.heading} ${isInView ? styles.animateFadeInLeft : ""}`}
-          style={{ textAlign: isPortrait ? "center" : "left" }}
-        >
-          TRACKS
-        </h1>
-        <p
-          className={`${styles.tracksText} ${isInView ? styles.animateFadeInLeft : ""}`}
-          style={{ textAlign: isPortrait ? "center" : "left" }}
-        >
-          <span className="font-light">
-            Whether you&apos;re passionate about
-          </span>{" "}
-          <strong>health, fintech, AI, or sustainability</strong>
-          <span className="font-light">
-            , see what we can offer for the perfect platform to focus your
-            creativity and build impactful solutions.
-          </span>{" "}
-          <u>Choose your challenge</u>, collaborate, and{" "}
-          <strong>
-            <em>explore your limits!</em>
-          </strong>
-        </p>
-      </div>
+        <div className="flex w-full ">
+          <div className="h-full  ">
+            <div
+              className=" absolute z-[2] w-full"
+              ref={imageRef} // Attach the ref to the image
+            >
+              <TracksImageTop
+                // src={TracksImageTop.src}
+                // alt="Top Tracks Image"
+                className=" md:h-[86vw] h-[65vh] relative z-[0] bg-cover"
+              />
+            </div>
+          </div>
+          <div
+            className="relative w-full overflow-hidden  flex    items-end z-[2] "
+            style={{ height: minHeight }}
+          >
+            <div className="   w-full  ">
+              <TrainStation className="md:w-[100vw]  overflow-hidden   relative " />
+            </div>
+          </div>
+          <div
+            className="  flex justify-end items-end absolute z-[4] "
+            style={{ height: minHeight }}
+          >
+            <Seperation
+              // alt="Seperation Image"
+              // // style={{ marginTop: '-260px' }}
+              className="w-[160vw] z-[4] top-[7vw] -translate-x-[10%] relative"
+              // className="w-[240%] z-[4] -translate-x-[2%] md:-mt-[63%]  relative h-auto "
+            />
+          </div>
+          {minHeight != "0" ? (
+            <div
+              className=" absolute z-[3] md:w-[40%] w-[] p-5 md:p-10 flex flex-col md:top-[20%]  top-0  text-white"
+              style={{ minHeight }}
+            >
+              <h1
+                ref={ref}
+                className={`font-bold text-white [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${
+                  isMobile || isInView
+                    ? "visible" // Immediately visible on mobile, or if in view on larger screens
+                    : "hidden"
+                } ${
+                  !isMobile && isInView
+                    ? "animate-flip-down animate-once animate-duration-300 animate-delay-200 animate-ease-in"
+                    : ""
+                }`}
+                style={{
+                  fontSize: "clamp(3rem, 7vw, 10rem)", // Set the origin to the top for a flip-down effect
+                }}
+              >
+                TRACKS
+              </h1>
 
-      {isPortrait && (
-      <div className={styles.floorContainer}>
-          <FloorSVG />
-      </div>
-    )}
-      <div className={styles.diagonalSeparator}>
-        <Seperator className="w-full h-auto" />
-      </div>
-    </section>
+              <p
+                ref={ref}
+                className={` text-white  md:text-2xl text-sm ${
+                  isInView
+                    ? "animate-fade-right animate-once animate-duration-500 animate-ease-out"
+                    : ""
+                }`}
+              >
+                <span className="font-light">
+                  Whether you&apos;re passionate about
+                </span>{" "}
+                <strong>health, fintech, AI, or sustainability</strong>
+                <span className="font-light">
+                  , see what we can offer for the perfect platform to focus your
+                  creativity and build impactful solutions.
+                </span>{" "}
+                <u>Choose your challenge</u>, collaborate, and{" "}
+                <strong>
+                  <em>explore your limits!</em>
+                </strong>
+              </p>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+      </section>
+      <UOttaHackHad />
+    </div>
   );
 };
 

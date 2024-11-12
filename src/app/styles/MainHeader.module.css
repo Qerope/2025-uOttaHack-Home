@@ -39,6 +39,7 @@
     top: 0;
     width: 100vw;
     margin: 0;
+    /* transform: translateX(-50%); */
     align-items: center;
     justify-content: center;
     display: flex;
