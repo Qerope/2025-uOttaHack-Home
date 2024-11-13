@@ -20,7 +20,7 @@
     border-left: 200vw solid transparent;
     border-right: 200vw solid transparent;
     border-bottom: 150vh solid #D5DBE2;
-    z-index: 0;
+    z-index: 12;
 }
 
 .pretitle {
