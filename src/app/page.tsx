@@ -9,7 +9,6 @@ import MainFooter from "./components/MainFooter";
 import MainHeader from "./components/MainHeader";
 import MapSection from "./components/MapSection";
 import SponsorsSection from "./components/SponsorsSection";
-import SponsorUsSection from "./components/SponsorUsSection";
 import TracksSection from "./components/TracksSection";
 import UOttaHackHad from "./components/UOttaHackHad";
 import InterestedInSponsoring from "./components/InterestedInSponsoring";
