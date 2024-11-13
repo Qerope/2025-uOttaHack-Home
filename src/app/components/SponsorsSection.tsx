@@ -535,7 +535,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.otrain} `}>
+      <div className={`${styles.otrain}`}>
         <Parallax
           translateX={isMobile ? [-20, 20] : [-80, 100]} // Adjust values for mobile
           className="will-change-transform  "
@@ -547,7 +547,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
       {/* </div> */}
 
-      <OtrainRails className="absolute z-10 " />
+      <OtrainRails className="absolute z-[1] " />
       <div className={` absolute top-0 z-0 w-full h-full`}>
         <div className={`${styles.triangle} absolute `} />
       </div>
