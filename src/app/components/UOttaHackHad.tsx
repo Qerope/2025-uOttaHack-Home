@@ -49,7 +49,7 @@ const UOttaHackHad: React.FC = () => {
 
   return (
     <section
-      className="relative z-[1] md:-mt-[20%] overflow-hidden  -mt-[20%] w-full"
+      className="relative z-[1] md:-mt-[20%] overflow-hidden  -mt-[20%] w-full md:pb-[2%] lg:pb-[5%]"
       style={{
         background: "linear-gradient(180deg, #366ACF 0%, #74A0F6 100%)",
       }}
@@ -79,8 +79,8 @@ const UOttaHackHad: React.FC = () => {
                     style={{
                       fontSize: "clamp(1.5rem, 2vw, 3rem)",
                       fontFamily: "Sulphur Point, sans-serif",
-                      paddingLeft: "clamp(1%, 8vw, 40%)",
-                      paddingRight: "clamp(1%, 8vw, 40%)",
+                      paddingLeft: "clamp(1%, 15vw, 40%)",
+                      paddingRight: "clamp(1%, 15vw, 40%)",
                       paddingBottom: "clamp(5%, 2vw, 20%)",
 
                       paddingTop: "clamp(5%, 2vw, 20%)",
