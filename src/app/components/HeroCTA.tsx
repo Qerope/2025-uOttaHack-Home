@@ -78,7 +78,7 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
                   Thank you for subscribing!
                 </p>
               ) : (
-                <div className="flex w-full flex-row">
+                <div className="flex w-full  items-center  flex-row">
                   <input
                     type="email"
                     placeholder="Subscribe to our newsletter"
