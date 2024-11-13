@@ -67,7 +67,7 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
   return (
     <div className="flex flex-col w-full ">
       {isNewsLetterActive && (
-        <div className=" flex w-full flex-col" style="align-items: center;">
+        <div className=" flex w-full flex-col" style={{ alignItems: "center" }}>
           <form
             onSubmit={handleEmailSubmit}
             className="flex items-center h-14 p-1 backdrop-blur-md bg-white/70 rounded-lg overflow-hidden w-full max-w-md shadow-xl"
