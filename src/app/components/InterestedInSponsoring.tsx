@@ -78,12 +78,12 @@ const InterestedInSponsoring = () => {
 
                 <div className="w-full  p-1 md:p-3 bg-[#366ACF] h-full rounded-2xl flex md:items-center md:justify-center">
                   <div className="relative w-full md:w-[60vw] h-[30vh] md:h-[60vh]">
-                    <iframe
-                      className=" w-full rounded-2xl h-full"
-                      src="https://www.youtube.com/embed/8A1UI3aGjSE"
-                      title="uOttaHack 6 Recap"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    ></iframe>
+                  <iframe
+                    className="w-full rounded-2xl h-full"
+                    src="https://www.youtube.com/embed/8A1UI3aGjSE?autoplay=1&mute=1"
+                    title="uOttaHack 6 Recap"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  ></iframe>
                   </div>
                 </div>
               </div>
