@@ -2,46 +2,33 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
-import { Jost, Sulphur_Point } from "next/font/google";
+import { Jost } from "next/font/google";
 
+// Set up fonts without exporting them
 const jost = Jost({
   subsets: ["latin"],
-  variable: "--font-jost", // Define a custom CSS variable for Jost
-
+  variable: "--font-jost",
 });
 
 const harabara = localFont({
   src: "./fonts/Harabara.ttf",
   display: "swap",
-  variable: "--font-harabara", // Define a custom CSS variable for Jost
+  variable: "--font-harabara",
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter", // Define a custom CSS variable for Jost
+  variable: "--font-inter",
 });
 
-/*const sulphurPoint = Sulphur_Point({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  display: "swap", // Optional
-  // Remove 'variable' option for now
-});*/
-
-export { jost, harabara, inter };
-
-/*const sulphurPoint = Sulphur_Point({
-  subsets: ["latin"],
-  weight: ["300", "400"], 
-  variable: "--font-sulphur-point",
-}); */
-
+// Metadata for the layout
 export const metadata: Metadata = {
-  title: "uOttahack 7",
+  title: "uOttaHack 7",
   description:
     "The largest Ottawa-based hackathon for the last half-decade, uOttaHack is returning for its most exciting iteration yet! To celebrate this momentous occasion, uOttaHack 7 is expanding the hacker experience with new initiatives to create an unforgettable weekend for its hackers.",
 };
 
+// Layout component definition
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,8 +39,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jost.variable} ${harabara.variable} font-sans`}
     >
-      {/* Use Jost font for specific components or sections */}
-      <body className={` antialiased`}>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
