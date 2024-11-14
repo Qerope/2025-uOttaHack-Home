@@ -15,7 +15,7 @@ import useIsMobile from "../hooks/useInMobile";
 const TracksSection: React.FC = () => {
   const imageRef = useRef<any | null>(null);
   const sectionRef = useRef(null);
-  const { ref, isInView } = useInView({ threshold: 0.01 });
+  const { ref, isInView } = useInView({ threshold: 0.4 });
   const isMobile = useIsMobile();
 
   const [minHeight, setMinHeight] = useState("0"); // Initial value as full screen height
@@ -50,6 +50,7 @@ const TracksSection: React.FC = () => {
       <section
         id="tracks"
         className="relative    w-full font-jost  "
+        ref={ref}
         style={{ height: minHeight, background: "#FFAF00" }} // Apply the dynamically calculated minHeight
       >
         <div className="flex w-full ">
@@ -90,12 +91,7 @@ const TracksSection: React.FC = () => {
               style={{ minHeight }}
             >
               <h1
-                ref={ref}
                 className={`font-bold text-white [text-shadow:_6px_0px_0px_rgb(0_0_0_/_0.5)] ${
-                  isMobile || isInView
-                    ? "visible" // Immediately visible on mobile, or if in view on larger screens
-                    : "hidden"
-                } ${
                   !isMobile && isInView
                     ? "animate-flip-down animate-once animate-duration-300 animate-delay-200 animate-ease-in"
                     : ""
@@ -108,7 +104,6 @@ const TracksSection: React.FC = () => {
               </h1>
 
               <p
-                ref={ref}
                 className={` text-white  md:text-2xl text-sm ${
                   isInView
                     ? "animate-fade-right animate-once animate-duration-500 animate-ease-out"
