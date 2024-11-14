@@ -488,7 +488,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center  h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -516,7 +516,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
