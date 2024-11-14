@@ -40,7 +40,6 @@ const MainHeader = () => {
   );
 
   const MobileMenu = () => (
-   
     <motion.div
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -198,9 +197,7 @@ const MainHeader = () => {
       </div>
 
       {/* Wrap MobileMenu with AnimatePresence */}
-      <AnimatePresence>
-        {isOpen && <MobileMenu />}
-      </AnimatePresence>
+      <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>
     </header>
   );
 };

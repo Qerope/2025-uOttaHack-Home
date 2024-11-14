@@ -5,21 +5,21 @@ import Image from "next/image";
 import solace from "../assets/solace.png";
 import EEF from "../assets/eef.png";
 import CSE from "../assets/cse.svg";
-import Surveymonkey from "../assets/survey_monkey.png";
-import deloitte from "../assets/deloitte.png";
+import Surveymonkey from "../assets/surveryMonkey.svg";
+import Deloitte from "../assets/Deloitte.svg";
 import Deepcode from "../assets/Deepcode.svg";
-import voiceflow from "../assets/voiceflow.png";
+import Voiceflow from "../assets/voiceflow.svg";
 import onepassword from "../assets/1password.png";
 import ehub from "../assets/ehub.png";
-import icons8 from "../assets/icons8.png";
+import Icons8 from "../assets/icons8.svg";
 import eleg from "../assets/eleg.png";
 import XYZ from "../assets/xyz-logo.svg";
-import interviewcake from "../assets/interviewcake.png";
+import Interviewcake from "../assets/interviewcake.svg";
 import balsamiq from "../assets/balsamiq2.png";
 import NavCanada from "../assets/navCanada.svg";
 import redbull from "../assets/redbull.png";
 import warp from "../assets/warp.png";
-import standoutStk from "../assets/StandOut-Stickers.png";
+import StandoutStk from "../assets/stand-out-stickers-logo.svg";
 import wolfram from "../assets/wolfram-1.png";
 import eef_community from "../assets/eef-com.png";
 
@@ -122,7 +122,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </a>
 
           {/* Second Row */}
-          <a href="https://www.uottawa.ca/faculty-engineering/student-experience/funding-student-initiatives" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.uottawa.ca/faculty-engineering/student-experience/funding-student-initiatives"
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
               <motion.div
                 className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
@@ -144,9 +148,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             </div>
           </a>
           {/* Third Row - Medium Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full pt-5 pl-5 pr-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pt-5 pl-5 pr-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw] overflow-hidden"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -156,12 +160,18 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[2] }
               }
             >
-              <a href="https://www.cse-cst.gc.ca/en" target="_blank" rel="noreferrer">
-                <CSE className="h-full w-32 md:w-full" />
-              </a>
+              <div className=" flex items-center justify-center w-full p-[20%] h-full overflow-hidden">
+                <a
+                  href="https://www.cse-cst.gc.ca/en"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <CSE className="w-full" />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -171,20 +181,22 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[3] }
               }
             >
-              <a href="https://www.surveymonkey.com/" target="_blank" rel="noreferrer">
-                <Image
-                  src={Surveymonkey}
-                  alt="Survey Monkey logo"
-                  className="h-auto w-full md:p-5"
-                />
-              </a>
+              <div className="  w-full p-[8%] h-full overflow-hidden">
+                <a
+                  href="https://www.surveymonkey.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Surveymonkey className="w-[100%] h-[100%]" />
+                </a>
+              </div>
             </motion.div>
           </div>
 
           {/* Fourth Row - Medium Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw] overflow-hidden"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -194,12 +206,18 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[4] }
               }
             >
-              <a href="https://www.navcanada.ca/en/" target="_blank" rel="noreferrer">
-                <NavCanada className="md:w-48 w-32 p-10" />
-              </a>
+              <div className=" flex items-center justify-center w-full p-[40%] h-full overflow-hidden">
+                <a
+                  href="https://www.navcanada.ca/en/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <NavCanada className="w-full" />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -209,16 +227,22 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[5] }
               }
             >
-              <a href="https://www.deepcode.ca/" target="_blank" rel="noreferrer">
-                <Deepcode className="h-auto w-[100%] md:w-[75%] p-5" />
-              </a>
+              <div className=" flex items-center justify-center w-full p-[5%] h-full overflow-hidden">
+                <a
+                  href="https://www.deepcode.ca/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Deepcode className="w-full " />
+                </a>
+              </div>
             </motion.div>
           </div>
 
           {/* Fifth Row - Small Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
             <motion.div
-              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20  md:h-48"
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -229,7 +253,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             ></motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 md:h-48"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -239,12 +263,18 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[7] }
               }
             >
-              <a href="https://ipsgtechnology.com/" target="_blank" rel="noreferrer">
-                <Image src={IPSG} alt="IPSG Logo" className="h-auto  w-[10vw]" />
-              </a>
+              <div className=" flex items-center justify-center w-full p-[30%]  h-full overflow-hidden">
+                <a
+                  href="https://ipsgtechnology.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={IPSG} alt="IPSG Logo" className="w-full" />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-20 h-20 md:h-48 "
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -254,16 +284,18 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[8] }
               }
             >
-              <a href="https://www2.deloitte.com/ca/en/pages/about-deloitte/articles/home.html" target="_blank" rel="noreferrer">
-                <Image
-                  src={deloitte}
-                  alt="Deloitte logo"
-                  className="h-auto w-48"
-                />
-              </a>
+              <div className=" flex items-center justify-center w-full  p-[30%] h-full overflow-hidden">
+                <a
+                  href="https://www2.deloitte.com/ca/en/pages/about-deloitte/articles/home.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Deloitte className="w-[100%]" />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center p-5 h-20 h-[3vh] md:h-[15vh]"
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center   h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -276,9 +308,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
 
           {/* Sixth Row - Mini Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -288,16 +320,20 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[10] }
               }
             >
-              <a href="https://www.redbull.com/ca-en" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.redbull.com/ca-en"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src={redbull}
                   alt="Red Bull logo"
-                  className="h-auto w-48"
+                  className="h-auto max-w-[10vw] min-w-[5vw]"
                 />
               </a>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -308,11 +344,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
               <a href="https://www.warp.dev/" target="_blank" rel="noreferrer">
-                <Image src={warp} alt="Warp logo" className="h-auto w-48" />
+                <Image src={warp} alt="Warp logo" className="w-full" />
               </a>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -322,12 +358,22 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[12] }
               }
             >
-              <a href="https://www.elegoo.com/" target="_blank" rel="noreferrer">
-                <Image src={eleg} alt="Elegoo logo" className="h-auto w-48" />
-              </a>
+              <div className=" flex items-center justify-center w-full  h-full overflow-hidden">
+                <a
+                  href="https://www.elegoo.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={eleg}
+                    alt="Elegoo logo"
+                    className="w-[10vw] h-[100%]"
+                  />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -337,16 +383,26 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[13] }
               }
             >
-              <a href="https://www.wolfram.com/" target="_blank" rel="noreferrer">
-                <Image src={wolfram} alt="Wolfram logo" className="h-auto " />
-              </a>
+              <div className=" flex items-center justify-center w-full p-[10%] h-full overflow-hidden">
+                <a
+                  href="https://www.wolfram.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={wolfram}
+                    alt="Wolfram logo"
+                    className="w-[100%]"
+                  />
+                </a>
+              </div>
             </motion.div>
           </div>
 
           {/* Seventh Row - Mini Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full   pl-5 pr-5 gap-x-5 ">
+          <div className="flex flex-row items-center justify-center w-full  pl-5 pr-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl  w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white rounded-xl  w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -356,12 +412,14 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[14] }
               }
             >
-              <a href="https://gen.xyz/" target="_blank" rel="noreferrer">
-                <XYZ className=" w-8 md:w-32 h-auto object-contain " />
-              </a>
+              <div className=" flex items-center justify-center w-full p-[30%] h-full overflow-hidden">
+                <a href="https://gen.xyz/" target="_blank" rel="noreferrer">
+                  <XYZ className=" w-full " />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[8vw]  "
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -371,35 +429,40 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[15] }
               }
             >
-              <a href="https://www.interviewcake.com/" target="_blank" rel="noreferrer">
-                <Image
-                  src={interviewcake}
-                  alt="Interview Cake Logo"
-                  className="h-auto w-48"
-                />
-              </a>
+              <div className=" ">
+                <a
+                  href="https://www.interviewcake.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Interviewcake className="w-full h-full " />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white rounded-md md:rounded-xl w-full flex items-center justify-center  h-[8vw] overflow-hidden"
               variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              initial={isMobile ? "visible" : "hidden"}
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"}
               transition={
                 isMobile
                   ? {}
                   : { duration: 1, ease: "easeOut", delay: delays[16] }
               }
             >
-            <a href="https://www.standoutstickers.com/" target="_blank" rel="noreferrer">
-              <Image
-                src={standoutStk}
-                alt="Standout-Stickers Logo"
-                className="h-auto w-[10vw]"
-              />
-            </a>
+              <div className="flex items-center justify-center w-full p-[25%] h-full overflow-hidden">
+                <a
+                  href="https://www.standoutstickers.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center"
+                >
+                  <StandoutStk className="w-full h-full" />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center  h-[8vw] overflow-hidden"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -409,13 +472,15 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[17] }
               }
             >
-              <a href="https://www.voiceflow.com/" target="_blank" rel="noreferrer">
-                <Image
-                  src={voiceflow}
-                  alt="Voiceflow Logo"
-                  className="h-auto w-48"
-                />
-              </a>
+              <div className="flex items-center justify-center w-full h-full overflow-hidden">
+                <a
+                  href="https://www.voiceflow.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Voiceflow className="w-[100%] " />
+                </a>
+              </div>
             </motion.div>
           </div>
 
@@ -423,7 +488,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center  h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -432,11 +497,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   ? {}
                   : { duration: 1, ease: "easeOut", delay: delays[18] }
               }
-            >
-              {" "}
-            </motion.div>
+            ></motion.div>
             <motion.div
-              className="bg-white rounded-xl w-[25%] flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className="bg-white md:rounded-xl rounded-md w-[25%] flex items-center justify-center  h-[8vw] "
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -446,12 +509,14 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[19] }
               }
             >
-              <a href="https://icons8.com/" target="_blank" rel="noreferrer">
-                <Image src={icons8} alt="Icons8 logo" className="h-auto w-48" />
-              </a>
+              <div className="p-[10%]">
+                <a href="https://icons8.com/" target="_blank" rel="noreferrer">
+                  <Icons8 className="w-full" />
+                </a>
+              </div>
             </motion.div>
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center p-5 h-[3vh] md:h-[15vh]"
+              className=" rounded-xl w-[37.5%]  flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -505,7 +570,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[23] }
               }
             >
-              <a href="https://www.uottawa.ca/faculty-engineering/student-experience/funding-student-initiatives" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.uottawa.ca/faculty-engineering/student-experience/funding-student-initiatives"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src={EEF}
                   alt="EEF Community"
@@ -524,7 +593,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[24] }
               }
             >
-              <a href="https://www.uottawa.ca/faculty-engineering/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.uottawa.ca/faculty-engineering/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src={uottawa}
                   alt="uOttawa Logo"

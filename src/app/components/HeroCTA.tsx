@@ -117,7 +117,6 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
             {buttonText}
           </a>
         </motion.button>
-        
       </div>
     </div>
   );
