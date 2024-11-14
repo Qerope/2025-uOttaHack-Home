@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   const isInView = useInView(ref, { once: true });
 
   const [email, setEmail] = useState<string>("");
-  const [mainState, setMainState] = useState<number>(0);
+  const [mainState, setMainState] = useState<number>(2);
   const isMobile = useIsMobile();
 
   return (
