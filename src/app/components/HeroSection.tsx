@@ -44,9 +44,9 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
       ) : (
         <div className="relative w-auto h-screen flex overflow-hidden">
           {/* Background Image Container with overflow-hidden */}
-          <div className="relative w-full h-full  overflow-hidden">
-            <BackgroundSVG className="fixed top-0 left-0 w-auto min-h-screen bg-center object-cover -z-[20]" />
-            <BackgroudFront className="fixed top-0  left-0 w-auto min-h-screen bg-center object-cover -z-[10]" />
+          <div className="relative w-full h-full overflow-hidden">
+            <BackgroundSVG className="fixed top-0 left-0 w-full min-h-screen bg-center object-cover -z-[20]" />
+            <BackgroudFront className="fixed top-0  left-0 w-full min-h-screen bg-center object-cover -z-[10]" />
             <div className="w-1/2 overflow-hidden fixed -z-[11]">
               {/* Animated Train positioned relative to the Background */}
               <motion.div
