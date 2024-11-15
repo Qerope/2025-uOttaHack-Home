@@ -10,11 +10,11 @@ const jost = Jost({
   variable: "--font-jost",
 });
 
-const harabara = localFont({
-  src: "./fonts/Harabara.ttf",
-  display: "swap",
-  variable: "--font-harabara",
-});
+// const harabara = localFont({
+//   src: "/fonts/Harabara.woff", // Correct path
+//   display: "swap",
+//   variable: "--font-harabara",
+// });
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,10 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jost.variable} ${harabara.variable} font-sans`}
-    >
+    <html lang="en" className={`${inter.variable} ${jost.variable}  font-sans`}>
       <body className="antialiased">{children}</body>
     </html>
   );

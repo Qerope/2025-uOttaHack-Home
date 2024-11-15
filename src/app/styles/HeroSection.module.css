@@ -52,7 +52,7 @@
   font-size: 6rem;
   margin: 0;
   font-weight: 700;
-  font-family: "Harabara", sans-serif;
+  /* font-family: "Harabara", sans-serif; */
   text-shadow: 4px 4px 6px rgba(0, 0, 128, 0.7); /* Dark drop shadow for the title */
 }
 

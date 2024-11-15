@@ -11,7 +11,7 @@ import BackgroundSVG from "../assets/bg-back2.svg";
 import Train from "../assets/test_metro2.svg";
 import BackgroudFront from "../assets/bg-front.svg";
 import buildingRight from "../assets/BuildingRight.png";
-import EmailInputBox from '../components/ui/EmailInputBox';
+import EmailInputBox from "../components/ui/EmailInputBox";
 import mlh from "../assets/MLH.png";
 import { DEV_MIDDLEWARE_MANIFEST } from "next/dist/shared/lib/constants";
 import { db } from "../../firebase";
@@ -82,14 +82,16 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className={`text-md md:text-lg text-center font-jost font-regular ${styles["text-shadow-dark"]}`}>
+          <p
+            className={`text-md md:text-lg text-center font-jost font-regular ${styles["text-shadow-dark"]}`}
+          >
             January 17 - 19, 2025
           </p>
 
-          <h1 className={`${styles.title} mb-2`}>
-            uOttaHack 7
-          </h1>
-          <p className={`mb-24 text-md md:text-lg text-center font-jost font-medium ${styles["text-shadow-dark"]}`}>
+          <h1 className={`${styles.title} font-harabara mb-2`}>uOttaHack 7</h1>
+          <p
+            className={`mb-24 text-md md:text-lg text-center font-jost font-medium ${styles["text-shadow-dark"]}`}
+          >
             In-person @ the University of Ottawa
           </p>
         </motion.div>
@@ -99,7 +101,8 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-          className="w-full h-full flex justify-center">
+          className="w-full h-full flex justify-center"
+        >
           <HeroCTA mainState={mainState} />
         </motion.div>
       </div>
