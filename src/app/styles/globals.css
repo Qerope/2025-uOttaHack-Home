@@ -14,6 +14,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Harabara';
+  src: url('/fonts/Harabara.woff') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
