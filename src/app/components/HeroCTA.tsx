@@ -103,15 +103,14 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
           </form>
         </div>
       )}
-      <div className="button-container p-10 text-center mt-0">
+      <div className={`button-container p-10 text-center mt-0 ${ styles.closerButton}`}>
         <motion.button
           ref={ref}
           initial={{ opacity: 0, y: 50 }} // Starting state: faded out and below
           animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible and in place
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Animation duration and easing
           className={`text-center font-bold cta ${
-            buttonText === "Visit 2024" ? styles.enlargeOnHover : ""
-          }`}
+            (buttonText === "Visit 2024" || buttonText === "Apply Now!") ? styles.enlargeOnHover : ""}`}
         >
           <a target="_blank" rel="noopener noreferrer" href={buttonLink}>
             {buttonText}
@@ -148,7 +147,7 @@ const QuickHeroSectionState: React.FC<QuickHeroSectionStateProps> = ({
     2: (
       <HeroCTA
         isNewsLetterActive={false}
-        buttonText="Apply!"
+        buttonText="Apply Now!"
         buttonLink="https://apply.uottahack.ca/"
       />
     ),

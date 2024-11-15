@@ -30,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   const isInView = useInView(ref, { once: true });
 
   const [email, setEmail] = useState<string>("");
-  const [mainState, setMainState] = useState<number>(0);
+  const [mainState, setMainState] = useState<number>(2);
   const isMobile = useIsMobile();
 
   return (
@@ -44,13 +44,13 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
       ) : (
         <div className="relative w-auto h-screen flex overflow-hidden">
           {/* Background Image Container with overflow-hidden */}
-          <div className="relative w-full h-full overflow-hidden">
-            <BackgroundSVG className="fixed top-0 left-0 w-full min-h-screen bg-center object-cover -z-[20]" />
-            <BackgroudFront className="fixed top-0  left-0 w-full min-h-screen bg-center object-cover -z-[10]" />
+          <div className="relative w-auto min-w-[100vw] min-h-screen h-full overflow-hidden">
+            <BackgroundSVG className="fixed top-0 left-0 w-auto min-h-screen min-w-[100vw] bg-center object-cover -z-[20]" />
+            <BackgroudFront className="fixed top-0 left-0 w-auto min-h-screen min-w-[100vw] bg-center object-cover -z-[10]" />
             <div className="w-1/2 overflow-hidden fixed -z-[11]">
               {/* Animated Train positioned relative to the Background */}
               <motion.div
-                className="fixed top-0 left-0 w-full h-full -z-15"
+                className="fixed top-0 left-0  w-auto min-h-screen min-w-[100vw] h-full -z-[15]"
                 initial={{ x: -1300, y: -250 }} // Start off-screen to the left
                 animate={{
                   x: [-1300, 0, 0, 1300], // Move to the right, ending off-screen
@@ -65,7 +65,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
                   ease: "easeInOut", // Smooth easing for natural motion
                 }}
               >
-                <Train className=" fixed top-0 left-0 w-auto min-h-screen object-cover" />
+                <Train className=" fixed top-0 left-0 w-auto min-h-screen min-w-[100vw] object-cover" />
               </motion.div>
             </div>
           </div>

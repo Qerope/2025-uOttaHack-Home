@@ -15,6 +15,10 @@
     transform: skewX(-0deg);
 }
 
+.closerButton {
+    margin-top: -80px;
+}
+
 .flex-center {
     align-items: center;
 }
