@@ -328,11 +328,13 @@ button {
   padding: 8px 15px;
   border: none;
   border-radius: 5px;
-  background: blue;
   color: white;
+  background-color: rgba(0, 123, 255, 1);
+  border-color: rgba(0, 123, 255, 1);
   cursor: pointer;
 }
 
 button:hover {
-  background: #F4A701;
+  background-color: rgba(0, 123, 255, 1);
+  border-color: rgba(0, 123, 255, 1);
 }
