@@ -23,10 +23,11 @@ const inter = Inter({
 
 // Metadata for the layout
 export const metadata: Metadata = {
-  title: "uOttaHack 7",
+  title: "uOttaHack 7 - 2025 - Apply NOW!",
   description:
-    "The largest Ottawa-based hackathon for the last half-decade, uOttaHack is returning for its most exciting iteration yet! To celebrate this momentous occasion, uOttaHack 7 is expanding the hacker experience with new initiatives to create an unforgettable weekend for its hackers.",
+    "Join us and apply now to attend uOttaHack 7, the most anticipated hackathon in Ottawa, proudly celebrating 7 years of innovation, creativity, and community. This year, we’re leveling up the hacker experience with exciting new initiatives, exclusive workshops, inspiring keynote speakers, and unforgettable activities. Whether you're a seasoned hacker or a first-timer, uOttaHack 7 promises to be an incredible weekend of collaboration, learning, and fun.",
 };
+
 
 // Layout component definition
 export default function RootLayout({

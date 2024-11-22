@@ -571,13 +571,13 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
               <a
-                href="https://www.uottawa.ca/faculty-engineering/student-experience/funding-student-initiatives"
+                href="https://www.uottawa.ca/current-students/career-experiential-learning/entrepreneurship-hub"
                 target="_blank"
                 rel="noreferrer"
               >
                 <Image
                   src={ehub}
-                  alt="EEF Community"
+                  alt="ehub Community"
                   className="w-48  md:w-full h-auto"
                 />
               </a>
