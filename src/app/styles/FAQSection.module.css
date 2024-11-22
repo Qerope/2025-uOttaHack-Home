@@ -67,7 +67,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* font-family:   'var(--font-jost)'; */
+    font-family:  "Jost", sans-serif;;
 }
 
 .moreQuestions {

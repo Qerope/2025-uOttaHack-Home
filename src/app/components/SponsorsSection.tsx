@@ -10,7 +10,7 @@ import Deloitte from "../assets/Deloitte.svg";
 import Deepcode from "../assets/Deepcode.svg";
 import Voiceflow from "../assets/voiceflow.svg";
 import onepassword from "../assets/1password.png";
-import ehub from "../assets/ehub.png";
+import ehub from "../assets/eef2.png";
 import Icons8 from "../assets/icons8.svg";
 import eleg from "../assets/eleg.png";
 import XYZ from "../assets/xyz-logo.svg";
@@ -150,7 +150,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           {/* Third Row - Medium Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pt-5 pl-5 pr-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw] overflow-hidden"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw] overflow-hidden"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -171,7 +171,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -196,7 +196,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           {/* Fourth Row - Medium Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw] overflow-hidden"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw] overflow-hidden"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -217,7 +217,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -253,7 +253,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             ></motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -274,7 +274,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -295,7 +295,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center   h-[11vw]"
+              className=" md:rounded-xl rounded-md w[5%] md:w-[25%] flex items-center justify-center   h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -310,7 +310,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           {/* Sixth Row - Mini Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -333,7 +333,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </a>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -348,7 +348,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </a>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -373,7 +373,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -402,7 +402,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           {/* Seventh Row - Mini Sponsors */}
           <div className="flex flex-row items-center justify-center w-full  pl-5 pr-5 gap-x-2 ">
             <motion.div
-              className="bg-white rounded-xl  w-full flex items-center justify-center h-[8vw]"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -429,18 +429,18 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[15] }
               }
             >
-              <div className=" ">
+              <div className=" flex items-center justify-center w-full h-full overflow-hidden">
                 <a
                   href="https://www.interviewcake.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Interviewcake className="w-full h-full " />
+                  <Interviewcake className="w-[100%]" />
                 </a>
               </div>
             </motion.div>
             <motion.div
-              className="bg-white rounded-md md:rounded-xl w-full flex items-center justify-center  h-[8vw] overflow-hidden"
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center  h-[8vw] overflow-hidden"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"}
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"}
@@ -457,7 +457,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   rel="noreferrer"
                   className="flex items-center"
                 >
-                  <StandoutStk className="w-full h-full" />
+                  <StandoutStk className="w-[100%]" />
                 </a>
               </div>
             </motion.div>
