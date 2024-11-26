@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import { Jost } from "next/font/google";
+import opengraph_image from "@/app/assets/og-image.jpg";
+import twittercard_image from "@/app/assets/twitter-card.jpg";
 
 // Set up fonts without exporting them
 const jost = Jost({
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     url: "https://2025.uOttahack.com",
     images: [ 
       {
-        url: "https://2025.uOttahack.com/og-image.jpg",
+        url: opengraph_image.src,
         width: 1200,
         height: 630,
         alt: "uOttaHack 7 - Apply Now!"
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     description: "Join us for uOttaHack 7 and apply now! The most anticipated hackathon in Ottawa.",
     images: [ 
       {
-        url: "https://2025.uOttahack.com/twitter-card.jpg",
+        url: twittercard_image.src,
         width: 800,
         height: 418,
         alt: "uOttaHack 7 - Apply Now!"
@@ -72,9 +74,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jost.variable}  font-sans`}>
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
-        <link rel="icon" href="/icons/web-app-manifest-192x192.png" sizes="192x192" />
-        <link rel="icon" href="/icons/web-app-manifest-512x512.png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180" />
+        <link rel="icon" href="/favicon/web-app-manifest-192x192.png" sizes="192x192" />
+        <link rel="icon" href="/favicon/web-app-manifest-512x512.png" sizes="512x512" />
       </head>
       
       <body className="antialiased">{children}</body>
