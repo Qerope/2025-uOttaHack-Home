@@ -31,15 +31,29 @@ export const metadata: Metadata = {
     title: "uOttaHack 7 - 2025 - Apply NOW!",
     description: "Join us and apply now to attend uOttaHack 7, the most anticipated hackathon in Ottawa.",
     url: "https://2025.uOttahack.com",
-    image: "https://2025.uOttahack.com/og-image.jpg",
-    site_name: "uOttaHack",
+    images: [ 
+      {
+        url: "https://2025.uOttahack.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "uOttaHack 7 - Apply Now!"
+      }
+    ],    
+    siteName: "uOttaHack",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image", 
     title: "uOttaHack 7 - 2025 - Apply NOW!",
     description: "Join us for uOttaHack 7 and apply now! The most anticipated hackathon in Ottawa.",
-    image: "https://2025.uOttahack.com/twitter-card.jpg", 
+    images: [ 
+      {
+        url: "https://2025.uOttahack.com/twitter-card.jpg",
+        width: 800,
+        height: 418,
+        alt: "uOttaHack 7 - Apply Now!"
+      }
+    ],
     site: "@uOttaHack",
   },
   appleWebApp: {
