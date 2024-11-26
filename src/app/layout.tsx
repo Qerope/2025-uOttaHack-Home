@@ -26,8 +26,27 @@ export const metadata: Metadata = {
   title: "uOttaHack 7 - 2025 - Apply NOW!",
   description:
     "Join us and apply now to attend uOttaHack 7, the most anticipated hackathon in Ottawa, proudly celebrating 7 years of innovation, creativity, and community. This year, we’re leveling up the hacker experience with exciting new initiatives, exclusive workshops, inspiring keynote speakers, and unforgettable activities. Whether you're a seasoned hacker or a first-timer, uOttaHack 7 promises to be an incredible weekend of collaboration, learning, and fun.",
+  openGraph: {
+    type: 'website',
+    title: "uOttaHack 7 - 2025 - Apply NOW!",
+    description: "Join us and apply now to attend uOttaHack 7, the most anticipated hackathon in Ottawa.",
+    url: "https://2025.uOttahack.com",
+    image: "https://2025.uOttahack.com/og-image.jpg",
+    site_name: "uOttaHack",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image", 
+    title: "uOttaHack 7 - 2025 - Apply NOW!",
+    description: "Join us for uOttaHack 7 and apply now! The most anticipated hackathon in Ottawa.",
+    image: "https://2025.uOttahack.com/twitter-card.jpg", 
+    site: "@uOttaHack",
+  },
+  appleWebApp: {
+    title: "uOttaHack 7",
+    statusBarStyle: "black-translucent",
+  },
 };
-
 
 // Layout component definition
 export default function RootLayout({
@@ -37,6 +56,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jost.variable}  font-sans`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
+        <link rel="icon" href="/icons/web-app-manifest-192x192.png" sizes="192x192" />
+        <link rel="icon" href="/icons/web-app-manifest-512x512.png" sizes="512x512" />
+      </head>
+      
       <body className="antialiased">{children}</body>
     </html>
   );
