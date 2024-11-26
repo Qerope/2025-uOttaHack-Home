@@ -529,7 +529,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
             <div className="p-[10%]">
-              <a href="https://icons8.com/" target="_blank" rel="noreferrer">
+              <a href="https://www.long-mcquade.com/" target="_blank" rel="noreferrer">
                 <Image
                   src={longandmcquade}
                   alt="Long & McQuade logo"
