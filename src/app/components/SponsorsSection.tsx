@@ -559,7 +559,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
           {/* Eighth Row - Single Sponsor */}
 
-          <div className="flex flex-row items-center justify-self-center justify-center w-[75%] pl-5 pr-5 pt-5 gap-x-2">
+          <div className="flex flex-row items-center translate-x-[16.3%] justify-center w-[75%] pl-5 pr-5 pt-5 gap-x-2">
             <motion.div
               className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
               variants={itemVariants}
