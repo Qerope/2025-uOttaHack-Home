@@ -388,78 +388,6 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             ></motion.div>
           </div>
 
-           {/* row# - Small Sponsors */}
-          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
-            <motion.div
-              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center h-[11vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[6] }
-              }
-            ></motion.div>
-            <motion.div
-              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[7] }
-              }
-            >
-              <div className=" flex items-center justify-center w-full   h-full overflow-hidden">
-                <a
-                  href="https://www.wesleyclover.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src={WesleyClover}
-                    alt="Wesley Clover Logo"
-                    className="w-[20vw]"
-                  />
-                </a>
-              </div>
-            </motion.div>
-            <motion.div
-              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[8] }
-              }
-            >
-              <div className=" flex items-center justify-center w-full  p-[10%] h-full overflow-hidden">
-                <a
-                  href="https://www.capzul.net/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image src={Capzul} alt="Capzul Logo" className="w-[20vw]" />
-                </a>
-              </div>
-            </motion.div>
-            <motion.div
-              className=" md:rounded-xl rounded-md w[5%] md:w-[25%] flex items-center justify-center   h-[11vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[9] }
-              }
-            ></motion.div>
-          </div>
-          
           {/* Sixth Row - Mini Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-2 ">
             <motion.div
@@ -637,7 +565,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             </motion.div>
           </div>
 
-          {/* Eighth Row - Single Sponsor */}
+          {/* Eighth Row - Mini Sponsors */}
 
           <div className="flex flex-row items-center translate-x-[16.3%] justify-center w-[75%] pl-5 pr-5 pt-5 gap-x-2">
             <motion.div
@@ -696,6 +624,58 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                     src={themerrydairy}
                     alt="The Merry Dairy logo"
                     className="w-[100%]"
+                  />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Nineth Row - Mini Sponsors */}
+
+          <div className="flex flex-row items-center translate-x-[50%] justify-center w-[50%] pl-5 pr-5 pt-5 gap-x-2">
+            <motion.div
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[18] }
+              }
+            >
+
+              <div className=" flex items-center justify-center w-full  p-[10%] h-full overflow-hidden">
+                <a
+                  href="https://www.capzul.net/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={Capzul} alt="Capzul Logo" className="w-[20vw]" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
+            >
+              <div className=" flex items-center justify-center w-full   h-full overflow-hidden">
+                <a
+                  href="https://www.wesleyclover.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={WesleyClover}
+                    alt="Wesley Clover Logo"
+                    className="w-[15vw]"
                   />
                 </a>
               </div>
