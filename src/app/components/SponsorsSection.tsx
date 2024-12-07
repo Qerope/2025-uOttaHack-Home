@@ -22,11 +22,11 @@ import warp from "../assets/warp.png";
 import StandoutStk from "../assets/stand-out-stickers-logo.svg";
 import wolfram from "../assets/wolfram-1.png";
 import eef_community from "../assets/eef-com.png";
-
+import WesleyClover from "../assets/WesleyClover.png";
 import MLH from "../assets/mlh.svg";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
-
+import Capzul from "@/app/assets/Capzul.png";
 import IPSG from "../assets/IPSG.png";
 import OtrainSVG from "../assets/Otrain2.svg";
 import OtrainRails from "../assets/train_rail.svg";
@@ -307,6 +307,73 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             ></motion.div>
           </div>
 
+          {/* row# - Small Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
+            <motion.div
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[6] }
+              }
+            ></motion.div>
+            <motion.div
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[7] }
+              }
+            >
+              <div className=" flex items-center justify-center w-full   h-full overflow-hidden">
+                <a
+                  href="https://www.wesleyclover.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={WesleyClover}
+                    alt="Wesley Clover Logo"
+                    className="w-[20vw]"
+                  />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white md:rounded-xl rounded-md w-full flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[8] }
+              }
+            >
+              <div className=" flex items-center justify-center w-full  p-[10%] h-full overflow-hidden">
+                <a href="" target="_blank" rel="noreferrer">
+                  <Image src={Capzul} alt="Capzul Logo" className="w-[20vw]" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className=" md:rounded-xl rounded-md w[5%] md:w-[25%] flex items-center justify-center   h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[9] }
+              }
+            ></motion.div>
+          </div>
           {/* Sixth Row - Mini Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-2 ">
             <motion.div
