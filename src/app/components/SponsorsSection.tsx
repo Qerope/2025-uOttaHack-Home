@@ -357,7 +357,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
               <div className=" flex items-center justify-center w-full  p-[10%] h-full overflow-hidden">
-                <a href="" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.capzul.net/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image src={Capzul} alt="Capzul Logo" className="w-[20vw]" />
                 </a>
               </div>
