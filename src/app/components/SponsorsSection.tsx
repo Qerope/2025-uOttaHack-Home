@@ -21,8 +21,17 @@ import redbull from "../assets/redbull.png";
 import warp from "../assets/warp.png";
 import StandoutStk from "../assets/stand-out-stickers-logo.svg";
 import wolfram from "../assets/wolfram-1.png";
+import huion from "../assets/huion.png";
 import eef_community from "../assets/eef-com.png";
+
 import WesleyClover from "../assets/WesleyClover.png";
+
+import longandmcquade from "../assets/long-and-mcquade.png"
+import themerrydairy from "../assets/themerrydairy.png"
+import shop3d from "../assets/shop3d.png"
+import dorahacks from "../assets/dorahacks.png"
+
+
 import MLH from "../assets/mlh.svg";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
@@ -35,7 +44,7 @@ import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 
-interface SponsorsSectionProps {}
+interface SponsorsSectionProps { }
 
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   const sectionRef = useRef(null);
@@ -307,7 +316,79 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             ></motion.div>
           </div>
 
-          {/* row# - Small Sponsors */}
+
+          {/* Fifth Row - Small Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
+            <motion.div
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[6] }
+              }
+            ></motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[7] }
+              }
+            >
+
+              <div className=" flex items-center justify-center w-full p-[30%]  h-full overflow-hidden">
+                <a
+                  href="https://dorahacks.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={dorahacks} alt="DoraHacks Logo" className="w-full" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+
+                  : { duration: 1, ease: "easeOut", delay: delays[7] }
+              }
+            >
+              <div className=" flex items-center justify-center w-full p-[30%]  h-full overflow-hidden">
+                <a
+                  href="https://shop3d.ca/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={shop3d} alt="Shop3D.ca Logo" className="w-full" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center   h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[9] }
+              }
+            ></motion.div>
+          </div>
+
+           {/* row# - Small Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
             <motion.div
               className=" rounded-xl w[5%] md:w-[25%] flex items-center justify-center h-[11vw]"
@@ -378,6 +459,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             ></motion.div>
           </div>
+          
           {/* Sixth Row - Mini Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 pb-5 gap-x-2 ">
             <motion.div
@@ -456,14 +538,14 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             >
               <div className=" flex items-center justify-center w-full p-[10%] h-full overflow-hidden">
                 <a
-                  href="https://www.wolfram.com/"
+                  href="https://huion.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Image
-                    src={wolfram}
-                    alt="Wolfram logo"
-                    className="w-[100%]"
+                    src={huion}
+                    alt="Huion logo"
+                    className="h-auto max-w-[10vw] min-w-[5vw]"
                   />
                 </a>
               </div>
@@ -557,9 +639,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
           {/* Eighth Row - Single Sponsor */}
 
-          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-5 ">
+          <div className="flex flex-row items-center translate-x-[16.3%] justify-center w-[75%] pl-5 pr-5 pt-5 gap-x-2">
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center  h-[8vw]"
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -568,9 +650,20 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   ? {}
                   : { duration: 1, ease: "easeOut", delay: delays[18] }
               }
-            ></motion.div>
+            >
+
+              <div className="p-[10%]">
+                <a href="https://www.long-mcquade.com/" target="_blank" rel="noreferrer">
+                  <Image
+                    src={longandmcquade}
+                    alt="Long & McQuade logo"
+                    className="w-[100%]"
+                  />
+                </a>
+              </div>
+            </motion.div>
             <motion.div
-              className="bg-white md:rounded-xl rounded-md w-[25%] flex items-center justify-center  h-[8vw] "
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -587,16 +680,26 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className=" rounded-xl w-[37.5%]  flex items-center justify-center h-[8vw]"
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
               transition={
                 isMobile
                   ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[20] }
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
               }
-            ></motion.div>
+            >
+              <div className="p-[10%]">
+                <a href="https://themerrydairy.com/" target="_blank" rel="noreferrer">
+                  <Image
+                    src={themerrydairy}
+                    alt="The Merry Dairy logo"
+                    className="w-[100%]"
+                  />
+                </a>
+              </div>
+            </motion.div>
           </div>
 
           {/* Community Partners */}
