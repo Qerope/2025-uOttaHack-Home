@@ -26,11 +26,10 @@ import eef_community from "../assets/eef-com.png";
 
 import WesleyClover from "../assets/WesleyClover.png";
 
-import longandmcquade from "../assets/long-and-mcquade.png"
-import themerrydairy from "../assets/themerrydairy.png"
-import shop3d from "../assets/shop3d.png"
-import dorahacks from "../assets/dorahacks.png"
-
+import longandmcquade from "../assets/long-and-mcquade.png";
+import themerrydairy from "../assets/themerrydairy.png";
+import shop3d from "../assets/shop3d.png";
+import dorahacks from "../assets/dorahacks.png";
 
 import MLH from "../assets/mlh.svg";
 import github from "../assets/github.png";
@@ -44,7 +43,7 @@ import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 
-interface SponsorsSectionProps { }
+interface SponsorsSectionProps {}
 
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   const sectionRef = useRef(null);
@@ -316,7 +315,6 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             ></motion.div>
           </div>
 
-
           {/* Fifth Row - Small Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
             <motion.div
@@ -341,19 +339,21 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[7] }
               }
             >
-
               <div className=" flex items-center justify-center w-full p-[30%]  h-full overflow-hidden">
                 <a
                   href="https://dorahacks.io/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image src={dorahacks} alt="DoraHacks Logo" className="w-full" />
+                  <Image
+                    src={dorahacks}
+                    alt="DoraHacks Logo"
+                    className="w-full"
+                  />
                 </a>
               </div>
             </motion.div>
             <motion.div
-
               className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
@@ -361,16 +361,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               transition={
                 isMobile
                   ? {}
-
                   : { duration: 1, ease: "easeOut", delay: delays[7] }
               }
             >
               <div className=" flex items-center justify-center w-full p-[30%]  h-full overflow-hidden">
-                <a
-                  href="https://shop3d.ca/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://shop3d.ca/" target="_blank" rel="noreferrer">
                   <Image src={shop3d} alt="Shop3D.ca Logo" className="w-full" />
                 </a>
               </div>
@@ -465,11 +460,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
               <div className=" flex items-center justify-center w-full p-[10%] h-full overflow-hidden">
-                <a
-                  href="https://huion.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://huion.com/" target="_blank" rel="noreferrer">
                   <Image
                     src={huion}
                     alt="Huion logo"
@@ -533,7 +524,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             >
               <div className="flex items-center justify-center w-full p-[25%] h-full overflow-hidden">
                 <a
-                  href="https://www.standoutstickers.com/"
+                  href="http://hackp.ac/mlh-StandOutStickers-hackathons"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center"
@@ -579,9 +570,12 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[18] }
               }
             >
-
               <div className="p-[10%]">
-                <a href="https://www.long-mcquade.com/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.long-mcquade.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image
                     src={longandmcquade}
                     alt="Long & McQuade logo"
@@ -619,7 +613,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
               <div className="p-[10%]">
-                <a href="https://themerrydairy.com/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://themerrydairy.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Image
                     src={themerrydairy}
                     alt="The Merry Dairy logo"
@@ -644,7 +642,6 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[18] }
               }
             >
-
               <div className=" flex items-center justify-center w-full  p-[10%] h-full overflow-hidden">
                 <a
                   href="https://www.capzul.net/"
