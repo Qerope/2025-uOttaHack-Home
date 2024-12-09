@@ -25,20 +25,20 @@ const inter = Inter({
 
 // Metadata for the layout
 export const metadata: Metadata = {
-  title: "uOttaHack 7 - 2025 - Apply NOW!",
+  title: "uOttaHack 7",
   description:
-    "Join us and apply now to attend uOttaHack 7, the most anticipated hackathon in Ottawa, proudly celebrating 7 years of innovation, creativity, and community. This year, we’re leveling up the hacker experience with exciting new initiatives, exclusive workshops, inspiring keynote speakers, and unforgettable activities. Whether you're a seasoned hacker or a first-timer, uOttaHack 7 promises to be an incredible weekend of collaboration, learning, and fun.",
+    "Join us to attend uOttaHack 7, the most anticipated hackathon in Ottawa, proudly celebrating 7 years of innovation, creativity, and community. This year, we’re leveling up the hacker experience with exciting new initiatives, exclusive workshops, inspiring keynote speakers, and unforgettable activities. Whether you're a seasoned hacker or a first-timer, uOttaHack 7 promises to be an incredible weekend of collaboration, learning, and fun.",
   openGraph: {
     type: 'website',
-    title: "uOttaHack 7 - 2025 - Apply NOW!",
-    description: "Join us and apply now to attend uOttaHack 7, the most anticipated hackathon in Ottawa.",
+    title: "uOttaHack 7 - 2025",
+    description: "Join us to attend uOttaHack 7, the most anticipated hackathon in Ottawa.",
     url: "https://2025.uOttahack.com",
     images: [ 
       {
         url: opengraph_image.src,
         width: 1200,
         height: 630,
-        alt: "uOttaHack 7 - Apply Now!"
+        alt: "uOttaHack 7"
       }
     ],    
     siteName: "uOttaHack",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image", 
-    title: "uOttaHack 7 - 2025 - Apply NOW!",
-    description: "Join us for uOttaHack 7 and apply now! The most anticipated hackathon in Ottawa.",
+    title: "uOttaHack 7 - 2025",
+    description: "Join us for uOttaHack 7; the most anticipated hackathon in Ottawa.",
     images: [ 
       {
         url: twittercard_image.src,
         width: 800,
         height: 418,
-        alt: "uOttaHack 7 - Apply Now!"
+        alt: "uOttaHack 7"
       }
     ],
     site: "@uOttaHack",
