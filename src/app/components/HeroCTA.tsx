@@ -67,7 +67,7 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
   return (
     <div className="flex flex-col w-full items-center">
       {isNewsLetterActive && (
-        <div className=" flex w-full mt-[0px] flex-col items-center">
+        <div className=" flex w-full flex-col items-center">
           <form
             onSubmit={handleEmailSubmit}
             className="flex items-center h-14 p-1 backdrop-blur-md bg-white/70 rounded-lg overflow-hidden w-full max-w-md shadow-xl"
@@ -111,12 +111,14 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
             animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible and in place
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Animation duration and easing
             className={`text-center font-bold cta ${
-              (buttonText === "Visit 2024" || buttonText === "Apply Now!") ? styles.enlargeOnHover : ""
+              (buttonText === "Registration Closed" || buttonText === "Visit 2024" || buttonText === "Apply Now!") ? styles.enlargeOnHover : ""
             }`}
           >
-            <a target="_blank" rel="noopener noreferrer" href={buttonLink}>
+            {buttonLink && (<a target="_blank" rel="noopener noreferrer" href={buttonLink}>
               {buttonText}
-            </a>
+            </a>)}
+            {!buttonLink && (
+              buttonText)}
           </motion.button>
         </div>
       )}
@@ -164,8 +166,8 @@ const QuickHeroSectionState: React.FC<QuickHeroSectionStateProps> = ({
     ),
     4: (
       <HeroCTA
-        isNewsLetterActive={true}
-        buttonText=""
+        isNewsLetterActive={false}
+        buttonText="Registration Closed"
         buttonLink=""
       />
     ),
