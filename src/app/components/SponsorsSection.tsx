@@ -33,6 +33,7 @@ import dorahacks from "../assets/dorahacks.png"
 
 
 import MLH from "../assets/mlh.svg";
+import Tailed from "../assets/tailed.png";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
 import Capzul from "@/app/assets/Capzul.png";
@@ -711,6 +712,25 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             >
               <a href="https://mlh.io/" target="_blank" rel="noreferrer">
                 <MLH className="w-48 md:w-full h-auto" />
+              </a>
+            </motion.div>
+            <motion.div
+              className={styles.partnersContainer}
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[22] }
+              }
+            >
+              <a href="https://tailed.ca/" target="_blank" rel="noreferrer">
+                <Image
+                  src={Tailed}
+                  alt="Tail'ed Community"
+                  className="w-48  md:w-full h-auto"
+                />
               </a>
             </motion.div>
             <motion.div
