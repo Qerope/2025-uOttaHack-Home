@@ -33,7 +33,7 @@ import dorahacks from "../assets/dorahacks.png";
 import seeedStudio from "../assets/seedStudio.png";
 
 import MLH from "../assets/mlh.svg";
-import Tailed from "../assets/tailed.png";
+import Tailed from "../assets/Tailed.png";
 import github from "../assets/github.png";
 import uottawa from "../assets/uottawa.png";
 import Capzul from "@/app/assets/Capzul.png";
