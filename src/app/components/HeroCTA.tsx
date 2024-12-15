@@ -103,20 +103,26 @@ const HeroCTA: React.FC<HeroCTAProps> = ({
           </form>
         </div>
       )}
-      <div className={`button-container p-10 text-center mt-0 ${ styles.closerButton}`}>
-        <motion.button
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }} // Starting state: faded out and below
-          animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible and in place
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Animation duration and easing
-          className={`text-center font-bold cta ${
-            (buttonText === "Visit 2024" || buttonText === "Apply Now!") ? styles.enlargeOnHover : ""}`}
-        >
-          <a target="_blank" rel="noopener noreferrer" href={buttonLink}>
-            {buttonText}
-          </a>
-        </motion.button>
-      </div>
+      {buttonText && (
+        <div className={`button-container p-10 text-center mt-0 ${styles.closerButton}`}>
+          <motion.button
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }} // Starting state: faded out and below
+            animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate to visible and in place
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} // Animation duration and easing
+            className={`text-center font-bold cta ${
+              (buttonText === "Registration Closed" || buttonText === "Visit 2024" || buttonText === "Apply Now!") ? styles.enlargeOnHover : ""
+            }`}
+          >
+            {buttonLink && (<a target="_blank" rel="noopener noreferrer" href={buttonLink}>
+              {buttonText}
+            </a>)}
+            {!buttonLink && (
+              buttonText)}
+          </motion.button>
+        </div>
+      )}
+      
     </div>
   );
 };
@@ -158,7 +164,13 @@ const QuickHeroSectionState: React.FC<QuickHeroSectionStateProps> = ({
         buttonLink="https://live.uottahack.ca/"
       />
     ),
-    4: null,
+    4: (
+      <HeroCTA
+        isNewsLetterActive={false}
+        buttonText="Registration Closed"
+        buttonLink=""
+      />
+    ),
   };
 
   return <>{sectionComponents[mainState]}</>;
