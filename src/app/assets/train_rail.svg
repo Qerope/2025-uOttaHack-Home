@@ -1,40 +1,43 @@
-<svg width="1920" height="202" viewBox="0 0 1920 202" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect y="0.552734" width="1920" height="60.6072" fill="#C9C9C9"/>
-<rect y="39.9473" width="1920" height="21.2125" fill="#848484"/>
-<rect y="48.0283" width="1920" height="13.1316" fill="#AEAEAE"/>
-<path d="M935 99.0396V61.1602H1013V99.0396L999 107.626V143.485H949V107.626L935 99.0396Z" fill="#CACACA"/>
-<rect x="943" y="65.7056" width="62" height="30.3036" fill="#BCBCBC"/>
-<rect x="932" y="61.6655" width="3" height="26.2631" fill="#BCBCBC"/>
-<rect x="1013" y="61.6655" width="3" height="26.2631" fill="#BCBCBC"/>
-<rect x="943" y="93.9893" width="62" height="3.03036" fill="#8F8F8F"/>
-<rect x="954" y="97.019" width="1" height="5.0506" fill="#8F8F8F"/>
-<rect x="993" y="96.0093" width="1" height="6.06072" fill="#8F8F8F"/>
-<rect x="955" y="97.019" width="38" height="3.03036" fill="#727272"/>
-<path d="M949 128.333L999 120.252V143.485H949V128.333Z" fill="#AEAEAE"/>
-<path d="M935 62.1699H1013V73.2812L935 87.928V62.1699Z" fill="black" fill-opacity="0.2"/>
-<path d="M943 86.4131L935 87.9283V99.0396L949 107.626V143.485H952L951.5 105.605L943 99.0396V86.4131Z" fill="black" fill-opacity="0.2"/>
-<path d="M1558 99.0396V61.1602H1636V99.0396L1622 107.626V143.485H1572V107.626L1558 99.0396Z" fill="#CACACA"/>
-<rect x="1566" y="65.7056" width="62" height="30.3036" fill="#BCBCBC"/>
-<rect x="1555" y="61.6655" width="3" height="26.2631" fill="#BCBCBC"/>
-<rect x="1636" y="61.6655" width="3" height="26.2631" fill="#BCBCBC"/>
-<rect x="1566" y="93.9893" width="62" height="3.03036" fill="#8F8F8F"/>
-<rect x="1577" y="97.019" width="1" height="5.0506" fill="#8F8F8F"/>
-<rect x="1616" y="96.0093" width="1" height="6.06072" fill="#8F8F8F"/>
-<rect x="1578" y="97.019" width="38" height="3.03036" fill="#727272"/>
-<path d="M1572 128.333L1622 120.252V143.485H1572V128.333Z" fill="#AEAEAE"/>
-<path d="M1558 62.1699H1636V73.2812L1558 87.928V62.1699Z" fill="black" fill-opacity="0.2"/>
-<path d="M1566 86.4131L1558 87.9283V99.0396L1572 107.626V143.485H1575L1574.5 105.605L1566 99.0396V86.4131Z" fill="black" fill-opacity="0.2"/>
-<path d="M312 100.049V62.1699H390V100.049L376 108.635V144.495H326V108.635L312 100.049Z" fill="#CACACA"/>
-<rect x="320" y="66.7158" width="62" height="30.3036" fill="#BCBCBC"/>
-<rect x="309" y="62.6753" width="3" height="26.2631" fill="#BCBCBC"/>
-<rect x="390" y="62.6753" width="3" height="26.2631" fill="#BCBCBC"/>
-<rect x="320" y="94.999" width="62" height="3.03036" fill="#8F8F8F"/>
-<rect x="331" y="98.0293" width="1" height="5.0506" fill="#8F8F8F"/>
-<rect x="370" y="97.019" width="1" height="6.06072" fill="#8F8F8F"/>
-<rect x="332" y="98.0293" width="38" height="3.03036" fill="#727272"/>
-<path d="M326 129.343L376 121.262V144.495H326V129.343Z" fill="#AEAEAE"/>
-<path d="M312 63.1802H390V74.2915L312 88.9382V63.1802Z" fill="black" fill-opacity="0.2"/>
-<path d="M320 87.4233L312 88.9385V100.05L326 108.636V144.495H329L328.5 106.616L320 100.05V87.4233Z" fill="black" fill-opacity="0.2"/>
-<rect y="10.6543" width="1920" height="6.06072" fill="#979797"/>
-<rect y="143" width="1920" height="59" fill="#A6A9AD"/>
+<svg width="100%" height="202" viewBox="0 0 1920 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect y="0.552734" width="1920" height="60.6072" fill="#C9C9C9" />
+    <rect y="39.9473" width="1920" height="21.2125" fill="#848484" />
+    <rect y="48.0283" width="1920" height="13.1316" fill="#AEAEAE" />
+    <path d="M935 99.0396V61.1602H1013V99.0396L999 107.626V143.485H949V107.626L935 99.0396Z" fill="#CACACA" />
+    <rect x="943" y="65.7056" width="62" height="30.3036" fill="#BCBCBC" />
+    <rect x="932" y="61.6655" width="3" height="26.2631" fill="#BCBCBC" />
+    <rect x="1013" y="61.6655" width="3" height="26.2631" fill="#BCBCBC" />
+    <rect x="943" y="93.9893" width="62" height="3.03036" fill="#8F8F8F" />
+    <rect x="954" y="97.019" width="1" height="5.0506" fill="#8F8F8F" />
+    <rect x="993" y="96.0093" width="1" height="6.06072" fill="#8F8F8F" />
+    <rect x="955" y="97.019" width="38" height="3.03036" fill="#727272" />
+    <path d="M949 128.333L999 120.252V143.485H949V128.333Z" fill="#AEAEAE" />
+    <path d="M935 62.1699H1013V73.2812L935 87.928V62.1699Z" fill="black" fill-opacity="0.2" />
+    <path d="M943 86.4131L935 87.9283V99.0396L949 107.626V143.485H952L951.5 105.605L943 99.0396V86.4131Z" fill="black"
+        fill-opacity="0.2" />
+    <path d="M1558 99.0396V61.1602H1636V99.0396L1622 107.626V143.485H1572V107.626L1558 99.0396Z" fill="#CACACA" />
+    <rect x="1566" y="65.7056" width="62" height="30.3036" fill="#BCBCBC" />
+    <rect x="1555" y="61.6655" width="3" height="26.2631" fill="#BCBCBC" />
+    <rect x="1636" y="61.6655" width="3" height="26.2631" fill="#BCBCBC" />
+    <rect x="1566" y="93.9893" width="62" height="3.03036" fill="#8F8F8F" />
+    <rect x="1577" y="97.019" width="1" height="5.0506" fill="#8F8F8F" />
+    <rect x="1616" y="96.0093" width="1" height="6.06072" fill="#8F8F8F" />
+    <rect x="1578" y="97.019" width="38" height="3.03036" fill="#727272" />
+    <path d="M1572 128.333L1622 120.252V143.485H1572V128.333Z" fill="#AEAEAE" />
+    <path d="M1558 62.1699H1636V73.2812L1558 87.928V62.1699Z" fill="black" fill-opacity="0.2" />
+    <path d="M1566 86.4131L1558 87.9283V99.0396L1572 107.626V143.485H1575L1574.5 105.605L1566 99.0396V86.4131Z"
+        fill="black" fill-opacity="0.2" />
+    <path d="M312 100.049V62.1699H390V100.049L376 108.635V144.495H326V108.635L312 100.049Z" fill="#CACACA" />
+    <rect x="320" y="66.7158" width="62" height="30.3036" fill="#BCBCBC" />
+    <rect x="309" y="62.6753" width="3" height="26.2631" fill="#BCBCBC" />
+    <rect x="390" y="62.6753" width="3" height="26.2631" fill="#BCBCBC" />
+    <rect x="320" y="94.999" width="62" height="3.03036" fill="#8F8F8F" />
+    <rect x="331" y="98.0293" width="1" height="5.0506" fill="#8F8F8F" />
+    <rect x="370" y="97.019" width="1" height="6.06072" fill="#8F8F8F" />
+    <rect x="332" y="98.0293" width="38" height="3.03036" fill="#727272" />
+    <path d="M326 129.343L376 121.262V144.495H326V129.343Z" fill="#AEAEAE" />
+    <path d="M312 63.1802H390V74.2915L312 88.9382V63.1802Z" fill="black" fill-opacity="0.2" />
+    <path d="M320 87.4233L312 88.9385V100.05L326 108.636V144.495H329L328.5 106.616L320 100.05V87.4233Z" fill="black"
+        fill-opacity="0.2" />
+    <rect y="10.6543" width="1920" height="6.06072" fill="#979797" />
+    <rect y="143" width="1920" height="59" fill="#A6A9AD" />
 </svg>

@@ -52,7 +52,7 @@ import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 
-interface SponsorsSectionProps { }
+interface SponsorsSectionProps {}
 
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   const sectionRef = useRef(null);
@@ -275,11 +275,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image
-                    src={qnx}
-                    alt="QNX Logo"
-                    className="w-full"
-                  />
+                  <Image src={qnx} alt="QNX Logo" className="w-full" />
                 </a>
               </div>
             </motion.div>
@@ -490,8 +486,16 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
               <div className=" flex items-center justify-center w-full p-[20%]  h-full overflow-hidden">
-                <a href="https://www.fanxiangssd.com/" target="_blank" rel="noreferrer">
-                  <Image src={fanxiang} alt="Fanxiang Logo" className="w-full" />
+                <a
+                  href="https://www.fanxiangssd.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={fanxiang}
+                    alt="Fanxiang Logo"
+                    className="w-full"
+                  />
                 </a>
               </div>
             </motion.div>
@@ -773,7 +777,6 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             </motion.div>
           </div>
 
-
           <div className="flex flex-row items-center translate-x-[16.3%] justify-center w-[75%] pl-5 pr-5 pt-5 gap-x-2">
             <motion.div
               className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
@@ -817,11 +820,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image
-                    src={xppen}
-                    alt="XP-Pen logo"
-                    className="w-[100%]"
-                  />
+                  <Image src={xppen} alt="XP-Pen logo" className="w-[100%]" />
                 </a>
               </div>
             </motion.div>
@@ -842,11 +841,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image
-                    src={aws}
-                    alt="AWS logo"
-                    className="w-[100%]"
-                  />
+                  <Image src={aws} alt="AWS logo" className="w-[100%]" />
                 </a>
               </div>
             </motion.div>
@@ -888,16 +883,8 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               }
             >
               <div className=" flex items-center justify-center w-full p-[20%] h-full overflow-hidden">
-                <a
-                  href="https://igda.org/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src={igda}
-                    alt="IGDA Logo"
-                    className="w-[15vw]"
-                  />
+                <a href="https://igda.org/" target="_blank" rel="noreferrer">
+                  <Image src={igda} alt="IGDA Logo" className="w-[15vw]" />
                 </a>
               </div>
             </motion.div>
@@ -1014,7 +1001,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
 
       {/* </div> */}
 
-      <OtrainRails className="absolute z-[1] " />
+      <OtrainRails className="absolute z-[1]  w-full h-auto" />
       <div className={` absolute top-0 z-0 w-full h-full`}>
         <div className={`${styles.triangle} absolute `} />
       </div>
