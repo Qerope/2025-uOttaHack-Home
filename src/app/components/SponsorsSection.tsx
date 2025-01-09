@@ -30,6 +30,8 @@ import igda from "../assets/igda.png";
 import groq from "../assets/groq.png";
 import qnx from "../assets/qnx.png";
 import fanxiang from "../assets/fanxiang.png";
+import fwdedu from "../assets/fwdedu.webp";
+import filamentsca from "../assets/filamentsca.png";
 
 import WesleyClover from "../assets/WesleyClover.png";
 
@@ -52,7 +54,7 @@ import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 
-interface SponsorsSectionProps {}
+interface SponsorsSectionProps { }
 
 const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   const sectionRef = useRef(null);
@@ -777,6 +779,104 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             </motion.div>
           </div>
 
+          {/* Nineth Row - Mini Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full  pl-5 pr-5 pt-5 gap-x-2 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[14] }
+              }
+            >
+              <div className=" flex items-center justify-center w-full p-[10%] h-full overflow-hidden">
+                <div className="p-[0%]">
+                  <a
+                    href="https://www.wesleyclover.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image
+                      src={WesleyClover}
+                      alt="Wesley Clover Logo"
+                      className="w-[15vw]"
+                    />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[8vw]  "
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[15] }
+              }
+            >
+              <div className="p-[20%] flex items-center justify-center w-full h-full overflow-hidden">
+                <div className="p-[25%]">
+                  <a
+                    href="https://www.xp-pen.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image src={xppen} alt="XP-Pen logo" className="w-[100%]" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center  h-[8vw] overflow-hidden"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"}
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"}
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[16] }
+              }
+            >
+              <div className="flex items-center justify-center w-full p-0 h-full overflow-hidden">
+                <div className="p-[32%]">
+                  <a
+                    href="https://aws.amazon.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image src={aws} alt="AWS logo" className="w-[100%]" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center  h-[8vw] overflow-hidden"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[17] }
+              }
+            >
+              <div className="p-[10%] flex items-center justify-center w-full h-full overflow-hidden">
+                <a
+                  href="https://www.peo.on.ca/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={peo} alt="PEO Logo" className="w-[20vw]" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
           <div className="flex flex-row items-center translate-x-[16.3%] justify-center w-[75%] pl-5 pr-5 pt-5 gap-x-2">
             <motion.div
               className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
@@ -789,102 +889,51 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   : { duration: 1, ease: "easeOut", delay: delays[18] }
               }
             >
-              <div className="p-[10%]">
-                <a
-                  href="https://www.wesleyclover.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src={WesleyClover}
-                    alt="Wesley Clover Logo"
-                    className="w-[15vw]"
-                  />
-                </a>
-              </div>
-            </motion.div>
-            <motion.div
-              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[19] }
-              }
-            >
-              <div className="p-[37%]">
-                <a
-                  href="https://www.xp-pen.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image src={xppen} alt="XP-Pen logo" className="w-[100%]" />
-                </a>
-              </div>
-            </motion.div>
-            <motion.div
-              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[19] }
-              }
-            >
-              <div className="p-[32%]">
-                <a
-                  href="https://aws.amazon.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image src={aws} alt="AWS logo" className="w-[100%]" />
-                </a>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Nineth Row - Mini Sponsors */}
-
-          <div className="flex flex-row items-center translate-x-[50%] justify-center w-[50%] pl-5 pr-5 pt-5 gap-x-2">
-            <motion.div
-              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[18] }
-              }
-            >
-              <div className=" flex items-center justify-center w-full  p-[10%] h-full overflow-hidden">
-                <a
-                  href="https://www.peo.on.ca/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image src={peo} alt="PEO Logo" className="w-[20vw]" />
-                </a>
-              </div>
-            </motion.div>
-            <motion.div
-              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[19] }
-              }
-            >
-              <div className=" flex items-center justify-center w-full p-[20%] h-full overflow-hidden">
+              <div className="p-[20%]">
                 <a href="https://igda.org/" target="_blank" rel="noreferrer">
                   <Image src={igda} alt="IGDA Logo" className="w-[15vw]" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
+            >
+              <div className="p-[15%]">
+                <a
+                  href="https://forwardedu.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={fwdedu} alt="Forward Education logo" className="w-[100%]" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
+            >
+              <div className="p-[15%]">
+                <a
+                  href="https://filaments.ca/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={filamentsca} alt="Filaments.ca logo" className="w-[100%]" />
                 </a>
               </div>
             </motion.div>
