@@ -40,6 +40,10 @@ import themerrydairy from "../assets/themerrydairy.png";
 import shop3d from "../assets/shop3d.png";
 import dorahacks from "../assets/dorahacks.png";
 import seeedStudio from "../assets/seedStudio.png";
+import gadget from "../assets/gadget.png";
+import thales from "../assets/thales.png";
+import starknet from "../assets/starknet.png";
+import nordvpn from "../assets/nordvpn.png";
 
 import MLH from "../assets/mlh.svg";
 import Tailed from "../assets/Tailed.png";
@@ -259,6 +263,52 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           </div>
 
           {/* Fourth.2 Row - Medium Sponsors */}
+          <div className="flex flex-row items-center justify-center w-full pl-5 pr-5 pt-5 gap-x-2 ">
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw] overflow-hidden"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[4] }
+              }
+            >
+              <div className=" flex items-center justify-center w-full p-[20%] h-full overflow-hidden">
+                <a
+                  href="https://blackberry.qnx.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={qnx} alt="QNX Logo" className="w-full" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[5] }
+              }
+            >
+              <div className="flex items-center justify-center w-full p-[10%] h-full overflow-hidden">
+                <a
+                  href="https://gadget.dev/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={gadget} alt="Gadget Logo" className="w-full" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Fourth.3 Row - Medium Sponsors */}
           <div className="flex flex-row items-center justify-center w-[51%] translate-x-[49%] translate pl-5 pr-5 pt-5 gap-x-2 ">
             <motion.div
               className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
@@ -273,11 +323,11 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             >
               <div className=" flex items-center justify-center w-full p-[20%] h-full overflow-hidden">
                 <a
-                  href="https://blackberry.qnx.com/"
+                  href="https://www.starknet.io/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image src={qnx} alt="QNX Logo" className="w-full" />
+                  <Image src={starknet} alt="Starknet Logo" className="w-full" />
                 </a>
               </div>
             </motion.div>
@@ -466,7 +516,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
           {/* Fifth.3 Row - Small Sponsors */}
           <div className="flex flex-row items-center justify-center w-full pt-5 gap-x-2 ">
             <motion.div
-              className=" rounded-xl w-[105%] flex items-center justify-center h-[11vw]"
+              className=" rounded-xl w-[55%] flex items-center justify-center h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -502,7 +552,32 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
               </div>
             </motion.div>
             <motion.div
-              className=" rounded-xl w-[105%] flex items-center justify-center   h-[11vw]"
+              className="bg-white rounded-xl w-full flex items-center justify-center h-[11vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[7] }
+              }
+            >
+              <div className=" flex items-center justify-center w-full p-[10%]  h-full overflow-hidden">
+                <a
+                  href="https://www.thalesgroup.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={thales}
+                    alt="Thales Logo"
+                    className="w-full"
+                  />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className=" rounded-xl w-[55%] flex items-center justify-center   h-[11vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -877,7 +952,7 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
             </motion.div>
           </div>
 
-          <div className="flex flex-row items-center translate-x-[16.3%] justify-center w-[75%] pl-5 pr-5 pt-5 gap-x-2">
+          <div className="flex flex-row items-center justify-center w-[100%] pl-5 pr-5 pt-5 gap-x-2">
             <motion.div
               className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
               variants={itemVariants}
@@ -934,6 +1009,27 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                   rel="noreferrer"
                 >
                   <Image src={filamentsca} alt="Filaments.ca logo" className="w-[100%]" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
+            >
+              <div className="p-[0%]">
+                <a
+                  href="https://nordvpn.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={nordvpn} alt="NordVPN logo" className="w-[100%]" />
                 </a>
               </div>
             </motion.div>
