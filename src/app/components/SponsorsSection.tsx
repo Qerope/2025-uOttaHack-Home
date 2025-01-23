@@ -45,6 +45,9 @@ import thales from "../assets/thales.png";
 import starknet from "../assets/starknet.png";
 import nordvpn from "../assets/nordvpn.png";
 import coinbase from "../assets/coinbase.png";
+import nordpass from "../assets/nordpass.png";
+import saily from "../assets/saily.png";
+import incogni from "../assets/incogni.png";
 
 import MLH from "../assets/mlh.svg";
 import Tailed from "../assets/Tailed.png";
@@ -1013,43 +1016,9 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                 </a>
               </div>
             </motion.div>
+
             <motion.div
               className="bg-white rounded-xl flex-1 flex items-center justify-center h-[8vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[19] }
-              }
-            >
-              <div className="p-[0%]">
-                <a
-                  href="https://nordvpn.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image src={nordvpn} alt="NordVPN logo" className="w-[100%]" />
-                </a>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="flex flex-row items-center justify-center w-[100%] pl-5 pr-5 pt-5 gap-x-2">
-            <motion.div
-              className=" flex-auto w-64 flex items-center justify-center h-[8vw]"
-              variants={itemVariants}
-              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
-              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
-              transition={
-                isMobile
-                  ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[9] }
-              }
-            ></motion.div>
-            <motion.div
-              className="bg-white rounded-xl flex-auto w-32 flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
@@ -1069,17 +1038,94 @@ const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
                 </a>
               </div>
             </motion.div>
+          </div>
+
+          <div className="flex flex-row items-center justify-center w-[100%] pl-5 pr-5 pt-5 gap-x-2">
             <motion.div
-              className=" flex-auto w-64 flex items-center justify-center h-[8vw]"
+              className="bg-white rounded-xl flex-auto w-32 flex items-center justify-center h-[8vw]"
               variants={itemVariants}
               initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
               animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
               transition={
                 isMobile
                   ? {}
-                  : { duration: 1, ease: "easeOut", delay: delays[9] }
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
               }
-            ></motion.div>
+            >
+              <div className="p-[0%]">
+                <a
+                  href="https://nordvpn.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={nordvpn} alt="NordVPN logo" className="w-[100%]" />
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-xl flex-auto w-32 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
+            >
+              <div className="p-[15%]">
+                <a
+                  href="https://nordpass.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={nordpass} alt="Nordpass logo" className="w-[100%]" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl flex-auto w-32 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
+            >
+              <div className="p-[20%]">
+                <a
+                  href="https://incogni.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={incogni} alt="incogni logo" className="w-[100%]" />
+                </a>
+              </div>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl flex-auto w-32 flex items-center justify-center h-[8vw]"
+              variants={itemVariants}
+              initial={isMobile ? "visible" : "hidden"} // On mobile, default to visible with no animation
+              animate={isMobile ? "visible" : isInView ? "visible" : "hidden"} // Only animate on larger screens
+              transition={
+                isMobile
+                  ? {}
+                  : { duration: 1, ease: "easeOut", delay: delays[19] }
+              }
+            >
+              <div className="p-[15%]">
+                <a
+                  href="https://saily.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image src={saily} alt="Saily logo" className="w-[100%]" />
+                </a>
+              </div>
+            </motion.div>
           </div>
 
           {/* Community Partners */}
